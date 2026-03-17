@@ -76,7 +76,7 @@ const translations = {
     form_select: "Select a service...", form_opt1: "Website Development",
     form_opt2: "SNS Management", form_opt3: "Digital Transformation", form_opt4: "All Services",
     form_msg: "Message", form_submit: "Send Message →",
-    form_success: "✅ Message sent! We'll be in touch within 24 hours."
+    form_success: "✅ Message sent! We'll be in touch within 24 hours.",
     footer_tagline: "Start smart. Start digital. Your trusted partner in digital transformation.",
     footer_nav: "Navigation", footer_services: "Services", footer_lang: "Languages"
   },
