@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --outfile=js/main.js --format=iife --minify",
+    "dev": "esbuild src/main.js --bundle --outfile=js/main.js --format=iife --watch"
+  },
   "dependencies": {
-    "@formspree/react": "^3.0.0"
+    "@formspree/react": "^3.0.0",
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.4"
   }
 }
