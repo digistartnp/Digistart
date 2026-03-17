@@ -283,6 +283,15 @@ async function handleFormSubmit(e) {
 
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  submitButton.disabled = true;
+
+  const successMessages = {
+    en: "Thank you! We’ve received your message and will contact you within 24 hours. Let's start your digital journey!",
+    jp: "送信ありがとうございました！ 内容を確認し、24時間以内にご連絡いたします。ビジネスのデジタル化を全力でサポートします。",
+    np: "धन्यवाद! हामीले तपाईंको सन्देश प्राप्त गरेका छौं र २४ घण्टा भित्र सम्पर्क गर्नेछौं। तपाईंको डिजिटल यात्रा सुरु गरौं!"
+  };
 
   try {
     const response = await fetch(form.action, {
@@ -293,8 +302,15 @@ async function handleFormSubmit(e) {
 
     if (response.ok) {
       form.reset();
+      form.style.display = 'none';
+      success.classList.add('show');
+      success.textContent = successMessages[currentLang] || successMessages.en;
       success.style.display = 'block';
-      success.textContent = 'Message sent! Thanks for reaching out. We\'ll get back to you soon.';
+
+      setTimeout(() => {
+        success.classList.remove('show');
+      }, 2500);
+
       return false;
     }
 
@@ -304,6 +320,8 @@ async function handleFormSubmit(e) {
   } catch (error) {
     alert('Network error: unable to send message.');
     console.error(error);
+  } finally {
+    submitButton.disabled = false;
   }
 
   return false;
