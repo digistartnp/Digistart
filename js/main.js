@@ -6,7 +6,7 @@
 // ── TRANSLATIONS ──────────────────────────────────────────────
 const translations = {
   en: {
-    nav_home: "Home", nav_services: "Services", nav_about: "About",
+    nav_home: "Home", nav_services: "Services", nav_pricing: "Pricing", nav_about: "About",
     nav_faq: "FAQ", nav_contact: "Contact", nav_cta: "Apply Now →",
     hero_badge: "Digital Marketing Agency",
     hero_title_1: "We Help", hero_title_2: "To Go Digital",
@@ -80,7 +80,7 @@ const translations = {
   },
 
   jp: {
-    nav_home: "ホーム", nav_services: "サービス", nav_about: "私たちについて",
+    nav_home: "ホーム", nav_services: "サービス", nav_pricing: "価格", nav_about: "私たちについて",
     nav_faq: "よくある質問", nav_contact: "お問い合わせ", nav_cta: "今すぐ申し込む →",
     hero_badge: "デジタルマーケティング会社",
     hero_title_1: "デジタル化を", hero_title_2: "サポートします",
@@ -154,7 +154,7 @@ const translations = {
   },
 
   np: {
-    nav_home: "होम", nav_services: "सेवाहरू", nav_about: "हाम्रो बारे",
+    nav_home: "होम", nav_services: "सेवाहरू", nav_pricing: "मूल्य", nav_about: "हाम्रो बारे",
     nav_faq: "प्रश्नहरू", nav_contact: "सम्पर्क", nav_cta: "अहिले आवेदन गर्नुहोस् →",
     hero_badge: "डिजिटल मार्केटिङ एजेन्सी",
     hero_title_1: "हामी मद्दत गर्छौं", hero_title_2: "डिजिटल बन्न",
