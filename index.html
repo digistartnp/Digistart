@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIGIスタート | Start Smart. Start Digital.</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="#home" class="nav-logo">
+      <img src="images/logo.png" alt="DIGIスタート Logo">
+      <span class="nav-logo-text">DIGI<span>スタート</span></span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="nav-links">
+      <li><a href="#home"     data-i18n="nav_home">Home</a></li>
+      <li><a href="#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="#about"    data-i18n="nav_about">About</a></li>
+      <li><a href="#faq"      data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
+    </ul>
+
+    <!-- Right Side: Language + CTA -->
+    <div class="nav-right">
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn"        onclick="setLang('jp')">JP</button>
+        <button class="lang-btn"        onclick="setLang('np')">नेपाली</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="nav_cta">Apply Now →</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"     onclick="toggleMenu()" data-i18n="nav_home">Home</a>
+  <a href="#services" onclick="toggleMenu()" data-i18n="nav_services">Services</a>
+  <a href="#about"    onclick="toggleMenu()" data-i18n="nav_about">About</a>
+  <a href="#faq"      onclick="toggleMenu()" data-i18n="nav_faq">FAQ</a>
+  <a href="#contact"  onclick="toggleMenu()" data-i18n="nav_contact">Contact</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-bg-dots"></div>
+  <div class="hero-bg-shape"></div>
+
+  <div class="hero-inner">
+
+    <!-- Hero Text -->
+    <div class="hero-content">
+      <div class="hero-badge" data-i18n="hero_badge">Digital Marketing Agency</div>
+      <h1 class="hero-title">
+        <span data-i18n="hero_title_1">We Help</span><br>
+        <span class="accent" data-i18n="hero_title_2">To Go Digital</span>
+      </h1>
+      <p class="hero-sub" data-i18n="hero_sub">
+        Start smart. Start digital. We transform traditional businesses into modern digital powerhouses — websites, social media, and full digital transformation.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary"   data-i18n="hero_cta1">Get Started →</a>
+        <a href="#services" class="btn-secondary" data-i18n="hero_cta2">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">4+</div>
+          <div class="stat-label" data-i18n="stat1">Core Services</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label" data-i18n="stat2">Client Focus</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label" data-i18n="stat3">Languages</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Visual Card -->
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-main-card">
+          <div class="hero-service-tag"  data-i18n="hero_card_tag">Digital Transformation</div>
+          <div class="hero-card-title"   data-i18n="hero_card_title">Your Business, Reimagined</div>
+          <div class="hero-card-desc"    data-i18n="hero_card_desc">We bridge the gap between traditional operations and the digital future.</div>
+          <div class="hero-card-metrics">
+            <div class="metric-pill">
+              <div class="mp-val">↑85%</div>
+              <div class="mp-label" data-i18n="mp1">Online Reach</div>
+            </div>
+            <div class="metric-pill">
+              <div class="mp-val">3×</div>
+              <div class="mp-label" data-i18n="mp2">Engagement</div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating badges -->
+        <div class="float-card float-card-1">
+          <div class="fc-icon">🌐</div>
+          <div class="fc-label" data-i18n="fc1_label">Website</div>
+          <div class="fc-val"   data-i18n="fc1_val">Live & Fast</div>
+        </div>
+        <div class="float-card float-card-2">
+          <div class="fc-icon">📊</div>
+          <div class="fc-label" data-i18n="fc2_label">SNS Growth</div>
+          <div class="fc-val">+2.4k</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SERVICES SECTION
+════════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+
+    <div class="services-header reveal">
+      <div class="section-label" data-i18n="svc_label">What We Do</div>
+      <h2 class="section-title" data-i18n="svc_title">Our Services</h2>
+      <p class="section-sub" data-i18n="svc_sub">Everything you need to build a strong digital presence.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Service 1: Website -->
+      <div class="service-card reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">🌐</div>
+        <h3 class="svc-title" data-i18n="svc1_title">Website</h3>
+        <p class="svc-desc"   data-i18n="svc1_desc">Professional, fast-loading websites tailored to your brand.</p>
+        <div class="svc-tags">
+          <span class="svc-tag" data-i18n="svc1_t1">Landing Page</span>
+          <span class="svc-tag" data-i18n="svc1_t2">E-Commerce</span>
+          <span class="svc-tag" data-i18n="svc1_t3">Corporate Site</span>
+        </div>
+      </div>
+
+      <!-- Service 2: SNS Management -->
+      <div class="service-card reveal">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">📱</div>
+        <h3 class="svc-title" data-i18n="svc2_title">SNS Management</h3>
+        <p class="svc-desc"   data-i18n="svc2_desc">Build your community and grow your brand on Instagram, Facebook, and more.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Instagram</span>
+          <span class="svc-tag">Facebook</span>
+          <span class="svc-tag" data-i18n="svc2_t3">Content</span>
+        </div>
+      </div>
+
+      <!-- Service 3: Digital Transformation -->
+      <div class="service-card reveal">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">⚡</div>
+        <h3 class="svc-title" data-i18n="svc3_title">Digital Transformation</h3>
+        <p class="svc-desc"   data-i18n="svc3_desc">Move beyond fax machines and paper. We modernize your business with digital tools.</p>
+        <div class="svc-tags">
+          <span class="svc-tag" data-i18n="svc3_t1">Consulting</span>
+          <span class="svc-tag" data-i18n="svc3_t2">Automation</span>
+          <span class="svc-tag" data-i18n="svc3_t3">Strategy</span>
+        </div>
+      </div>
+
+      <!-- Service 4: Restaurant Digital Growth -->
+      <div class="service-card reveal">
+        <div class="svc-num">04</div>
+        <div class="svc-icon">📍</div>
+        <h3 class="svc-title">MEO + QR Code Menus + SNS Integration</h3>
+        <p class="svc-desc">Optimize your Google Maps button to open your new landing page, generate branded QR table menus, and link your Instagram/Linktree directly to your fast site.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Google Maps Order</span>
+          <span class="svc-tag">Branded QR Menu</span>
+          <span class="svc-tag">Instagram/Linktree</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+
+      <!-- Left: Visual Card -->
+      <div class="about-visual reveal">
+        <div class="about-card-main">
+          <div class="about-tagline">
+            <span class="ac" data-i18n="about_tagline_1">Start smart.</span><br>
+            <span data-i18n="about_tagline_2">Start digital.</span>
+          </div>
+          <p class="about-card-desc" data-i18n="about_card_desc">
+            DIGIスタート was born from a simple belief: every business deserves a modern digital presence. We work with shops, entrepreneurs, and growing companies across Japan and beyond.
+          </p>
+          <div class="about-metrics">
+            <div class="am-item">
+              <div class="am-val">3</div>
+              <div class="am-label" data-i18n="am1">Languages Supported</div>
+            </div>
+            <div class="am-item">
+              <div class="am-val">∞</div>
+              <div class="am-label" data-i18n="am2">Client Potential</div>
+            </div>
+          </div>
+          <div class="about-badge-strip">
+            <span class="about-badge">🇯🇵 Japan</span>
+            <span class="about-badge">🌏 Nepal</span>
+            <span class="about-badge">🌐 Global</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="about-content reveal">
+        <div class="section-label" data-i18n="about_label">Who We Are</div>
+        <h2 class="section-title" data-i18n="about_title">About DIGIスタート</h2>
+        <p class="section-sub"   data-i18n="about_sub">We're a multilingual digital marketing agency helping businesses break into the digital world.</p>
+
+        <div class="about-values">
+          <div class="value-item">
+            <div class="vi-icon">🎯</div>
+            <div class="vi-text">
+              <h4 data-i18n="val1_title">Result-Driven</h4>
+              <p  data-i18n="val1_desc">Every project is built around measurable outcomes that grow your business.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="vi-icon">🤝</div>
+            <div class="vi-text">
+              <h4 data-i18n="val2_title">Multilingual Support</h4>
+              <p  data-i18n="val2_desc">We communicate in English, Japanese, and Nepali — no barriers, no confusion.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="vi-icon">💡</div>
+            <div class="vi-text">
+              <h4 data-i18n="val3_title">Accessible & Affordable</h4>
+              <p  data-i18n="val3_desc">Digital transformation for everyone, not just big corporations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FAQ SECTION
+════════════════════════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-inner">
+
+      <!-- Left: Intro -->
+      <div class="faq-intro reveal">
+        <div class="section-label" data-i18n="faq_label">Got Questions?</div>
+        <h2 class="section-title" data-i18n="faq_title">Frequently Asked</h2>
+        <p class="section-sub"   data-i18n="faq_sub">Can't find your answer? Reach out to us directly.</p>
+        <br>
+        <a href="#contact" class="btn-primary" data-i18n="faq_cta">Ask Us Directly →</a>
+      </div>
+
+      <!-- Right: FAQ List -->
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq1_q">What services does DIGIスタート offer?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq1_a">We offer three core services: Website Development, SNS Management, and Digital Transformation consulting.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq2_q">What languages do you support?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq2_a">We operate fully in English, Japanese (日本語), and Nepali (नेपाली).</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq3_q">How long does it take to build a website?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq3_a">A landing page takes 1–2 weeks. A full corporate or e-commerce website typically takes 3–6 weeks.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq4_q">How do I get started?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq4_a">Fill out the contact form or reach us via social media. We'll schedule a free consultation.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq5_q">Do you work with small businesses?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq5_a">Absolutely! Small and medium businesses are at the heart of what we do. We offer flexible packages.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq6_q">What is digital transformation?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq6_a">Replacing outdated tools (fax, paper) with modern digital systems: online booking, digital payments, cloud storage, and online marketing.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What is MEO (Map Engine Optimization)?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a">MEO ensures your business is visible and optimized on Google Maps. We set up your "Order" button to direct customers straight to your landing page, increasing orders and engagement.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How do QR Code Menus help my business?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a">Branded QR codes on table tents or displays let customers instantly access your digital menu or services. They're fast, contactless, and drive traffic to your site—perfect for restaurants, cafes, and service businesses.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How do you integrate Instagram and Linktree?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a">We link your Instagram profile bio and Linktree directly to your new landing page, creating a single hub for all customer interactions. One link guides them to your website, services, and social channels.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT SECTION
+════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+
+      <!-- Left: Info -->
+      <div class="contact-info reveal">
+        <div class="section-label" data-i18n="contact_label">Get In Touch</div>
+        <h2 class="section-title" data-i18n="contact_title">Let's Start Your Digital Journey</h2>
+        <p class="section-sub"   data-i18n="contact_sub">Ready to go digital? We'll get back to you within 24 hours.</p>
+
+        <div class="contact-methods">
+          <div class="cm-item">
+            <div class="cm-icon">📘</div>
+            <div>
+              <div class="cm-label" data-i18n="cm_fb">Facebook</div>
+              <div class="cm-val"><a href="https://www.facebook.com/profile.php?id=61583067325281" target="_blank" rel="noopener">DIGIスタート</a></div>
+            </div>
+          </div>
+          <div class="cm-item">
+            <div class="cm-icon">📸</div>
+            <div>
+              <div class="cm-label" data-i18n="cm_ig">Instagram</div>
+              <div class="cm-val"><a href="https://www.instagram.com/digistartnp/" target="_blank" rel="noopener">@digistartnp</a></div>
+            </div>
+          </div>
+          <div class="cm-item">
+            <div class="cm-icon">✉️</div>
+            <div>
+              <div class="cm-label" data-i18n="cm_email">Email</div>
+              <div class="cm-val"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=digistartnp@gmail.com" target="_blank" rel="noopener">digistartnp@gmail.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap reveal">
+        <div class="form-title" data-i18n="form_title">Apply Now — It's Free</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfa5grd5Jbd71ZSpTybc-cgzKsRWy8sYLh6WKJRMNw0ECahww/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-primary" style="display: inline-block; padding: 14px 28px; font-weight: 600; text-decoration: none; border-radius: 8px; margin-top: 20px;">
+          Fill Out Form →
+        </a>
+        <p style="margin-top: 16px; font-size: 14px; color: var(--text-light);">Open our application form in a new window to submit your details.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <img src="images/logo.png" alt="DIGIスタート">
+          <span class="footer-logo-text">DIGI<span>スタート</span></span>
+        </a>
+        <p class="footer-tagline" data-i18n="footer_tagline">Start smart. Start digital. Your trusted partner in digital transformation.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">📘</a>
+          <a href="#" class="social-link">📸</a>
+          <a href="#" class="social-link">✉️</a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="footer-col">
+        <h5 data-i18n="footer_nav">Navigation</h5>
+        <ul>
+          <li><a href="#home"     data-i18n="nav_home">Home</a></li>
+          <li><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#about"    data-i18n="nav_about">About</a></li>
+          <li><a href="#faq"      data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h5 data-i18n="footer_services">Services</h5>
+        <ul>
+          <li><a href="#services" data-i18n="svc1_title">Website</a></li>
+          <li><a href="#services" data-i18n="svc2_title">SNS Management</a></li>
+          <li><a href="#services" data-i18n="svc3_title">Digital Transformation</a></li>
+          <li><a href="#services">MEO + QR Menus + SNS Link</a></li>
+        </ul>
+      </div>
+
+      <!-- Languages -->
+      <div class="footer-col">
+        <h5 data-i18n="footer_lang">Languages</h5>
+        <ul>
+          <li><a href="#" onclick="setLang('en')">English</a></li>
+          <li><a href="#" onclick="setLang('jp')">日本語</a></li>
+          <li><a href="#" onclick="setLang('np')">नेपाली</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 DIGIスタート. All rights reserved.</div>
+      <div class="footer-langs">
+        <span onclick="setLang('en')">EN</span>
+        <span onclick="setLang('jp')">日本語</span>
+        <span onclick="setLang('np')">नेपाली</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── External JS ─────────────────────────────────────────── -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
