@@ -70,6 +70,8 @@ const translations = {
     contact_sub: "Ready to go digital? We'll get back to you within 24 hours.",
     cm_fb: "Facebook", cm_ig: "Instagram", cm_email: "Email",
     form_title: "Apply Now — It's Free",
+    form_note: "Already have details in Google Sheets? Fill the form above to submit directly from this page.",
+    form_title_success: "स्मार्ट सोच, डिजिटल सुरुवात!\nStart smart. Start digital.\nスマート始動。デジタル始動",
     form_name: "Your Name", form_email: "Email Address", form_service: "Service Interested In",
     form_select: "Select a service...", form_opt1: "Website Development",
     form_opt2: "SNS Management", form_opt3: "Digital Transformation", form_opt4: "All Services",
@@ -144,6 +146,8 @@ const translations = {
     contact_sub: "デジタル化の準備ができたら、24時間以内にご返答します。",
     cm_fb: "フェイスブック", cm_ig: "インスタグラム", cm_email: "メール",
     form_title: "今すぐ申し込む — 無料",
+    form_note: "Google スプレッドシートの情報をお持ちの場合は、上のフォームに入力して直接送信できます。",
+    form_title_success: "スマート始動。デジタル始動",
     form_name: "お名前", form_email: "メールアドレス", form_service: "ご希望のサービス",
     form_select: "サービスを選択...", form_opt1: "ウェブサイト制作",
     form_opt2: "SNS管理", form_opt3: "デジタルトランスフォーメーション", form_opt4: "すべてのサービス",
@@ -218,6 +222,8 @@ const translations = {
     contact_sub: "डिजिटल बन्न तयार? हामी २४ घण्टाभित्र जवाफ दिनेछौं।",
     cm_fb: "फेसबुक", cm_ig: "इन्स्टाग्राम", cm_email: "इमेल",
     form_title: "अहिले आवेदन गर्नुहोस् — निःशुल्क",
+    form_note: "यदि तपाइंसँग Google Sheets मा विवरण छ भने, माथि फर्म पूरा गरी सीधै यहाँ पठाउनुहोस्।",
+    form_title_success: "धन्यवाद! हामीले तपाईंको सन्देश प्राप्त गरेका छौं र २४ घण्टाभित्र सम्पर्क गर्नेछौं।",
     form_name: "तपाईंको नाम", form_email: "इमेल ठेगाना", form_service: "रुचि राखेको सेवा",
     form_select: "सेवा छान्नुहोस्...", form_opt1: "वेबसाइट विकास",
     form_opt2: "SNS व्यवस्थापन", form_opt3: "डिजिटल ट्रान्सफर्मेशन", form_opt4: "सबै सेवाहरू",
@@ -306,6 +312,16 @@ async function handleFormSubmit(e) {
       success.classList.add('show');
       success.textContent = successMessages[currentLang] || successMessages.en;
       success.style.display = 'block';
+
+      const formTitle = document.querySelector('.form-title');
+      const formNote = document.getElementById('formNote');
+
+      if (formTitle) {
+        formTitle.textContent = translations[currentLang]?.form_title_success || translations.en.form_title_success;
+      }
+      if (formNote) {
+        formNote.textContent = translations[currentLang]?.form_note || translations.en.form_note;
+      }
 
       setTimeout(() => {
         success.classList.remove('show');
