@@ -270,31 +270,43 @@ function toggleFaq(btn) {
 }
 
 // ── CONTACT FORM ──────────────────────────────────────────────
-function handleSubmit(e) {
+async function handleFormSubmit(e) {
   e.preventDefault();
   const name = document.getElementById('nameInput').value.trim();
   const email = document.getElementById('emailInput').value.trim();
-  const service = document.getElementById('serviceInput').value.trim();
-  const msg = document.getElementById('messageInput').value.trim();
+  const message = document.getElementById('messageInput').value.trim();
 
-  if (!name || !email || !msg) {
+  if (!name || !email || !message) {
     alert('Please fill all fields before sending.');
-    return;
+    return false;
   }
 
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
-  form.style.display = 'none';
-  success.style.display = 'block';
-  success.textContent = translations[currentLang].form_success;
 
-  // Redirect to Google Form after 2 seconds
-  // Replace with actual field entry IDs from your Google Form for full pre-fill
-  const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfa5grd5Jbd71ZSpTybc-cgzKsRWy8sYLh6WKJRMNw0ECahww/viewform?usp=pp_url&entry.FIELD_ID_NAME=NAME_VALUE&entry.FIELD_ID_EMAIL=EMAIL_VALUE&entry.FIELD_ID_SERVICE=SERVICE_VALUE&entry.FIELD_ID_MESSAGE=MESSAGE_VALUE';
-  
-  setTimeout(() => {
-    window.location.href = googleFormUrl;
-  }, 2000);
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+
+    if (response.ok) {
+      form.reset();
+      success.style.display = 'block';
+      success.textContent = 'Message sent! Thanks for reaching out. We\'ll get back to you soon.';
+      return false;
+    }
+
+    const errorData = await response.json();
+    alert('Oops! There was a problem submitting your form.');
+    console.error(errorData);
+  } catch (error) {
+    alert('Network error: unable to send message.');
+    console.error(error);
+  }
+
+  return false;
 }
 
 // ── NAVBAR SCROLL EFFECT ──────────────────────────────────────

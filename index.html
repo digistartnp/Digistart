@@ -503,10 +503,25 @@
       <!-- Right: Form -->
       <div class="contact-form-wrap reveal">
         <div class="form-title" data-i18n="form_title">Apply Now — It's Free</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfa5grd5Jbd71ZSpTybc-cgzKsRWy8sYLh6WKJRMNw0ECahww/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-primary" style="display: inline-block; padding: 14px 28px; font-weight: 600; text-decoration: none; border-radius: 8px; margin-top: 20px;">
-          Fill Out Form →
-        </a>
-        <p style="margin-top: 16px; font-size: 14px; color: var(--text-light);">Open our application form in a new window to submit your details.</p>
+
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="return handleFormSubmit(event);" class="p-6 bg-white rounded-xl border border-gray-200">
+          <div class="form-group">
+            <label for="nameInput" class="block text-sm font-semibold mb-1">Name</label>
+            <input id="nameInput" name="name" type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-400" placeholder="Your name" />
+          </div>
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="emailInput" class="block text-sm font-semibold mb-1">Email</label>
+            <input id="emailInput" name="email" type="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-400" placeholder="email@example.com" />
+          </div>
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="messageInput" class="block text-sm font-semibold mb-1">Message</label>
+            <textarea id="messageInput" name="message" rows="5" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-400" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="w-full mt-5 bg-black text-white font-bold py-3 rounded-lg hover:bg-gray-800 transition">Send Message</button>
+          <p id="formSuccess" class="text-green-700 text-sm mt-4" style="display:none">Message sent! Thanks for reaching out. We'll get back to you soon.</p>
+        </form>
+
+        <p style="margin-top: 16px; font-size: 14px; color: var(--text-light);">Already have details in Google Sheets? Fill the form above to submit directly from this page.</p>
       </div>
 
     </div>
