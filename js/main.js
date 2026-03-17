@@ -58,6 +58,14 @@ const translations = {
     faq8_a: "Branded QR codes on table tents or displays let customers instantly access your digital menu or services. They're fast, contactless, and drive traffic to your site—perfect for restaurants, cafes, and service businesses.",
     faq9_q: "How do you integrate Instagram and SNS?",
     faq9_a: "We link your Instagram profile bio and SNS channels directly to your new landing page, creating a single hub for all customer interactions. One link guides them to your website, services, and social channels.",
+    price_label: "Transparent Pricing", price_title: "Simple Plans, Real Results", price_sub: "No hidden fees, no surprises. Pick JPY or USD and see instantly updated pricing.",
+    plan1_title: "🌐 Go Digital", plan1_sub: "For shops & small businesses", plan1_desc: "Perfect for small shops, cafes, or solo businesses that need a fast, clean digital launch — website live and Google Maps optimized.",
+    plan1_f1: "Professional landing page (1 page)", plan1_f2: "Mobile-optimized & fast loading", plan1_f3: "Google Maps (MEO) setup", plan1_f4: "Branded QR code menu", plan1_f5: "1 language (EN or JP)", plan1_f6: "Delivered in 1–2 weeks", plan1_f7: "30-day post-launch support",
+    plan2_title: "📱 Build & Grow", plan2_sub: "For foreign businesses entering Japan", plan2_desc: "The complete package for foreign businesses entering Japan or expats ready to get serious. Website, SNS, and Maps — all connected and live.",
+    plan2_f1: "Full website (up to 5 pages)", plan2_f2: "Bilingual content (EN + JP)", plan2_f3: "Google Maps (MEO) optimization", plan2_f4: "SNS profile setup (IG + FB)", plan2_f5: "1 month content management", plan2_f6: "Delivered in 3–4 weeks", plan2_f7: "60-day support",
+    plan3_title: "⚡ Full Digital", plan3_sub: "For ambitious transformation", plan3_desc: "End-to-end digital transformation for businesses replacing fax and paper workflows with modern digital systems. Built for serious growth.",
+    plan3_f1: "Corporate website (unlimited pages)", plan3_f2: "Trilingual support (EN + JP + NP)", plan3_f3: "Full MEO + local SEO strategy", plan3_f4: "E-commerce or booking integration", plan3_f5: "Digital workflow audit", plan3_f6: "Automation setup", plan3_f7: "3 months SNS management", plan3_f8: "Priority support",
+    plan_cta: "Get Started →",
     contact_label: "Get In Touch", contact_title: "Let's Start Your Digital Journey",
     contact_sub: "Ready to go digital? We'll get back to you within 24 hours.",
     cm_fb: "Facebook", cm_ig: "Instagram", cm_email: "Email",
@@ -124,6 +132,14 @@ const translations = {
     faq8_a: "テーブルテントやディスプレイ上のブランドQRコードにより、顧客はデジタルメニューやサービスに瞬時にアクセスできます。高速で接触不要、サイトへのトラフィックを増加させます。レストラン、カフェ、サービス業に最適です。",
     faq9_q: "InstagramとSNSをどのように統合しますか？",
     faq9_a: "InstagramプロフィールのバイオとSNSチャネルをあなたの新しいランディングページに直接リンクし、すべての顧客インタクションの一元化ハブを作成します。1つのリンクで顧客をウェブサイト、サービス、ソーシャルチャネルに導きます。",
+    price_label: "料金プラン", price_title: "シンプルなプラン、確かな成果", price_sub: "追加料金なし。JPYとUSDのみを選択できます。",
+    plan1_title: "🌐 Go Digital", plan1_sub: "ショップ・小規模事業向け", plan1_desc: "小さなショップやカフェに最適な、迅速でクリーンなデジタルローンチ。ウェブサイト公開とGoogleマップ最適化を含みます。",
+    plan1_f1: "プロ仕様のランディングページ（1ページ）", plan1_f2: "モバイル最適化＆高速表示", plan1_f3: "Googleマップ（MEO）設定", plan1_f4: "ブランドQRコードメニュー", plan1_f5: "1言語（英語または日本語）", plan1_f6: "1〜2週間で納品", plan1_f7: "30日間アフターサポート",
+    plan2_title: "📱 Build & Grow", plan2_sub: "日本展開を目指す海外事業向け", plan2_desc: "外国企業の日本進出に最適。ウェブ、SNS、マップを一体化し、しっかり立ち上げます。",
+    plan2_f1: "フルウェブサイト（最大5ページ）", plan2_f2: "バイリンガルコンテンツ（英語+日本語）", plan2_f3: "Googleマップ（MEO）最適化", plan2_f4: "SNSプロフィール設定（IG+FB）", plan2_f5: "1ヶ月のコンテンツ管理", plan2_f6: "3〜4週間納品", plan2_f7: "60日間サポート",
+    plan3_title: "⚡ Full Digital", plan3_sub: "本格的なデジタル変革向け", plan3_desc: "紙・FAX運用からの完全移行と、成長を見据えたデジタルシステム構築。",
+    plan3_f1: "コーポレートサイト（無制限ページ）", plan3_f2: "トリリンガル（英語+日本語+ネパール語）", plan3_f3: "MEO+ローカルSEO戦略", plan3_f4: "EC/予約導入", plan3_f5: "デジタルワークフロー監査", plan3_f6: "自動化設定", plan3_f7: "SNS運用3ヶ月", plan3_f8: "優先サポート",
+    plan_cta: "申し込む →",
     contact_label: "お問い合わせ", contact_title: "デジタルの旅を始めましょう",
     contact_sub: "デジタル化の準備ができたら、24時間以内にご返答します。",
     cm_fb: "フェイスブック", cm_ig: "インスタグラム", cm_email: "メール",
@@ -190,6 +206,14 @@ const translations = {
     faq8_a: "टेबल टेन्ट वा डिस्प्लेमा राखिएको ब्र्यान्डेड QR कोडले ग्राहकहरूलाई तपाईंको डिजिटल मेनु वा सेवाहरूमा तुरन्त पहुँच गर्न दिन्छ। यो छिटो, संपर्कमुक्त, र तपाईंको साइटमा ट्राफिक बढाउँछ—रेस्टुरेन्ट, क्याफे र सेवा व्यवसायका लागि आदर्श।",
     faq9_q: "तपाई Instagram र SNS लाई कसरी एकीकृत गर्नुहुन्छ?",
     faq9_a: "हामी तपाईंको Instagram प्रोफाइल बायो र SNS चनलहरूलाई तपाईंको नयाँ ल्यान्डिङ पेजमा सिधै लिङ्क गर्छौं, सबै ग्राहक अन्तरक्रियाको लागि एकल हब बनाइएको। एक लिङ्कले ग्राहकहरूलाई तपाईंको वेबसाइट, सेवा र सोशल च्यानलमा गाइड गर्छ।",
+    price_label: "प्याकेज मूल्य निर्धारण", price_title: "सरल प्लान, वास्तविक परिणाम", price_sub: "लुकेका शुल्क छैन। JPY र USD मात्र समर्थन।",
+    plan1_title: "🌐 Go Digital", plan1_sub: "साना व्यवसाय र पसलका लागि", plan1_desc: "साना पसल, क्याफे वा एकल व्यवसायका लागि तत्काल, सफा डिजिटल सुरुवात। वेबसाइट र Google Maps अनुकूलित।",
+    plan1_f1: "पेशेवर ल्यान्डिङ पेज (1 पृष्ठ)", plan1_f2: "मोबाइल-अनुकूल र छिटो लोड", plan1_f3: "Google Maps (MEO) सेटअप", plan1_f4: "ब्रान्डेड QR कोड मेनु", plan1_f5: "1 भाषा (EN या JP)", plan1_f6: "1-2 हप्ता भित्र डेलिभरी", plan1_f7: "30 दिन पोस्ट-लन्च समर्थन",
+    plan2_title: "📱 Build & Grow", plan2_sub: "जापान प्रवेश गर्ने विदेशी व्यवसायका लागि", plan2_desc: "जापानमा प्रवेश गर्न चाहने व्यवसायका लागि पूरा प्याकेज। वेबसाइट, SNS, Maps — सबै जडान र अनलाइन।",
+    plan2_f1: " पूर्ण वेबसाइट (अधिकतम 5 पृष्ठ)", plan2_f2: "द्विभाषिक सामग्री (EN+JP)", plan2_f3: "Google Maps (MEO) अनुकूलन", plan2_f4: "SNS प्रोफाइल सेटअप (IG+FB)", plan2_f5: "1 महिना सामग्री व्यवस्थापन", plan2_f6: "3-4 हप्ता डेलिभरी", plan2_f7: "60 दिन समर्थन",
+    plan3_title: "⚡ Full Digital", plan3_sub: "गम्भीर रूपान्तरणका लागि", plan3_desc: "कागज र फ्याक्स प्रक्रियाबाट आधुनिक डिजिटल प्रणालीमा स्विच गर्ने समग्र सुविधा।",
+    plan3_f1: "कर्पोरेट वेबसाइट (असीमित पृष्ठ)", plan3_f2: "त्रिभाषी समर्थन (EN+JP+NP)", plan3_f3: "पूर्ण MEO + स्थानीय SEO रणनीति", plan3_f4: "ई-कमर्स / बुकिंग इंटीग्रेशन", plan3_f5: "डिजिटल वर्कफ्लो अडिट", plan3_f6: "स्वचालन सेटअप", plan3_f7: "3 महिना SNS व्यवस्थापन", plan3_f8: "प्राथमिकता समर्थन",
+    plan_cta: "सुरु गर्नुहोस् →",
     contact_label: "सम्पर्क", contact_title: "तपाईंको डिजिटल यात्रा सुरु गरौं",
     contact_sub: "डिजिटल बन्न तयार? हामी २४ घण्टाभित्र जवाफ दिनेछौं।",
     cm_fb: "फेसबुक", cm_ig: "इन्स्टाग्राम", cm_email: "इमेल",
@@ -205,6 +229,7 @@ const translations = {
 };
 
 let currentLang = 'en';
+let currentCurrency = 'jpy';
 
 // ── LANGUAGE SWITCHER ─────────────────────────────────────────
 function setLang(lang) {
@@ -223,6 +248,7 @@ function setLang(lang) {
     const map = { en: 'EN', jp: 'JP', np: 'नेपाली' };
     if (btn.textContent.trim() === map[lang]) btn.classList.add('active');
   });
+  setCurrency(currentCurrency);
 }
 
 // ── FAQ ACCORDION ─────────────────────────────────────────────
@@ -287,6 +313,45 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── PRICING CURRENCY SWITCHER ─────────────────────────────────
+const currencyRates = { jpy: 1, usd: 0.0067 };
+const pricingData = { s: 49800, g: 128000, t: 268000 };
+
+function formatPrice(value, currency) {
+  if (currency === 'usd') return `$${(Math.round(value * currencyRates.usd)).toLocaleString('en-US')}`;
+  return `¥${value.toLocaleString('ja-JP')}`;
+}
+
+function setCurrency(currency) {
+  currentCurrency = currency;
+  document.getElementById('btn-jpy').classList.toggle('active', currency === 'jpy');
+  document.getElementById('btn-usd').classList.toggle('active', currency === 'usd');
+
+  const sym = currency === 'jpy' ? '¥' : '$';
+  const noteText = currency === 'usd' ? ' (approx.)' : '';
+
+  const noteTexts = {
+    en: { s: 'One-time payment', g: 'One-time + optional retainer', t: 'One-time payment' },
+    jp: { s: '一括支払い', g: '一括支払い + 任意の顧問', t: '一括支払い' },
+    np: { s: 'एक पटक तिर्नुहोस्', g: 'एक पटक + वैकल्पिक रिटेनर', t: 'एक पटक तिर्नुहोस्' }
+  };
+
+  ['s', 'g', 't'].forEach(key => {
+    const priceEl = document.getElementById(`${key}-price`);
+    const symEl = document.getElementById(`${key}-sym`);
+    const noteEl = document.getElementById(`${key}-note`);
+    if (priceEl) priceEl.textContent = currency === 'jpy' ? pricingData[key].toLocaleString('ja-JP') : Math.round(pricingData[key] * currencyRates.usd).toLocaleString('en-US');
+    if (symEl) symEl.textContent = sym;
+    if (noteEl) noteEl.textContent = `${noteTexts[currentLang]?.[key] || noteTexts.en[key]}${noteText}`;
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  setCurrency('jpy');
+  document.getElementById('btn-jpy')?.addEventListener('click', () => setCurrency('jpy'));
+  document.getElementById('btn-usd')?.addEventListener('click', () => setCurrency('usd'));
+});
 
 // ── MOBILE MENU ───────────────────────────────────────────────
 function toggleMenu() {
