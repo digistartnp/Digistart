@@ -70,7 +70,8 @@ const translations = {
     contact_sub: "Ready to go digital? We'll get back to you within 24 hours.",
     cm_fb: "Facebook", cm_ig: "Instagram", cm_email: "Email",
     form_title: "Apply Now — It's Free",
-    form_note: "We received your message and will reply within 24 hours.",
+    form_note: "Please fill out the form and we’ll get back to you promptly.",
+    form_note_success: "We received your message and will reply within 24 hours.",
     form_title_success: "स्मार्ट सोच, डिजिटल सुरुवात!\nStart smart. Start digital.\nスマート始動。デジタル始動",
     form_name: "Your Name", form_email: "Email Address", form_service: "Service Interested In",
     form_select: "Select a service...", form_opt1: "Website Development",
@@ -222,7 +223,8 @@ const translations = {
     contact_sub: "डिजिटल बन्न तयार? हामी २४ घण्टाभित्र जवाफ दिनेछौं।",
     cm_fb: "फेसबुक", cm_ig: "इन्स्टाग्राम", cm_email: "इमेल",
     form_title: "अहिले आवेदन गर्नुहोस् — निःशुल्क",
-    form_note: "हामीले तपाईंको सन्देश प्राप्त गर्यौं र २४ घण्टाभित्र जवाफ दिनेछौं।",
+    form_note: "कृपया फारम पूरा गर्नुहोस्, हामी छिट्टै जवाफ दिनेछौं।",
+    form_note_success: "हामीले तपाईंको सन्देश प्राप्त गर्यौं र २४ घण्टाभित्र जवाफ दिनेछौं।",
     form_title_success: "धन्यवाद! हामीले तपाईंको सन्देश प्राप्त गरेका छौं र २४ घण्टाभित्र सम्पर्क गर्नेछौं।",
     form_name: "तपाईंको नाम", form_email: "इमेल ठेगाना", form_service: "रुचि राखेको सेवा",
     form_select: "सेवा छान्नुहोस्...", form_opt1: "वेबसाइट विकास",
@@ -320,7 +322,7 @@ async function handleFormSubmit(e) {
         formTitle.textContent = translations[currentLang]?.form_title_success || translations.en.form_title_success;
       }
       if (formNote) {
-        formNote.textContent = translations[currentLang]?.form_note || translations.en.form_note;
+        formNote.textContent = translations[currentLang]?.form_note_success || translations.en.form_note_success || translations[currentLang]?.form_note || translations.en.form_note;
       }
 
       setTimeout(() => {
