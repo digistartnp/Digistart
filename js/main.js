@@ -59,6 +59,23 @@ const translations = {
     faq9_q: "How do you integrate Instagram and SNS?",
     faq9_a: "We link your Instagram profile bio and SNS channels directly to your new landing page, creating a single hub for all customer interactions. One link guides them to your website, services, and social channels.",
     price_label: "Monthly Plans", price_title: "Simple Plans, Real Results", price_sub: "No hidden fees. Scale as you grow. Pick JPY or USD.",
+    pricing_label: "Transparent Pricing", pricing_heading: "Simple Plans, <em>Real Results</em>", pricing_subheading: "No hidden fees, no surprises. Pick your currency and launch your digital presence today.",
+    plan_go_name: "Go Digital", plan_go_tagline: "For shops & small businesses", plan_go_note: "One-time payment · Delivered in 1–2 weeks", plan_go_f1: "Professional landing page (1 page)", plan_go_f2: "Mobile-optimized & fast loading", plan_go_f3: "Google Maps (MEO) setup", plan_go_f4: "Branded QR code menu", plan_go_f5: "1 language (EN or JP)", plan_go_f6: "30-day post-launch support",
+    popular_badge: "⭐ Most Popular", plan_build_name: "Build & Grow", plan_build_tagline: "For foreign businesses entering Japan", plan_build_note: "One-time + optional retainer · Delivered in 3–4 weeks", plan_build_f1: "Full website (up to 5 pages)", plan_build_f2: "Bilingual content (EN + JP)", plan_build_f3: "Google Maps (MEO) optimization", plan_build_f4: "SNS profile setup (IG + FB)", plan_build_f5: "1 month content management", plan_build_f6: "60-day support",
+    plan_full_name: "Full Digital", plan_full_tagline: "For ambitious transformation", plan_full_note: "One-time payment · Delivered in 4–6 weeks", plan_full_f1: "Corporate website (unlimited pages)", plan_full_f2: "Trilingual support (EN + JP + NP)", plan_full_f3: "Full MEO + local SEO strategy", plan_full_f4: "E-commerce or booking integration", plan_full_f5: "Digital workflow audit & automation", plan_full_f6: "3 months SNS management", plan_full_f7: "Priority support",
+    monthly_label: "Monthly Plans", monthly_sub_label: "Monthly Subscriptions", monthly_heading: "Keep Growing Every Month", monthly_subheading: "Add ongoing content, management, and SEO retainer services on top of any one-time plan — or subscribe standalone.",
+    sub1_name: "SNS Essentials", sub1_desc: "Perfect for businesses that just launched and need a consistent social presence.", sub1_period: "Billed monthly · Cancel anytime", sub1_f1: "8 posts/month (IG or FB)", sub1_f2: "Caption writing (EN or JP)", sub1_f3: "Monthly performance report", sub1_f4: "Story updates (4/month)",
+    sub2_name: "Growth Retainer", sub2_desc: "Full-service monthly management: content, SEO, and map optimization to keep traffic growing.", sub2_period: "Billed monthly · Cancel anytime", sub2_f1: "16 posts/month (IG + FB)", sub2_f2: "Bilingual captions (EN + JP)", sub2_f3: "MEO monthly optimization", sub2_f4: "Google profile updates", sub2_f5: "Weekly performance report", sub2_f6: "1 reel or short video/month",
+    sub3_name: "Full Digital Partner", sub3_desc: "Your outsourced digital team — strategy, content, SEO, and website updates every month.", sub3_period: "Billed monthly · Cancel anytime", sub3_f1: "Unlimited posts across all platforms", sub3_f2: "Trilingual content (EN + JP + NP)", sub3_f3: "Monthly website updates (up to 4)", sub3_f4: "Full MEO + local SEO management", sub3_f5: "4 reels or short videos/month", sub3_f6: "Dedicated account manager", sub3_f7: "Priority response within 4hrs",
+    addons_label: "À La Carte Add-Ons", addons_heading: "Enhance Your Plan", addons_sub: "Stack these on top of any one-time or monthly plan to get exactly what your business needs.",
+    addon1_name: "Extra Page", addon1_desc: "Add an additional page to your website (About, Menu, Services, etc.).", addon1_tag: "One-time",
+    addon2_name: "Extra Language", addon2_desc: "Add a full translation layer to your site in EN, JP, or Nepali.", addon2_tag: "One-time",
+    addon3_name: "Content Shoot", addon3_desc: "Professional photo/video session for social media and website content.", addon3_tag: "One-time",
+    addon4_name: "MEO Boost", addon4_desc: "Ongoing Google Maps ranking optimization and review management.", addon4_tag: "Monthly",
+    addon5_name: "E-Commerce Setup", addon5_desc: "Add an online shop or booking system to your existing website.", addon5_tag: "One-time",
+    addon6_name: "Reel / Short Video", addon6_desc: "Professionally edited short-form video for Instagram Reels or TikTok.", addon6_tag: "Per video",
+    addon7_name: "Email Newsletter", addon7_desc: "Monthly newsletter designed and sent to your customer list.", addon7_tag: "Monthly",
+    addon8_name: "QR Menu Update", addon8_desc: "Update your digital menu content anytime — seasonal, new items, price changes.", addon8_tag: "Per update",
     plan1_title: "📱 SNS Essentials", plan1_sub: "Social media foundation", plan1_desc: "Perfect for businesses wanting to establish a strong social media presence with consistent, professional content.",
     plan1_f1: "8 posts per month", plan1_f2: "Story management & reels", plan1_f3: "Monthly performance report", plan1_f4: "Community engagement support", plan1_f5: "1 platform (Instagram/Facebook)",
     plan2_title: "🚀 Growth Retainer", plan2_sub: "Comprehensive growth solution", plan2_desc: "Our most popular plan. Grow fast with bilingual content, MEO optimization, and professional reel management.",
@@ -412,38 +429,9 @@ function formatPrice(value, currency) {
 
 function setCurrency(currency) {
   currentCurrency = currency;
-  document.getElementById('btn-jpy').classList.toggle('active', currency === 'jpy');
-  document.getElementById('btn-usd').classList.toggle('active', currency === 'usd');
-
-  const sym = currency === 'jpy' ? '¥' : '$';
-
-  const noteTexts = {
-    en: { plan1: 'Monthly subscription', plan2: 'Monthly subscription', plan3: 'Monthly subscription' },
-    jp: { plan1: '月額', plan2: '月額', plan3: '月額' },
-    np: { plan1: 'मासिक सदस्यता', plan2: 'मासिक सदस्यता', plan3: 'मासिक सदस्यता' }
-  };
-
-  // Update plan prices
-  ['plan1', 'plan2', 'plan3'].forEach(key => {
-    const planNum = key.charAt(4); // Extract number from 'plan1', 'plan2', etc.
-    const priceEl = document.getElementById(`p${planNum}-price`);
-    const symEl = document.getElementById(`p${planNum}-sym`);
-    const noteEl = document.getElementById(`p${planNum}-note`);
-    if (priceEl) priceEl.textContent = currency === 'jpy' ? pricingData[key].toLocaleString('ja-JP') : Math.round(pricingData[key] * currencyRates.usd).toLocaleString('en-US');
-    if (symEl) symEl.textContent = sym;
-    if (noteEl) noteEl.textContent = noteTexts[currentLang]?.[key] || noteTexts.en[key];
-  });
-
-  // Update add-on prices
-  for (let i = 1; i <= 8; i++) {
-    const addonEl = document.getElementById(`addon${i}-price`);
-    if (addonEl) {
-      const key = `addon${i}`;
-      const value = pricingData[key];
-      const formattedPrice = currency === 'jpy' ? `¥${value.toLocaleString('ja-JP')}` : `$${Math.round(value * currencyRates.usd).toLocaleString('en-US')}`;
-      addonEl.textContent = formattedPrice;
-    }
-  }
+  document.body.classList.toggle('usd', currency === 'usd');
+  document.getElementById('btn-jpy')?.classList.toggle('active', currency === 'jpy');
+  document.getElementById('btn-usd')?.classList.toggle('active', currency === 'usd');
 }
 
 window.addEventListener('DOMContentLoaded', () => {

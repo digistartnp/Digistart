@@ -211,156 +211,276 @@
      PRICING SECTION
 ════════════════════════════════════════════ -->
 <section id="pricing" class="pricing-section">
-  <div class="container">
-    <!-- Header -->
-    <div class="services-header reveal">
-      <div class="section-label" data-i18n="price_label">Monthly Plans</div>
-      <h2 class="section-title" data-i18n="price_title">Simple Plans, Real Results</h2>
-      <p class="section-sub" data-i18n="price_sub">No hidden fees. Scale as you grow. Pick JPY or USD.</p>
+  <div class="section-label" data-i18n="pricing_label">Transparent Pricing</div>
+  <h2 class="heading" data-i18n="pricing_heading">Simple Plans, <em>Real Results</em></h2>
+  <p class="subheading" data-i18n="pricing_subheading">No hidden fees, no surprises. Pick your currency and launch your digital presence today.</p>
+
+  <!-- Currency toggle -->
+  <div class="toggle-row">
+    <button class="toggle-btn active" id="btn-jpy" onclick="setCurrency('jpy')">¥ JPY</button>
+    <button class="toggle-btn" id="btn-usd" onclick="setCurrency('usd')">$ USD</button>
+  </div>
+
+  <div class="plans-grid">
+    <div class="plan-card">
+      <span class="plan-icon">🌐</span>
+      <div class="plan-name" data-i18n="plan_go_name">Go Digital</div>
+      <div class="plan-tagline" data-i18n="plan_go_tagline">For shops & small businesses</div>
+      <div class="plan-price">
+        <span class="price-jpy">¥49,800</span>
+        <span class="price-usd">$330</span>
+      </div>
+      <div class="plan-note" data-i18n="plan_go_note">One-time payment · Delivered in 1–2 weeks</div>
+      <ul class="plan-features">
+        <li data-i18n="plan_go_f1">Professional landing page (1 page)</li>
+        <li data-i18n="plan_go_f2">Mobile-optimized & fast loading</li>
+        <li data-i18n="plan_go_f3">Google Maps (MEO) setup</li>
+        <li data-i18n="plan_go_f4">Branded QR code menu</li>
+        <li data-i18n="plan_go_f5">1 language (EN or JP)</li>
+        <li data-i18n="plan_go_f6">30-day post-launch support</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
     </div>
-
-    <!-- Currency Switcher -->
-    <div class="currency-wrap">
-      <button class="cur-btn active" id="btn-jpy">¥ JPY</button>
-      <button class="cur-btn" id="btn-usd">$ USD</button>
+    <div class="plan-card popular">
+      <div class="popular-badge" data-i18n="popular_badge">⭐ Most Popular</div>
+      <span class="plan-icon">📱</span>
+      <div class="plan-name" data-i18n="plan_build_name">Build & Grow</div>
+      <div class="plan-tagline" data-i18n="plan_build_tagline">For foreign businesses entering Japan</div>
+      <div class="plan-price">
+        <span class="price-jpy">¥128,000</span>
+        <span class="price-usd">$850</span>
+      </div>
+      <div class="plan-note" data-i18n="plan_build_note">One-time + optional retainer · Delivered in 3–4 weeks</div>
+      <ul class="plan-features">
+        <li data-i18n="plan_build_f1">Full website (up to 5 pages)</li>
+        <li data-i18n="plan_build_f2">Bilingual content (EN + JP)</li>
+        <li data-i18n="plan_build_f3">Google Maps (MEO) optimization</li>
+        <li data-i18n="plan_build_f4">SNS profile setup (IG + FB)</li>
+        <li data-i18n="plan_build_f5">1 month content management</li>
+        <li data-i18n="plan_build_f6">60-day support</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
     </div>
-
-    <!-- Monthly Subscription Plans -->
-    <div class="plans-grid">
-      <!-- Plan 1: SNS Essentials -->
-      <div class="plan reveal">
-        <p class="plan-num">01</p>
-        <h3 class="plan-title" data-i18n="plan1_title">📱 SNS Essentials</h3>
-        <p class="plan-sub" data-i18n="plan1_sub">Social media foundation</p>
-        <div class="plan-price">
-          <div class="price-amount"><span class="price-sym" id="p1-sym">¥</span><span id="p1-price">18,000</span><span class="price-period">/mo</span></div>
-          <p class="price-note" id="p1-note">Monthly subscription</p>
-        </div>
-        <p class="plan-desc" data-i18n="plan1_desc">Perfect for businesses wanting to establish a strong social media presence with consistent, professional content.</p>
-        <ul class="features">
-          <li><span class="check"></span><span data-i18n="plan1_f1">8 posts per month</span></li>
-          <li><span class="check"></span><span data-i18n="plan1_f2">Story management & reels</span></li>
-          <li><span class="check"></span><span data-i18n="plan1_f3">Monthly performance report</span></li>
-          <li><span class="check"></span><span data-i18n="plan1_f4">Community engagement support</span></li>
-          <li><span class="check"></span><span data-i18n="plan1_f5">1 platform (Instagram/Facebook)</span></li>
-        </ul>
-        <a href="#contact" class="plan-btn outline" data-i18n="plan_cta">Get Started →</a>
+    <div class="plan-card">
+      <span class="plan-icon">⚡</span>
+      <div class="plan-name" data-i18n="plan_full_name">Full Digital</div>
+      <div class="plan-tagline" data-i18n="plan_full_tagline">For ambitious transformation</div>
+      <div class="plan-price">
+        <span class="price-jpy">¥268,000</span>
+        <span class="price-usd">$1,780</span>
       </div>
-
-      <!-- Plan 2: Growth Retainer (Featured) -->
-      <div class="plan featured reveal">
-        <div class="plan-badge" data-i18n="plan_featured_badge">Most Popular</div>
-        <p class="plan-num">02</p>
-        <h3 class="plan-title" data-i18n="plan2_title">🚀 Growth Retainer</h3>
-        <p class="plan-sub" data-i18n="plan2_sub">Comprehensive growth solution</p>
-        <div class="plan-price">
-          <div class="price-amount"><span class="price-sym" id="p2-sym">¥</span><span id="p2-price">38,000</span><span class="price-period">/mo</span></div>
-          <p class="price-note" id="p2-note">Monthly subscription</p>
-        </div>
-        <p class="plan-desc" data-i18n="plan2_desc">Our most popular plan. Grow fast with bilingual content, MEO optimization, and professional reel management.</p>
-        <ul class="features">
-          <li><span class="check"></span><span data-i18n="plan2_f1">16 posts per month</span></li>
-          <li><span class="check"></span><span data-i18n="plan2_f2">Bilingual content (EN + JP)</span></li>
-          <li><span class="check"></span><span data-i18n="plan2_f3">MEO (Google Maps) optimization</span></li>
-          <li><span class="check"></span><span data-i18n="plan2_f4">Reel & short video production</span></li>
-          <li><span class="check"></span><span data-i18n="plan2_f5">Monthly analytics & strategy</span></li>
-          <li><span class="check"></span><span data-i18n="plan2_f6">Multiple platform management</span></li>
-        </ul>
-        <a href="#contact" class="plan-btn filled" data-i18n="plan_cta">Get Started →</a>
-      </div>
-
-      <!-- Plan 3: Full Digital Partner -->
-      <div class="plan reveal">
-        <p class="plan-num">03</p>
-        <h3 class="plan-title" data-i18n="plan3_title">🌐 Full Digital Partner</h3>
-        <p class="plan-sub" data-i18n="plan3_sub">Unlimited growth & management</p>
-        <div class="plan-price">
-          <div class="price-amount"><span class="price-sym" id="p3-sym">¥</span><span id="p3-price">78,000</span><span class="price-period">/mo</span></div>
-          <p class="price-note" id="p3-note">Monthly subscription</p>
-        </div>
-        <p class="plan-desc" data-i18n="plan3_desc">Full-service partnership. Unlimited posts, trilingual content, website updates, dedicated account manager, and complete digital ecosystem.</p>
-        <ul class="features">
-          <li><span class="check"></span><span data-i18n="plan3_f1">Unlimited posts & content</span></li>
-          <li><span class="check"></span><span data-i18n="plan3_f2">Trilingual content (EN+JP+NP)</span></li>
-          <li><span class="check"></span><span data-i18n="plan3_f3">Weekly site updates</span></li>
-          <li><span class="check"></span><span data-i18n="plan3_f4">Dedicated account manager</span></li>
-          <li><span class="check"></span><span data-i18n="plan3_f5">Advanced SEO & MEO strategy</span></li>
-          <li><span class="check"></span><span data-i18n="plan3_f6">All platform management</span></li>
-          <li><span class="check"></span><span data-i18n="plan3_f7">Priority support</span></li>
-        </ul>
-        <a href="#contact" class="plan-btn outline" data-i18n="plan_cta">Get Started →</a>
-      </div>
+      <div class="plan-note" data-i18n="plan_full_note">One-time payment · Delivered in 4–6 weeks</div>
+      <ul class="plan-features">
+        <li data-i18n="plan_full_f1">Corporate website (unlimited pages)</li>
+        <li data-i18n="plan_full_f2">Trilingual support (EN + JP + NP)</li>
+        <li data-i18n="plan_full_f3">Full MEO + local SEO strategy</li>
+        <li data-i18n="plan_full_f4">E-commerce or booking integration</li>
+        <li data-i18n="plan_full_f5">Digital workflow audit & automation</li>
+        <li data-i18n="plan_full_f6">3 months SNS management</li>
+        <li data-i18n="plan_full_f7">Priority support</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
     </div>
+  </div>
 
-    <!-- Add-Ons Section -->
-    <div class="addons-section reveal">
-      <div class="addons-header">
-        <h3 class="addons-title" data-i18n="addons_title">Boost Your Plan with Add-Ons</h3>
-        <p class="addons-sub" data-i18n="addons_sub">Available for any subscription plan — pay per add-on, per month.</p>
+  <div class="section-divider"><span class="section-divider-label" data-i18n="monthly_label">Monthly Plans</span></div>
+  <div class="sub-label" data-i18n="monthly_sub_label">Monthly Subscriptions</div>
+  <h3 class="sub-heading" data-i18n="monthly_heading">Keep Growing Every Month</h3>
+  <p class="sub-sub" data-i18n="monthly_subheading">Add ongoing content, management, and SEO retainer services on top of any one-time plan — or subscribe standalone.</p>
+
+  <div class="subs-grid">
+    <div class="sub-card">
+      <div class="sub-card-header">
+        <span class="sub-icon">📅</span>
+        <span class="sub-badge badge-green">Starter</span>
       </div>
-
-      <div class="addons-grid">
-        <div class="addon-card">
-          <div class="addon-icon">📄</div>
-          <h4 class="addon-name" data-i18n="addon1_name">Extra Page</h4>
-          <p class="addon-price"><span class="addon-price-val" id="addon1-price">¥5,000</span><span class="addon-period">/mo</span></p>
-          <p class="addon-desc" data-i18n="addon1_desc">Additional landing or service page on your website</p>
-        </div>
-
-        <div class="addon-card">
-          <div class="addon-icon">🌍</div>
-          <h4 class="addon-name" data-i18n="addon2_name">Extra Language</h4>
-          <p class="addon-price"><span class="addon-price-val" id="addon2-price">¥8,000</span><span class="addon-period">/mo</span></p>
-          <p class="addon-desc" data-i18n="addon2_desc">Add trilingual support to your plan</p>
-        </div>
-
-        <div class="addon-card">
-          <div class="addon-icon">📸</div>
-          <h4 class="addon-name" data-i18n="addon3_name">Content Shoot</h4>
-          <p class="addon-price"><span class="addon-price-val" id="addon3-price">¥12,000</span><span class="addon-period">/mo</span></p>
-          <p class="addon-desc" data-i18n="addon3_desc">Professional photo/video shoot for content</p>
-        </div>
-
-        <div class="addon-card">
-          <div class="addon-icon">📍</div>
-          <h4 class="addon-name" data-i18n="addon4_name">MEO Boost</h4>
-          <p class="addon-price"><span class="addon-price-val" id="addon4-price">¥6,000</span><span class="addon-period">/mo</span></p>
-          <p class="addon-desc" data-i18n="addon4_desc">Enhanced Google Maps optimization & local SEO</p>
-        </div>
-
-        <div class="addon-card">
-          <div class="addon-icon">🛍️</div>
-          <h4 class="addon-name" data-i18n="addon5_name">E-Commerce Setup</h4>
-          <p class="addon-price"><span class="addon-price-val" id="addon5-price">¥15,000</span><span class="addon-period">/mo</span></p>
-          <p class="addon-desc" data-i18n="addon5_desc">Shopify/WooCommerce integration & management</p>
-        </div>
-
-        <div class="addon-card">
-          <div class="addon-icon">🎬</div>
-          <h4 class="addon-name" data-i18n="addon6_name">Reel/Short Video</h4>
-          <p class="addon-price"><span class="addon-price-val" id="addon6-price">¥7,000</span><span class="addon-period">/mo</span></p>
-          <p class="addon-desc" data-i18n="addon6_desc">Professional short videos for TikTok & Instagram</p>
-        </div>
-
-        <div class="addon-card">
-          <div class="addon-icon">📧</div>
-          <h4 class="addon-name" data-i18n="addon7_name">Email Newsletter</h4>
-          <p class="addon-price"><span class="addon-price-val" id="addon7-price">¥4,000</span><span class="addon-period">/mo</span></p>
-          <p class="addon-desc" data-i18n="addon7_desc">Monthly email campaigns & subscriber management</p>
-        </div>
-
-        <div class="addon-card">
-          <div class="addon-icon">🔗</div>
-          <h4 class="addon-name" data-i18n="addon8_name">QR Menu Update</h4>
-          <p class="addon-price"><span class="addon-price-val" id="addon8-price">¥3,000</span><span class="addon-period">/mo</span></p>
-          <p class="addon-desc" data-i18n="addon8_desc">Branded QR menu updates & redesigns</p>
-        </div>
+      <div class="sub-name" data-i18n="sub1_name">SNS Essentials</div>
+      <div class="sub-desc" data-i18n="sub1_desc">Perfect for businesses that just launched and need a consistent social presence.</div>
+      <div class="sub-price">
+        <span class="price-jpy">¥18,000</span>
+        <span class="price-usd">$120</span>
+        <span> / mo</span>
       </div>
+      <div class="sub-period" data-i18n="sub1_period">Billed monthly · Cancel anytime</div>
+      <ul class="sub-features">
+        <li data-i18n="sub1_f1">8 posts/month (IG or FB)</li>
+        <li data-i18n="sub1_f2">Caption writing (EN or JP)</li>
+        <li data-i18n="sub1_f3">Monthly performance report</li>
+        <li data-i18n="sub1_f4">Story updates (4/month)</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
     </div>
+    <div class="sub-card featured">
+      <div class="sub-card-header">
+        <span class="sub-icon">🚀</span>
+        <span class="sub-badge badge-gold">Popular</span>
+      </div>
+      <div class="sub-name" data-i18n="sub2_name">Growth Retainer</div>
+      <div class="sub-desc" data-i18n="sub2_desc">Full-service monthly management: content, SEO, and map optimization to keep traffic growing.</div>
+      <div class="sub-price">
+        <span class="price-jpy">¥38,000</span>
+        <span class="price-usd">$252</span>
+        <span> / mo</span>
+      </div>
+      <div class="sub-period" data-i18n="sub2_period">Billed monthly · Cancel anytime</div>
+      <ul class="sub-features">
+        <li data-i18n="sub2_f1">16 posts/month (IG + FB)</li>
+        <li data-i18n="sub2_f2">Bilingual captions (EN + JP)</li>
+        <li data-i18n="sub2_f3">MEO monthly optimization</li>
+        <li data-i18n="sub2_f4">Google profile updates</li>
+        <li data-i18n="sub2_f5">Weekly performance report</li>
+        <li data-i18n="sub2_f6">1 reel or short video/month</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
+    </div>
+    <div class="sub-card">
+      <div class="sub-card-header">
+        <span class="sub-icon">🏆</span>
+        <span class="sub-badge badge-blue">Pro</span>
+      </div>
+      <div class="sub-name" data-i18n="sub3_name">Full Digital Partner</div>
+      <div class="sub-desc" data-i18n="sub3_desc">Your outsourced digital team — strategy, content, SEO, and website updates every month.</div>
+      <div class="sub-price">
+        <span class="price-jpy">¥78,000</span>
+        <span class="price-usd">$518</span>
+        <span> / mo</span>
+      </div>
+      <div class="sub-period" data-i18n="sub3_period">Billed monthly · Cancel anytime</div>
+      <ul class="sub-features">
+        <li data-i18n="sub3_f1">Unlimited posts across all platforms</li>
+        <li data-i18n="sub3_f2">Trilingual content (EN + JP + NP)</li>
+        <li data-i18n="sub3_f3">Monthly website updates (up to 4)</li>
+        <li data-i18n="sub3_f4">Full MEO + local SEO management</li>
+        <li data-i18n="sub3_f5">4 reels or short videos/month</li>
+        <li data-i18n="sub3_f6">Dedicated account manager</li>
+        <li data-i18n="sub3_f7">Priority response within 4hrs</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
+    </div>
+  </div>
 
+  <div class="section-divider"><span class="section-divider-label">Add-Ons</span></div>
+  <div class="addons-label" data-i18n="addons_label">Add-Ons</div>
+  <h3 class="addons-heading" data-i18n="addons_heading">Enhance Your Plan</h3>
+  <p class="addons-sub" data-i18n="addons_sub">Stack these on top of any one-time or monthly plan to get exactly what your business needs.</p>
+
+  <div class="addons-grid">
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji">🌐</span>
+          <div class="addon-name" data-i18n="addon1_name">Extra Page</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥8,000</span>
+          <span class="price-usd">$53</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon1_desc">Add an additional page to your website (About, Menu, Services, etc.).</div>
+      <span class="addon-tag" data-i18n="addon1_tag">One-time</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji">🌏</span>
+          <div class="addon-name" data-i18n="addon2_name">Extra Language</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥12,000</span>
+          <span class="price-usd">$80</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon2_desc">Add a full translation layer to your site in EN, JP, or Nepali.</div>
+      <span class="addon-tag" data-i18n="addon2_tag">One-time</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji">📸</span>
+          <div class="addon-name" data-i18n="addon3_name">Content Shoot</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥22,000</span>
+          <span class="price-usd">$146</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon3_desc">Professional photo/video session for social media and website content.</div>
+      <span class="addon-tag" data-i18n="addon3_tag">One-time</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji">📍</span>
+          <div class="addon-name" data-i18n="addon4_name">MEO Boost</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥9,800</span>
+          <span class="price-usd">$65</span>
+          <span style="font-size:.8rem;color:var(--muted)">/mo</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon4_desc">Ongoing Google Maps ranking optimization and review management.</div>
+      <span class="addon-tag" data-i18n="addon4_tag">Monthly</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji">🛒</span>
+          <div class="addon-name" data-i18n="addon5_name">E-Commerce Setup</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥48,000</span>
+          <span class="price-usd">$318</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon5_desc">Add an online shop or booking system to your existing website.</div>
+      <span class="addon-tag" data-i18n="addon5_tag">One-time</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji">🎬</span>
+          <div class="addon-name" data-i18n="addon6_name">Reel / Short Video</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥14,000</span>
+          <span class="price-usd">$93</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon6_desc">Professionally edited short-form video for Instagram Reels or TikTok.</div>
+      <span class="addon-tag" data-i18n="addon6_tag">Per video</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji">📧</span>
+          <div class="addon-name" data-i18n="addon7_name">Email Newsletter</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥11,000</span>
+          <span class="price-usd">$73</span>
+          <span style="font-size:.8rem;color:var(--muted)">/mo</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon7_desc">Monthly newsletter designed and sent to your customer list.</div>
+      <span class="addon-tag" data-i18n="addon7_tag">Monthly</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji">🔗</span>
+          <div class="addon-name" data-i18n="addon8_name">QR Menu Update</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥3,500</span>
+          <span class="price-usd">$23</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon8_desc">Update your digital menu content anytime — seasonal, new items, price changes.</div>
+      <span class="addon-tag" data-i18n="addon8_tag">Per update</span>
+    </div>
   </div>
 </section>
-
 
 <!-- ═══════════════════════════════════════════
      ABOUT SECTION
