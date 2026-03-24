@@ -7,6 +7,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
+<style>
+  .original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 0.5em;
+    display: inline-block;
+  }
+  .discounted-price {
+    color: #1CC8C8;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+  .discount-label {
+    background: #1CC8C8;
+    color: #fff;
+    font-size: 0.75em;
+    border-radius: 20px;
+    padding: 3px 8px;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-left: 0.3em;
+  }
+</style>
+</head>
 <body>
 
 <!-- ═══════════════════════════════════════════
@@ -76,6 +103,12 @@
       <h1 class="hero-title">
         <span data-i18n="hero_title_1">We Help</span><br>
         <span class="accent" data-i18n="hero_title_2">To Go Digital</span>
+        <div class="offer-container">
+          <span class="hero-50off">🎉 50% OFF 🎉</span>
+          <div class="countdown-timer">
+            <span id="countdown">30d 00h 00m 00s</span>
+          </div>
+        </div>
       </h1>
       <p class="hero-sub" data-i18n="hero_sub">
         Start smart. Start digital. We transform traditional businesses into modern digital powerhouses — websites, social media, and full digital transformation.
@@ -213,7 +246,7 @@
 <section id="pricing" class="pricing-section">
   <div class="section-label" data-i18n="pricing_label">Transparent Pricing</div>
   <h2 class="heading" data-i18n="pricing_heading">Simple Plans, Real Results</h2>
-  <p class="subheading" data-i18n="pricing_subheading">No hidden fees, no surprises. Pick your currency and launch your digital presence today.</p>
+  <p class="subheading" data-i18n="pricing_subheading"><span style="color: #1CC8C8; font-weight: bold;">🎉 50% OFF ALL PLANS 🎉</span><br>No hidden fees, no surprises. Special Go Digital Package! Pick your currency and launch your digital presence today.</p>
 
   <!-- Currency toggle -->
   <div class="toggle-row">
@@ -227,8 +260,15 @@
       <div class="plan-name" data-i18n="plan_go_name">Go Digital</div>
       <div class="plan-tagline" data-i18n="plan_go_tagline">For shops & small businesses</div>
       <div class="plan-price">
-        <span class="price-jpy">¥49,800</span>
-        <span class="price-usd">$330</span>
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥49,800</span>
+          <span class="discounted-price price-jpy">¥24,900</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$330</span>
+          <span class="discounted-price price-usd">$165</span>
+        </div>
       </div>
       <div class="plan-note" data-i18n="plan_go_note">One-time payment · Delivered in 1–2 weeks</div>
       <ul class="plan-features">
@@ -247,8 +287,15 @@
       <div class="plan-name" data-i18n="plan_build_name">Build & Grow</div>
       <div class="plan-tagline" data-i18n="plan_build_tagline">For foreign businesses entering Japan</div>
       <div class="plan-price">
-        <span class="price-jpy">¥128,000</span>
-        <span class="price-usd">$850</span>
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥128,000</span>
+          <span class="discounted-price price-jpy">¥64,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$850</span>
+          <span class="discounted-price price-usd">$425</span>
+        </div>
       </div>
       <div class="plan-note" data-i18n="plan_build_note">One-time + optional retainer · Delivered in 3–4 weeks</div>
       <ul class="plan-features">
@@ -266,8 +313,15 @@
       <div class="plan-name" data-i18n="plan_full_name">Full Digital</div>
       <div class="plan-tagline" data-i18n="plan_full_tagline">For ambitious transformation</div>
       <div class="plan-price">
-        <span class="price-jpy">¥268,000</span>
-        <span class="price-usd">$1,780</span>
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥268,000</span>
+          <span class="discounted-price price-jpy">¥134,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$1,780</span>
+          <span class="discounted-price price-usd">$890</span>
+        </div>
       </div>
       <div class="plan-note" data-i18n="plan_full_note">One-time payment · Delivered in 4–6 weeks</div>
       <ul class="plan-features">
@@ -297,8 +351,15 @@
       <div class="sub-name" data-i18n="sub1_name">SNS Essentials</div>
       <div class="sub-desc" data-i18n="sub1_desc">Perfect for businesses that just launched and need a consistent social presence.</div>
       <div class="sub-price">
-        <span class="price-jpy">¥18,000</span>
-        <span class="price-usd">$120</span>
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥18,000</span>
+          <span class="discounted-price price-jpy">¥9,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$120</span>
+          <span class="discounted-price price-usd">$60</span>
+        </div>
         <span> / mo</span>
       </div>
       <div class="sub-period" data-i18n="sub1_period">Billed monthly · Cancel anytime</div>
@@ -318,8 +379,15 @@
       <div class="sub-name" data-i18n="sub2_name">Growth Retainer</div>
       <div class="sub-desc" data-i18n="sub2_desc">Full-service monthly management: content, SEO, and map optimization to keep traffic growing.</div>
       <div class="sub-price">
-        <span class="price-jpy">¥38,000</span>
-        <span class="price-usd">$252</span>
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥38,000</span>
+          <span class="discounted-price price-jpy">¥19,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$252</span>
+          <span class="discounted-price price-usd">$126</span>
+        </div>
         <span> / mo</span>
       </div>
       <div class="sub-period" data-i18n="sub2_period">Billed monthly · Cancel anytime</div>
@@ -341,8 +409,15 @@
       <div class="sub-name" data-i18n="sub3_name">Full Digital Partner</div>
       <div class="sub-desc" data-i18n="sub3_desc">Your outsourced digital team — strategy, content, SEO, and website updates every month.</div>
       <div class="sub-price">
-        <span class="price-jpy">¥78,000</span>
-        <span class="price-usd">$518</span>
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥78,000</span>
+          <span class="discounted-price price-jpy">¥39,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$518</span>
+          <span class="discounted-price price-usd">$259</span>
+        </div>
         <span> / mo</span>
       </div>
       <div class="sub-period" data-i18n="sub3_period">Billed monthly · Cancel anytime</div>
@@ -785,6 +860,43 @@
 </footer>
 
 <!-- ── External JS ─────────────────────────────────────────── -->
+<script>
+// Real-time Countdown Timer for 50% OFF Offer (30 days)
+function initCountdown() {
+  const countdownElement = document.getElementById('countdown');
+  if (!countdownElement) return;
+  
+  // Set expiration date to 30 days from now
+  const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + 30);
+  
+  function updateCountdown() {
+    const now = new Date();
+    const timeRemaining = expirationDate - now;
+    
+    if (timeRemaining <= 0) {
+      countdownElement.textContent = 'Offer Expired';
+      countdownElement.style.color = '#888';
+      return;
+    }
+    
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    
+    // Format as: 30d 12h 45m 30s
+    countdownElement.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+  }
+  
+  updateCountdown();
+  // Update every 1 second for real-time countdown
+  setInterval(updateCountdown, 1000);
+}
+
+// Initialize countdown when DOM is ready
+document.addEventListener('DOMContentLoaded', initCountdown);
+</script>
 <script src="js/main.js"></script>
 
 </body>
