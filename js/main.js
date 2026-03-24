@@ -344,7 +344,7 @@ const translations = {
   }
 };
 
-let currentLang = 'en';
+let currentLang = 'jp';
 let currentCurrency = 'jpy';
 
 // ── LANGUAGE SWITCHER ─────────────────────────────────────────
@@ -506,6 +506,7 @@ function setCurrency(currency) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  setLang('jp');
   setCurrency('jpy');
   document.getElementById('btn-jpy')?.addEventListener('click', () => setCurrency('jpy'));
   document.getElementById('btn-usd')?.addEventListener('click', () => setCurrency('usd'));
