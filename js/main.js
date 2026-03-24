@@ -355,13 +355,16 @@ function setLang(lang) {
   // Update all text elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key]) {
-      // Use innerHTML for content that may contain HTML tags, textContent otherwise
-      if (t[key].includes('<')) {
-        el.innerHTML = t[key];
-      } else {
-        el.textContent = t[key];
-      }
+    const val = t && t[key];
+    if (val) {
+      try {
+        // Use innerHTML for content that may contain HTML tags, textContent otherwise
+        if (val.includes('<')) {
+          el.innerHTML = val;
+        } else {
+          el.textContent = val;
+        }
+      } catch (e) { /* silent – don't break the loop */ }
     }
   });
 
