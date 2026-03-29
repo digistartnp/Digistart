@@ -114,6 +114,9 @@ const translations = {
     blog_post1_title: "Why Every Small Business Needs a Website in 2026", blog_post1_excerpt: "Discover why having a professional website is no longer optional and how it can transform your customer reach...",
     blog_post2_title: "Google Maps SEO: The Complete MEO Guide for Japan", blog_post2_excerpt: "Learn how Map Engine Optimization can put your business on the map — literally — and drive local foot traffic...",
     blog_post3_title: "5 Instagram Strategies That Actually Work for Restaurants", blog_post3_excerpt: "From reels to stories, learn proven tactics that restaurants in Japan are using to boost engagement and orders..."
+    blog_post4_title: "Digital Transformation: From Fax to Fast — A Japan Business Guide", blog_post4_excerpt: "Many Japanese businesses still rely on fax and paper. Here's how to modernize without disrupting your operations...", blog_post4_tag: "Marketing",
+    blog_post5_title: "QR Code Menus: Why Every Restaurant Should Switch Now", blog_post5_excerpt: "QR menus are fast, hygienic, and cost-effective. Learn how to implement them the right way for your restaurant...", blog_post5_tag: "Business Tips",
+    blog_post6_title: "Why Multilingual Websites Win in Japan's International Market", blog_post6_excerpt: "Japan's business landscape is increasingly international. A multilingual website opens doors to customers worldwide...", blog_post6_tag: "Multilingual",
   },
 
   jp: {
@@ -239,6 +242,9 @@ const translations = {
     blog_post1_title: "2026年にすべての中小企業がウェブサイトを必要とする理由", blog_post1_excerpt: "プロフェッショナルなウェブサイトがもはやオプションではない理由と、顧客リーチを変革する方法を発見...",
     blog_post2_title: "Googleマップ SEO：日本のためのMEO完全ガイド", blog_post2_excerpt: "マップエンジン最適化があなたのビジネスを地図上に載せ、地元の来店を促進する方法を学ぶ...",
     blog_post3_title: "レストランに本当に効く5つのInstagram戦略", blog_post3_excerpt: "リールからストーリーまで、日本のレストランがエンゲージメントと注文を増やすために使っている実証済みの戦術..."
+    blog_post4_title: "デジタルトランスフォーメーション：ファックスから高速へ — 日本ビジネスガイド", blog_post4_excerpt: "多くの日本企業はいまだにファックスや紙に頼っています。業務を妨げずに近代化する方法はこちら...", blog_post4_tag: "マーケティング",
+    blog_post5_title: "QRコードメニュー：すべてのレストランが今すぐ切り替えるべき理由", blog_post5_excerpt: "QRメニューは速く、衛生的で、コスト効率も抜群。正しい導入方法を学びましょう...", blog_post5_tag: "ビジネスヒント",
+    blog_post6_title: "多言語ウェブサイトが日本の国際市場で勝つ理由", blog_post6_excerpt: "日本のビジネス環境はますます国際的に。多言語ウェブサイトは世界中の顧客への扉を開きます...", blog_post6_tag: "多言語対応",
   },
 
   np: {
@@ -365,6 +371,9 @@ const translations = {
     blog_post1_title: "2026 मा हरेक साना व्यवसायलाई वेबसाइट किन चाहिन्छ", blog_post1_excerpt: "पेशेवर वेबसाइट अब वैकल्पिक नभएको र यसले तपाईंको ग्राहक पहुँच कसरी रूपान्तरण गर्न सक्छ भनेर पत्ता लगाउनुहोस्...",
     blog_post2_title: "Google Maps SEO: जापानको लागि पूर्ण MEO गाइड", blog_post2_excerpt: "म्याप इन्जिन अप्टिमाइजेसनले तपाईंको व्यवसायलाई नक्सामा कसरी राख्न सक्छ र स्थानीय पैदल ट्राफिक कसरी बढाउन सक्छ भनेर सिक्नुहोस्...",
     blog_post3_title: "रेस्टुरेन्टहरूका लागि वास्तवमै काम गर्ने 5 Instagram रणनीतिहरू", blog_post3_excerpt: "रिल्सदेखि स्टोरीहरूसम्म, जापानका रेस्टुरेन्टहरूले सगाई र अर्डरहरू बढाउन प्रयोग गरिरहेका प्रमाणित रणनीतिहरू सिक्नुहोस्..."
+    blog_post4_title: "डिजिटल रूपान्तरण: फ्याक्सबाट फास्टसम्म — जापान व्यापार गाइड", blog_post4_excerpt: "धेरै जापानी व्यवसायहरू अझै फ्याक्स र कागजमा निर्भर छन्। आफ्नो अपरेशनलाई अवरोध नगरी कसरी आधुनिकीकरण गर्ने...", blog_post4_tag: "मार्केटिङ",
+    blog_post5_title: "QR कोड मेनु: किन प्रत्येक रेस्टुरेन्टले अहिले नै स्विच गर्नुपर्छ", blog_post5_excerpt: "QR मेनु छिटो, सफा र लागत-कुशल छन्। आफ्नो रेस्टुरेन्टका लागि यसलाई सही तरिकाले लागू गर्ने तरिका जान्नुहोस्...", blog_post5_tag: "व्यापार सुझाव",
+    blog_post6_title: "बहुभाषिक वेबसाइटहरू जापानको अन्तर्राष्ट्रिय बजारमा किन जित्छन्", blog_post6_excerpt: "जापानको व्यापार परिदृश्य बढ्दो अन्तर्राष्ट्रिय छ। बहुभाषिक वेबसाइटले विश्वभरका ग्राहकहरूलाई ढोका खोल्छ...", blog_post6_tag: "बहुभाषिक",
   }
 };
 
