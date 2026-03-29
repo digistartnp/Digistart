@@ -27,14 +27,14 @@ const blogPosts = [
       <p>At DIGIスタート, we build professional, mobile-optimized websites starting from just ¥29,800. Whether you're a restaurant, salon, or consulting firm — we make going digital simple and affordable.</p>
       <p>Don't let your business stay invisible. <strong>Start smart. Start digital.</strong></p>
     `
-  },
   {
-    id: 2,
-    icon: "📊",
-    tag: "SEO & MEO",
-    date: "March 20, 2026",
-    title: "Google Maps SEO: The Complete MEO Guide for Japan",
-    excerpt: "Learn how Map Engine Optimization can put your business on the map — literally — and drive local foot traffic...",
+    id: 4,
+    icon: "🎯",
+    tag: null, // use translation
+    date: "March 10, 2026",
+    title: null, // use translation
+    excerpt: null, // use translation
+    content: `
     content: `
       <p>MEO (Map Engine Optimization) is the process of optimizing your Google Business Profile so your business appears prominently in local Google Maps searches. For businesses in Japan, MEO is one of the most powerful — and underused — marketing tools available.</p>
       <h3>Why MEO Matters in Japan</h3>
@@ -126,10 +126,10 @@ const blogPosts = [
   {
     id: 5,
     icon: "💡",
-    tag: "Business Tips",
+    tag: null, // use translation
     date: "March 5, 2026",
-    title: "QR Code Menus: Why Every Restaurant Should Switch Now",
-    excerpt: "QR menus are fast, hygienic, and cost-effective. Learn how to implement them the right way for your restaurant...",
+    title: null, // use translation
+    excerpt: null, // use translation
     content: `
       <p>QR code menus exploded during the pandemic, but they're here to stay. For restaurants in Japan, they offer real advantages over printed menus — if done right.</p>
       <h3>Benefits of QR Code Menus</h3>
@@ -148,10 +148,10 @@ const blogPosts = [
   {
     id: 6,
     icon: "🌐",
-    tag: "Multilingual",
+    tag: null, // use translation
     date: "February 28, 2026",
-    title: "Why Multilingual Websites Win in Japan's International Market",
-    excerpt: "Japan's business landscape is increasingly international. A multilingual website opens doors to customers worldwide...",
+    title: null, // use translation
+    excerpt: null, // use translation
     content: `
       <p>Japan attracts millions of international visitors, expats, and foreign business partners. If your website only speaks one language, you're losing potential customers every day.</p>
       <h3>The Multilingual Advantage</h3>
