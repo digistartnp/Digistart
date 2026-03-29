@@ -27,14 +27,14 @@ const blogPosts = [
       <p>At DIGIスタート, we build professional, mobile-optimized websites starting from just ¥29,800. Whether you're a restaurant, salon, or consulting firm — we make going digital simple and affordable.</p>
       <p>Don't let your business stay invisible. <strong>Start smart. Start digital.</strong></p>
     `
+  },
   {
-    id: 4,
-    icon: "🎯",
-    tag: null, // use translation
-    date: "March 10, 2026",
-    title: null, // use translation
-    excerpt: null, // use translation
-    content: `
+    id: 2,
+    icon: "📊",
+    tag: "SEO & MEO",
+    date: "March 20, 2026",
+    title: "Google Maps SEO: The Complete MEO Guide for Japan",
+    excerpt: "Learn how Map Engine Optimization can put your business on the map — literally — and drive local foot traffic...",
     content: `
       <p>MEO (Map Engine Optimization) is the process of optimizing your Google Business Profile so your business appears prominently in local Google Maps searches. For businesses in Japan, MEO is one of the most powerful — and underused — marketing tools available.</p>
       <h3>Why MEO Matters in Japan</h3>
@@ -58,14 +58,6 @@ const blogPosts = [
     date: "March 15, 2026",
     title: "5 Instagram Strategies That Actually Work for Restaurants",
     excerpt: "From reels to stories, learn proven tactics that restaurants in Japan are using to boost engagement and orders...",
-    {
-      id: 4,
-      icon: "🎯",
-      tag: null, // use translation
-      date: "March 10, 2026",
-      title: null, // use translation
-      excerpt: null, // use translation
-      content: `
     content: `
       <p>Instagram is the #1 platform for restaurant discovery in Japan. If your restaurant isn't active on Instagram, you're leaving money on the table. Here are 5 strategies that actually work.</p>
       <h3>1. Post Reels of Your Best Dishes</h3>
@@ -75,14 +67,6 @@ const blogPosts = [
       <h3>3. Share Stories Daily</h3>
       <p>Stories keep you at the top of your followers' feeds. Share behind-the-scenes kitchen content, daily specials, or customer shoutouts.</p>
       <h3>4. Collaborate with Local Food Bloggers</h3>
-    {
-      id: 5,
-      icon: "💡",
-      tag: null, // use translation
-      date: "March 5, 2026",
-      title: null, // use translation
-      excerpt: null, // use translation
-      content: `
       <p>Invite 2-3 local micro-influencers for a complimentary meal. Their posts reach thousands of potential customers in your area.</p>
       <h3>5. Link Your Bio to Your Website</h3>
       <p>Use your Instagram bio link to drive traffic to your website where customers can see your full menu, make reservations, or order online. We help set this up at DIGIスタート.</p>
@@ -91,18 +75,10 @@ const blogPosts = [
   {
     id: 4,
     icon: "🎯",
-    tag: "Marketing",
-    {
-      id: 6,
-      icon: "🌐",
-      tag: null, // use translation
-      date: "February 28, 2026",
-      title: null, // use translation
-      excerpt: null, // use translation
-      content: `
+    tag: null, // use translation
     date: "March 10, 2026",
-    title: "Digital Transformation: From Fax to Fast — A Japan Business Guide",
-    excerpt: "Many Japanese businesses still rely on fax and paper. Here's how to modernize without disrupting your operations...",
+    title: null, // use translation
+    excerpt: null, // use translation
     content: `
       <p>Japan is a technology leader, yet many small and medium businesses still rely on fax machines, paper ledgers, and phone-only bookings. Digital transformation doesn't mean throwing everything out — it means upgrading smartly.</p>
       <h3>Common Outdated Practices</h3>
