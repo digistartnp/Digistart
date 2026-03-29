@@ -185,7 +185,23 @@ async function fetchApiPosts() {
   } catch { /* API not available, use defaults only */ }
 }
 
+function getTranslatedPost(post, lang) {
+  // For posts 4,5,6 use translation keys if present
+  if (post.id >= 4 && post.id <= 6) {
+    const t = window.translations?.[lang] || translations[lang];
+    const tEn = window.translations?.en || translations.en;
+    return {
+      ...post,
+      tag: t[`blog_post${post.id}_tag`] || tEn[`blog_post${post.id}_tag`] || post.tag,
+      title: t[`blog_post${post.id}_title`] || tEn[`blog_post${post.id}_title`] || post.title,
+      excerpt: t[`blog_post${post.id}_excerpt`] || tEn[`blog_post${post.id}_excerpt`] || post.excerpt,
+    };
+  }
+  return post;
+}
+
 function getAllPosts() {
+  const lang = window.currentLang || (typeof currentLang !== 'undefined' ? currentLang : 'jp');
   // Map API posts to match the shape of default posts
   const apiMapped = cachedApiPosts.map(p => ({
     id: p._id,
@@ -199,8 +215,10 @@ function getAllPosts() {
     content: p.content,
     image: p.image || ''
   }));
+  // Default posts with translation
+  const translatedDefaults = blogPosts.map(post => getTranslatedPost(post, lang));
   // API posts first (newest), then default posts
-  return [...apiMapped, ...blogPosts];
+  return [...apiMapped, ...translatedDefaults];
 }
 
 // ── Render Blog Cards ───────────────────────────────────────
