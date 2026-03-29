@@ -8,6 +8,7 @@ const translations = {
   en: {
     nav_home: "Home", nav_services: "Services", nav_pricing: "Pricing", nav_about: "About",
     nav_faq: "FAQ", nav_contact: "Contact", nav_cta: "Apply Now →",
+    nav_blog: "Blog",
     hero_badge: "Digital Marketing Agency",
     hero_title_1: "We Help", hero_title_2: "To Go Digital",
     hero_sub: "Start smart. Start digital. We transform traditional businesses into modern digital powerhouses — websites, social media, and full digital transformation.",
@@ -105,12 +106,20 @@ const translations = {
     form_msg: "Message", form_submit: "Send Message →",
     form_success: "✅ Message sent! We'll be in touch within 24 hours.",
     footer_tagline: "Start smart. Start digital. Your trusted partner in digital transformation.",
-    footer_nav: "Navigation", footer_services: "Services", footer_lang: "Languages"
+    footer_nav: "Navigation", footer_services: "Services", footer_lang: "Languages",
+    blog_label: "Our Blog", blog_title: "Latest Insights", blog_sub: "Tips, strategies, and stories to help your business thrive in the digital world.",
+    blog_page_title: "Insights & Tips", blog_page_sub: "Practical guides, digital strategies, and stories to help your business grow online.",
+    blog_readmore: "Read More →",
+    blog_tag_digital: "Digital Tips", blog_tag_seo: "SEO & MEO", blog_tag_sns: "SNS Growth",
+    blog_post1_title: "Why Every Small Business Needs a Website in 2026", blog_post1_excerpt: "Discover why having a professional website is no longer optional and how it can transform your customer reach...",
+    blog_post2_title: "Google Maps SEO: The Complete MEO Guide for Japan", blog_post2_excerpt: "Learn how Map Engine Optimization can put your business on the map — literally — and drive local foot traffic...",
+    blog_post3_title: "5 Instagram Strategies That Actually Work for Restaurants", blog_post3_excerpt: "From reels to stories, learn proven tactics that restaurants in Japan are using to boost engagement and orders..."
   },
 
   jp: {
     nav_home: "ホーム", nav_services: "サービス", nav_pricing: "価格", nav_about: "私たちについて",
     nav_faq: "よくある質問", nav_contact: "お問い合わせ", nav_cta: "今すぐ申し込む →",
+    nav_blog: "ブログ",
     pricing_label: "透明な価格設定",
     pricing_heading: "シンプルなプラン、確かな成果",
     pricing_subheading: "隠れた料金はありません。驚きはありません。通貨を選択してデジタルプレゼンスを今日開始してください。",
@@ -222,12 +231,20 @@ const translations = {
     form_msg: "メッセージ", form_submit: "送信する →",
     form_success: "✅ 送信完了！24時間以内にご連絡します。",
     footer_tagline: "スマートに始め、デジタルに始める。デジタルトランスフォーメーションの信頼できるパートナー。",
-    footer_nav: "ナビゲーション", footer_services: "サービス", footer_lang: "言語"
+    footer_nav: "ナビゲーション", footer_services: "サービス", footer_lang: "言語",
+    blog_label: "ブログ", blog_title: "最新の情報", blog_sub: "デジタル世界でビジネスを成功させるためのヒント、戦略、ストーリー。",
+    blog_page_title: "インサイト＆ヒント", blog_page_sub: "実践的なガイド、デジタル戦略、オンラインビジネス成長のためのストーリー。",
+    blog_readmore: "もっと読む →",
+    blog_tag_digital: "デジタルヒント", blog_tag_seo: "SEO & MEO", blog_tag_sns: "SNS成長",
+    blog_post1_title: "2026年にすべての中小企業がウェブサイトを必要とする理由", blog_post1_excerpt: "プロフェッショナルなウェブサイトがもはやオプションではない理由と、顧客リーチを変革する方法を発見...",
+    blog_post2_title: "Googleマップ SEO：日本のためのMEO完全ガイド", blog_post2_excerpt: "マップエンジン最適化があなたのビジネスを地図上に載せ、地元の来店を促進する方法を学ぶ...",
+    blog_post3_title: "レストランに本当に効く5つのInstagram戦略", blog_post3_excerpt: "リールからストーリーまで、日本のレストランがエンゲージメントと注文を増やすために使っている実証済みの戦術..."
   },
 
   np: {
     nav_home: "होम", nav_services: "सेवाहरू", nav_pricing: "मूल्य", nav_about: "हाम्रो बारे",
     nav_faq: "प्रश्नहरू", nav_contact: "सम्पर्क", nav_cta: "अहिले आवेदन गर्नुहोस् →",
+    nav_blog: "ब्लग",
     pricing_label: "पारदर्शी मूल्य निर्धारण",
     pricing_heading: "सरल योजनाहरू, वास्तविक परिणामहरू",
     pricing_subheading: "लुकेका शुल्कहरू छैनन्। आश्चर्यहरू छैनन्। आफ्नो मुद्रा छान्नुहोस् र आज आफ्नो डिजिटल उपस्थिति सुरु गर्नुहोस्।",
@@ -340,7 +357,14 @@ const translations = {
     form_msg: "सन्देश", form_submit: "सन्देश पठाउनुहोस् →",
     form_success: "✅ सन्देश पठाइयो! हामी २४ घण्टाभित्र सम्पर्क गर्नेछौं।",
     footer_tagline: "स्मार्ट सुरु। डिजिटल सुरु। डिजिटल ट्रान्सफर्मेशनमा तपाईंको विश्वसनीय साझेदार।",
-    footer_nav: "नेभिगेशन", footer_services: "सेवाहरू", footer_lang: "भाषाहरू"
+    footer_nav: "नेभिगेशन", footer_services: "सेवाहरू", footer_lang: "भाषाहरू",
+    blog_label: "ब्लग", blog_title: "नवीनतम जानकारी", blog_sub: "डिजिटल संसारमा तपाईंको व्यवसायलाई सफल बनाउन सुझावहरू, रणनीतिहरू, र कथाहरू।",
+    blog_page_title: "अन्तर्दृष्टि र सुझावहरू", blog_page_sub: "व्यावहारिक गाइडहरू, डिजिटल रणनीतिहरू, र तपाईंको व्यवसाय अनलाइन बढाउन कथाहरू।",
+    blog_readmore: "थप पढ्नुहोस् →",
+    blog_tag_digital: "डिजिटल सुझाव", blog_tag_seo: "SEO र MEO", blog_tag_sns: "SNS वृद्धि",
+    blog_post1_title: "2026 मा हरेक साना व्यवसायलाई वेबसाइट किन चाहिन्छ", blog_post1_excerpt: "पेशेवर वेबसाइट अब वैकल्पिक नभएको र यसले तपाईंको ग्राहक पहुँच कसरी रूपान्तरण गर्न सक्छ भनेर पत्ता लगाउनुहोस्...",
+    blog_post2_title: "Google Maps SEO: जापानको लागि पूर्ण MEO गाइड", blog_post2_excerpt: "म्याप इन्जिन अप्टिमाइजेसनले तपाईंको व्यवसायलाई नक्सामा कसरी राख्न सक्छ र स्थानीय पैदल ट्राफिक कसरी बढाउन सक्छ भनेर सिक्नुहोस्...",
+    blog_post3_title: "रेस्टुरेन्टहरूका लागि वास्तवमै काम गर्ने 5 Instagram रणनीतिहरू", blog_post3_excerpt: "रिल्सदेखि स्टोरीहरूसम्म, जापानका रेस्टुरेन्टहरूले सगाई र अर्डरहरू बढाउन प्रयोग गरिरहेका प्रमाणित रणनीतिहरू सिक्नुहोस्..."
   }
 };
 

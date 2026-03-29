@@ -6,6 +6,7 @@
 <title>DIGIスタート | Start Smart. Start Digital.</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/blog.css">
 </head>
 <style>
   .original-price {
@@ -55,6 +56,7 @@
       <li><a href="#pricing"  data-i18n="nav_pricing">Pricing</a></li>
       <li><a href="#about"    data-i18n="nav_about">About</a></li>
       <li><a href="#faq"      data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="blog.html"  data-i18n="nav_blog">Blog</a></li>
       <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
     </ul>
 
@@ -84,6 +86,7 @@
   <a href="#pricing"  onclick="toggleMenu()" data-i18n="nav_pricing">Pricing</a>
   <a href="#about"    onclick="toggleMenu()" data-i18n="nav_about">About</a>
   <a href="#faq"      onclick="toggleMenu()" data-i18n="nav_faq">FAQ</a>
+  <a href="blog.html"  onclick="toggleMenu()" data-i18n="nav_blog">Blog</a>
   <a href="#contact"  onclick="toggleMenu()" data-i18n="nav_contact">Contact</a>
 </div>
 
@@ -726,6 +729,49 @@
 
 
 <!-- ═══════════════════════════════════════════
+     BLOG PREVIEW SECTION
+════════════════════════════════════════════ -->
+<section id="blog">
+  <div class="container">
+    <div class="section-label" data-i18n="blog_label">Our Blog</div>
+    <h2 class="section-title" data-i18n="blog_title">Latest Insights</h2>
+    <p class="section-sub" data-i18n="blog_sub">Tips, strategies, and stories to help your business thrive in the digital world.</p>
+
+    <div class="blog-preview-grid">
+      <div class="blog-preview-card reveal">
+        <div class="blog-preview-img">📱</div>
+        <div class="blog-preview-body">
+          <span class="blog-preview-tag" data-i18n="blog_tag_digital">Digital Tips</span>
+          <h3 data-i18n="blog_post1_title">Why Every Small Business Needs a Website in 2026</h3>
+          <p data-i18n="blog_post1_excerpt">Discover why having a professional website is no longer optional and how it can transform your customer reach...</p>
+        </div>
+      </div>
+      <div class="blog-preview-card reveal">
+        <div class="blog-preview-img">📊</div>
+        <div class="blog-preview-body">
+          <span class="blog-preview-tag" data-i18n="blog_tag_seo">SEO & MEO</span>
+          <h3 data-i18n="blog_post2_title">Google Maps SEO: The Complete MEO Guide for Japan</h3>
+          <p data-i18n="blog_post2_excerpt">Learn how Map Engine Optimization can put your business on the map — literally — and drive local foot traffic...</p>
+        </div>
+      </div>
+      <div class="blog-preview-card reveal">
+        <div class="blog-preview-img">🚀</div>
+        <div class="blog-preview-body">
+          <span class="blog-preview-tag" data-i18n="blog_tag_sns">SNS Growth</span>
+          <h3 data-i18n="blog_post3_title">5 Instagram Strategies That Actually Work for Restaurants</h3>
+          <p data-i18n="blog_post3_excerpt">From reels to stories, learn proven tactics that restaurants in Japan are using to boost engagement and orders...</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+      <a href="blog.html" class="blog-readmore-btn" data-i18n="blog_readmore">Read More →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
      CONTACT SECTION
 ════════════════════════════════════════════ -->
 <section id="contact">
@@ -750,7 +796,7 @@
             <div class="cm-icon">💼</div>
             <div>
               <div class="cm-label" data-i18n="cm_li">LinkedIn</div>
-              <div class="cm-val"><a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">DIGIスタート</a></div>
+              <div class="cm-val"><a href="https://www.linkedin.com/in/digi-start-2583793b9/" target="_blank" rel="noopener">DIGIスタート</a></div>
             </div>
           </div>
           <div class="cm-item">
@@ -815,7 +861,7 @@
         <p class="footer-tagline" data-i18n="footer_tagline">Start smart. Start digital. Your trusted partner in digital transformation.</p>
         <div class="social-links">
           <a href="https://www.facebook.com/profile.php?id=61576693414774" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
-          <a href="https://www.linkedin.com/feed/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+          <a href="https://www.linkedin.com/in/digi-start-2583793b9/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
           <a href="https://www.instagram.com/digistartjp/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=digistartnp@gmail.com" class="social-link" target="_blank" rel="noopener" aria-label="Email">✉️</a>
         </div>
@@ -829,6 +875,7 @@
           <li><a href="#services" data-i18n="nav_services">Services</a></li>
           <li><a href="#about"    data-i18n="nav_about">About</a></li>
           <li><a href="#faq"      data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
           <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
         </ul>
       </div>
@@ -857,7 +904,7 @@
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 DIGIスタート. All rights reserved.</div>
+      <div class="footer-copy">© 2026 DIGIスタート. All rights reserved.</div>
       <div class="footer-langs">
         <span onclick="setLang('en')">EN</span>
         <span onclick="setLang('jp')">日本語</span>
@@ -874,9 +921,17 @@ function initCountdown() {
   const countdownElement = document.getElementById('countdown');
   if (!countdownElement) return;
   
-  // Set expiration date to 30 days from now
-  const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + 30);
+  // Persist the expiration date in localStorage so it survives page refreshes
+  const STORAGE_KEY = 'offerExpirationDate';
+  let expirationDate;
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    expirationDate = new Date(parseInt(stored, 10));
+  } else {
+    expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 30);
+    localStorage.setItem(STORAGE_KEY, expirationDate.getTime().toString());
+  }
   
   function updateCountdown() {
     const now = new Date();
