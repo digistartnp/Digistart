@@ -259,7 +259,7 @@ function closeBlogModal() {
 
 // ── Init ────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
-  renderBlogCards();
+  // Do NOT call renderBlogCards() here. It will be called by setLang() in main.js after language is set.
 
   // Close modal on overlay click
   const overlay = document.getElementById('blogModalOverlay');
