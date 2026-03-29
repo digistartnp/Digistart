@@ -409,6 +409,11 @@ function setLang(lang) {
     if (btn.textContent.trim() === map[lang]) btn.classList.add('active');
   });
   setCurrency(currentCurrency);
+
+  // If on blog page and renderBlogCards exists, re-render blog cards after language change
+  if (typeof renderBlogCards === 'function' && document.querySelector('.blog-grid')) {
+    renderBlogCards();
+  }
 }
 
 // ── FAQ ACCORDION ─────────────────────────────────────────────
