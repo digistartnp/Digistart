@@ -157,8 +157,16 @@
   </div>
 </footer>
 
+
 <script src="js/main.js"></script>
 <script src="js/blog.js"></script>
+<!-- Ensure language and blog cards are initialized after all scripts are loaded -->
+<script>
+  // Wait for both main.js and blog.js to be loaded, then set language and render blog
+  window.addEventListener('DOMContentLoaded', function() {
+    setLang(localStorage.getItem('lang') || 'jp');
+  });
+</script>
 
 </body>
 </html>
