@@ -1,46 +1,36 @@
-# DIGIスタート — Website Files
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## 📁 Folder Structure
+## Getting Started
 
-```
-digistart/
-├── index.html          ← Main HTML file (open this in your browser)
-├── css/
-│   └── style.css       ← All styles and responsive design
-├── js/
-│   └── main.js         ← Language switcher, FAQ, form, animations
-└── images/
-    ├── logo.png        ← DIGIスタート logo
-    ├── we_help.png     ← Marketing banner 1
-    ├── we_help1.png    ← Marketing banner 2
-    ├── we_help2.png    ← Marketing banner 3
-    └── 20251226.png    ← Additional image
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 🚀 How to Use
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Keep all files/folders together — do not move them apart
-2. Open `index.html` in any modern browser to view the site
-3. To deploy online, upload the entire folder to your hosting (Netlify, Vercel, etc.)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## ✏️ How to Customize
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Colors**: Edit CSS variables at the top of `css/style.css`
-- **Text / Translations**: Edit the `translations` object in `js/main.js`
-- **Contact details**: Update email, social handles in `index.html` (search for `hello@digistart.jp`)
-- **Images**: Replace files in the `images/` folder (keep the same filenames)
+## Learn More
 
-## 🌐 Languages Supported
+To learn more about Next.js, take a look at the following resources:
 
-- 🇬🇧 English
-- 🇯🇵 Japanese (日本語)
-- 🇳🇵 Nepali (नेपाली)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📬 Connect the Contact Form
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-The form currently shows a success message. To receive real emails, connect it to:
-- [Formspree](https://formspree.io) — free, easy
-- [EmailJS](https://emailjs.com) — works without a backend
+## Deploy on Vercel
 
----
-*DIGIスタート — Start smart. Start digital.*
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
