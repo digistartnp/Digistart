@@ -29,7 +29,7 @@ const resolveLocale = (value: string | null): Locale => {
   if (value && supportedLocales.includes(value as Locale)) {
     return value as Locale;
   }
-  return "jp";
+  return "en";
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
