@@ -38,6 +38,11 @@
   background: linear-gradient(135deg, var(--teal-light), #d4f5f5);
 }
 
+.blog-preview-img i {
+  font-size: 3.1rem;
+  line-height: 1;
+}
+
 .blog-preview-body { padding: 24px; }
 
 .blog-preview-tag {
@@ -126,6 +131,11 @@
   justify-content: center;
   font-size: 3.5rem;
   background: linear-gradient(135deg, var(--teal-light), #d4f5f5);
+}
+
+.blog-card-img i {
+  font-size: 3.1rem;
+  line-height: 1;
 }
 
 .blog-card-body { padding: 24px; }
@@ -231,6 +241,12 @@
 .blog-modal-icon {
   font-size: 3rem;
   margin-bottom: 16px;
+}
+
+.blog-modal-icon i {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .blog-modal-tag {

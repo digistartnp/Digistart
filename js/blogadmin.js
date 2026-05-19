@@ -5,6 +5,30 @@
 
 const API_BASE = '/api';
 const TOKEN_KEY = 'blogAdminToken';
+const DEFAULT_ADMIN_ICON = 'fa-solid fa-pen-nib';
+
+const LEGACY_EMOJI_ICON_MAP = {
+  '\u{1F4F1}': 'fa-solid fa-mobile-screen-button',
+  '\u{1F4CA}': 'fa-solid fa-chart-column',
+  '\u{1F680}': 'fa-solid fa-rocket',
+  '\u{1F3AF}': 'fa-solid fa-bullseye',
+  '\u{1F4A1}': 'fa-solid fa-lightbulb',
+  '\u{1F310}': 'fa-solid fa-globe',
+  '\u{1F4DD}': 'fa-solid fa-pen-nib'
+};
+
+function normalizeIconClass(icon) {
+  const value = (icon || '').trim();
+  if (!value) return DEFAULT_ADMIN_ICON;
+  if (LEGACY_EMOJI_ICON_MAP[value]) return LEGACY_EMOJI_ICON_MAP[value];
+
+  const isValidFaClass = /^(fa-(solid|regular|brands|light|thin|duotone)\s+)?fa-[a-z0-9-]+(\s+fa-[a-z0-9-]+)*$/i.test(value);
+  return isValidFaClass ? value : DEFAULT_ADMIN_ICON;
+}
+
+function renderAdminIcon(icon) {
+  return '<i class="' + normalizeIconClass(icon) + '" aria-hidden="true"></i>';
+}
 
 // ── Helpers ─────────────────────────────────────────────────
 function getToken() { return sessionStorage.getItem(TOKEN_KEY); }
@@ -89,7 +113,7 @@ async function handlePostSubmit(e) {
   const formData = new FormData();
   formData.append('title', document.getElementById('postTitle').value.trim());
   formData.append('tag', document.getElementById('postTag').value);
-  formData.append('icon', document.getElementById('postIcon').value.trim() || '📝');
+  formData.append('icon', normalizeIconClass(document.getElementById('postIcon').value));
   formData.append('excerpt', document.getElementById('postExcerpt').value.trim());
   formData.append('content', document.getElementById('postContent').value.trim());
 
@@ -137,7 +161,7 @@ async function handlePostSubmit(e) {
 function resetForm() {
   document.getElementById('postForm').reset();
   document.getElementById('editPostId').value = '';
-  document.getElementById('postIcon').value = '📝';
+  document.getElementById('postIcon').value = DEFAULT_ADMIN_ICON;
   document.getElementById('imagePreview').innerHTML = '';
   document.getElementById('formHeading').textContent = 'Create New Post';
   document.getElementById('submitBtn').textContent = 'Publish Post →';
@@ -153,7 +177,7 @@ async function editPost(id) {
     document.getElementById('editPostId').value = post._id;
     document.getElementById('postTitle').value = post.title;
     document.getElementById('postTag').value = post.tag;
-    document.getElementById('postIcon').value = post.icon;
+    document.getElementById('postIcon').value = normalizeIconClass(post.icon);
     document.getElementById('postExcerpt').value = post.excerpt;
     document.getElementById('postContent').value = post.content;
     document.getElementById('formHeading').textContent = 'Edit Post';
@@ -231,7 +255,7 @@ async function renderPostsList() {
       });
       const thumb = post.image
         ? '<img src="' + escapeAttr(post.image) + '" alt="" class="post-item-thumb">'
-        : '<div class="post-item-icon">' + escapeHTML(post.icon) + '</div>';
+        : '<div class="post-item-icon">' + renderAdminIcon(post.icon) + '</div>';
       return `
         <div class="post-item">
           ${thumb}

@@ -316,6 +316,11 @@ body {
   border-radius: var(--radius-sm);
 }
 
+.post-item-icon i {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
 .post-item-thumb {
   width: 64px;
   height: 48px;

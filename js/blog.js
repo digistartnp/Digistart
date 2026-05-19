@@ -7,7 +7,7 @@
 const blogPosts = [
   {
     id: 1,
-    icon: "📱",
+    icon: "fa-solid fa-mobile-screen-button",
     tag: "Digital Tips",
     date: "March 25, 2026",
     title: "Why Every Small Business Needs a Website in 2026",
@@ -30,7 +30,7 @@ const blogPosts = [
   },
   {
     id: 2,
-    icon: "📊",
+    icon: "fa-solid fa-chart-column",
     tag: "SEO & MEO",
     date: "March 20, 2026",
     title: "Google Maps SEO: The Complete MEO Guide for Japan",
@@ -53,7 +53,7 @@ const blogPosts = [
   },
   {
     id: 3,
-    icon: "🚀",
+    icon: "fa-solid fa-rocket",
     tag: "SNS Growth",
     date: "March 15, 2026",
     title: "5 Instagram Strategies That Actually Work for Restaurants",
@@ -74,7 +74,7 @@ const blogPosts = [
   },
   {
     id: 4,
-    icon: "🎯",
+    icon: "fa-solid fa-bullseye",
     tag: null, // use translation
     date: "March 10, 2026",
     title: null, // use translation
@@ -101,7 +101,7 @@ const blogPosts = [
   },
   {
     id: 5,
-    icon: "💡",
+    icon: "fa-solid fa-lightbulb",
     tag: null, // use translation
     date: "March 5, 2026",
     title: null, // use translation
@@ -123,7 +123,7 @@ const blogPosts = [
   },
   {
     id: 6,
-    icon: "🌐",
+    icon: "fa-solid fa-globe",
     tag: null, // use translation
     date: "February 28, 2026",
     title: null, // use translation
@@ -151,6 +151,30 @@ const blogPosts = [
 
 // ── Merge API posts with default posts ──────────────────────
 let cachedApiPosts = [];
+
+const DEFAULT_BLOG_ICON = 'fa-solid fa-newspaper';
+const LEGACY_EMOJI_ICON_MAP = {
+  '\u{1F4F1}': 'fa-solid fa-mobile-screen-button',
+  '\u{1F4CA}': 'fa-solid fa-chart-column',
+  '\u{1F680}': 'fa-solid fa-rocket',
+  '\u{1F3AF}': 'fa-solid fa-bullseye',
+  '\u{1F4A1}': 'fa-solid fa-lightbulb',
+  '\u{1F310}': 'fa-solid fa-globe',
+  '\u{1F4DD}': 'fa-solid fa-pen-nib'
+};
+
+function normalizeIconClass(icon) {
+  const value = (icon || '').trim();
+  if (!value) return DEFAULT_BLOG_ICON;
+  if (LEGACY_EMOJI_ICON_MAP[value]) return LEGACY_EMOJI_ICON_MAP[value];
+
+  const isValidFaClass = /^(fa-(solid|regular|brands|light|thin|duotone)\s+)?fa-[a-z0-9-]+(\s+fa-[a-z0-9-]+)*$/i.test(value);
+  return isValidFaClass ? value : DEFAULT_BLOG_ICON;
+}
+
+function renderIconHTML(icon) {
+  return '<i class="' + normalizeIconClass(icon) + '" aria-hidden="true"></i>';
+}
 
 async function fetchApiPosts() {
   try {
@@ -181,7 +205,7 @@ function getAllPosts() {
   // Map API posts to match the shape of default posts
   const apiMapped = cachedApiPosts.map(p => ({
     id: p._id,
-    icon: p.icon,
+    icon: normalizeIconClass(p.icon),
     tag: p.tag,
     date: new Date(p.createdAt).toLocaleDateString('en-US', {
       year: 'numeric', month: 'long', day: 'numeric'
@@ -211,7 +235,7 @@ async function renderBlogCards() {
       : post.id;
     const imgSection = post.image
       ? `<div class="blog-card-img" style="background:url(${post.image}) center/cover no-repeat;font-size:0;"></div>`
-      : `<div class="blog-card-img">${post.icon}</div>`;
+      : `<div class="blog-card-img">${renderIconHTML(post.icon)}</div>`;
     return `
       <div class="blog-card" onclick="openBlogModal(${postIdAttr})">
         ${imgSection}
@@ -235,7 +259,7 @@ function openBlogModal(postId) {
   if (!post) return;
 
   const overlay = document.getElementById('blogModalOverlay');
-  document.getElementById('blogModalIcon').textContent = post.icon;
+  document.getElementById('blogModalIcon').innerHTML = renderIconHTML(post.icon);
   document.getElementById('blogModalTag').textContent = post.tag;
   document.getElementById('blogModalDate').textContent = post.date;
   document.getElementById('blogModalTitle').textContent = post.title;
