@@ -11,13 +11,13 @@ import {
   Hash,
   Lightbulb,
   Layers,
-  MapPin,
   PenTool,
   Rocket,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/components/digistart/language-provider";
 
 const socialLinks = {
@@ -197,12 +197,12 @@ export function ServicesSection() {
         <div className="services-grid">
           <div className="service-card reveal">
             <div className="svc-project-logo">
-              <img
+              <Image
                 src="https://www.akaruipokharaedu.com/assets/gallery/LOGO/Akarui%20Logo.webp"
                 alt="Akarui Pokhara Edu logo"
-                loading="lazy"
-                width={44}
-                height={44}
+                width={28}
+                height={28}
+                unoptimized
               />
             </div>
             <h3 className="svc-title">{t("svc_project1_title")}</h3>
@@ -220,12 +220,12 @@ export function ServicesSection() {
 
           <div className="service-card reveal">
             <div className="svc-project-logo">
-              <img
+              <Image
                 src="https://mustangasian-jp.online/images/logo.png"
                 alt="Mustang Asian JP logo"
-                loading="lazy"
-                width={44}
-                height={44}
+                width={28}
+                height={28}
+                unoptimized
               />
             </div>
             <h3 className="svc-title">{t("svc_project2_title")}</h3>

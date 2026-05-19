@@ -33,14 +33,11 @@ const resolveLocale = (value: string | null): Locale => {
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Locale>("jp");
-
-  useEffect(() => {
-    const stored = resolveLocale(
+  const [lang, setLangState] = useState<Locale>(() =>
+    resolveLocale(
       typeof window === "undefined" ? null : localStorage.getItem(STORAGE_KEY)
-    );
-    setLangState(stored);
-  }, []);
+    )
+  );
 
   useEffect(() => {
     if (typeof document !== "undefined") {

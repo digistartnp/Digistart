@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import RevealProvider from "@/components/digistart/reveal-provider";
 import { ServicesSection } from "@/components/digistart/sections";
@@ -39,11 +40,13 @@ export default function ServicesPage() {
           <div className="grid gap-6 md:grid-cols-2">
             <Card className="border-slate-200 bg-white">
               <CardContent className="space-y-4 p-6">
-                <img
+                <Image
                   src="https://www.akaruipokharaedu.com/assets/gallery/LOGO/Akarui%20Logo.webp"
                   alt="Akarui Pokhara Edu logo"
                   className="h-11 w-11 rounded-xl border border-slate-200 bg-white p-2"
-                  loading="lazy"
+                  width={44}
+                  height={44}
+                  unoptimized
                 />
                 <p className="heading-text text-lg font-semibold text-slate-950">
                   Akarui Pokhara Edu
@@ -65,11 +68,13 @@ export default function ServicesPage() {
             </Card>
             <Card className="border-slate-200 bg-white">
               <CardContent className="space-y-4 p-6">
-                <img
+                <Image
                   src="https://mustangasian-jp.online/images/logo.png"
                   alt="Mustang Asian JP logo"
                   className="h-11 w-11 rounded-xl border border-slate-200 bg-white p-2"
-                  loading="lazy"
+                  width={44}
+                  height={44}
+                  unoptimized
                 />
                 <p className="heading-text text-lg font-semibold text-slate-950">
                   Mustang Asian JP
