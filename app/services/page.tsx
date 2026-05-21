@@ -11,7 +11,7 @@ import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsTrigger,
+  TabsTrigger ,
 } from "@/components/ui/tabs";
 import { services } from "@/data/services";
 

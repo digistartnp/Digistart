@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Admin | DIGIスタート</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8R2R9YyQz8+1fK6K0Xr2Y5G5m9vDOMg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="css/blogadmin.css">
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     LOGIN SCREEN
+════════════════════════════════════════════ -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">DIGI<span>スタート</span></div>
+    <h2>Blog Admin</h2>
+    <p>Sign in to manage blog posts</p>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div class="form-field">
+        <label for="username">Username</label>
+        <input type="text" id="username" autocomplete="username" required>
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="current-password" required>
+      </div>
+      <p class="login-error" id="loginError"></p>
+      <button type="submit" class="btn-primary">Sign In →</button>
+    </form>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ADMIN DASHBOARD
+════════════════════════════════════════════ -->
+<div class="admin-dashboard" id="adminDashboard" style="display:none;">
+
+  <!-- Top Bar -->
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <div class="admin-brand">DIGI<span>スタート</span> <small>Blog Admin</small></div>
+      <div class="admin-actions">
+        <a href="blog.html" class="btn-secondary" target="_blank">View Blog ↗</a>
+        <button class="btn-logout" onclick="handleLogout()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-content">
+
+    <!-- New Post Form -->
+    <div class="admin-section">
+      <h2 id="formHeading">Create New Post</h2>
+
+      <form id="postForm" onsubmit="return handlePostSubmit(event)">
+        <input type="hidden" id="editPostId" value="">
+
+        <div class="form-field">
+          <label for="postTitle">Title</label>
+          <input type="text" id="postTitle" placeholder="Enter blog post title..." required>
+        </div>
+
+        <div class="form-field">
+          <label for="postTag">Category Tag</label>
+          <select id="postTag">
+            <option value="Digital Tips">Digital Tips</option>
+            <option value="SEO & MEO">SEO & MEO</option>
+            <option value="SNS Growth">SNS Growth</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Business Tips">Business Tips</option>
+            <option value="Multilingual">Multilingual</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="postIcon">Icon Class</label>
+          <input type="text" id="postIcon" placeholder="e.g. fa-solid fa-newspaper" value="fa-solid fa-pen-nib">
+        </div>
+
+        <div class="form-field">
+          <label for="postExcerpt">Short Excerpt</label>
+          <textarea id="postExcerpt" rows="2" placeholder="Brief summary shown on blog cards..." required></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="postContent">Full Content (HTML supported)</label>
+          <textarea id="postContent" rows="12" placeholder="Write your blog post content here. You can use HTML tags like <h3>, <p>, <ul>, <li>, <strong>..." required></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="postImage">Photo</label>
+          <input type="file" id="postImage" accept="image/*" onchange="previewImage(event)">
+          <div class="image-preview" id="imagePreview"></div>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-primary" id="submitBtn">Publish Post →</button>
+          <button type="button" class="btn-secondary" id="cancelEditBtn" style="display:none;" onclick="cancelEdit()">Cancel Edit</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Existing Posts -->
+    <div class="admin-section">
+      <h2>Published Posts <span class="post-count" id="postCount">0</span></h2>
+      <div id="postsList" class="posts-list"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/blogadmin.js"></script>
+</body>
+</html>

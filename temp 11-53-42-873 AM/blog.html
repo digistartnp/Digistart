@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | DIGIスタート</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8R2R9YyQz8+1fK6K0Xr2Y5G5m9vDOMg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/blog.css">
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION (same as index.html)
+════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="DIGIスタート Logo">
+      <span class="nav-logo-text">DIGI<span>スタート</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html"          data-i18n="nav_home">Home</a></li>
+      <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="index.html#pricing"  data-i18n="nav_pricing">Pricing</a></li>
+      <li><a href="index.html#about"    data-i18n="nav_about">About</a></li>
+      <li><a href="index.html#faq"      data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="blog.html"           data-i18n="nav_blog">Blog</a></li>
+      <li><a href="index.html#contact"  data-i18n="nav_contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn active" onclick="setLang('jp')">JP</button>
+        <button class="lang-btn" onclick="setLang('np')">नेपाली</button>
+      </div>
+      <a href="index.html#contact" class="nav-cta" data-i18n="nav_cta">Apply Now →</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html"          onclick="toggleMenu()" data-i18n="nav_home">Home</a>
+  <a href="index.html#services" onclick="toggleMenu()" data-i18n="nav_services">Services</a>
+  <a href="index.html#pricing"  onclick="toggleMenu()" data-i18n="nav_pricing">Pricing</a>
+  <a href="index.html#about"    onclick="toggleMenu()" data-i18n="nav_about">About</a>
+  <a href="index.html#faq"      onclick="toggleMenu()" data-i18n="nav_faq">FAQ</a>
+  <a href="blog.html"           onclick="toggleMenu()" data-i18n="nav_blog">Blog</a>
+  <a href="index.html#contact"  onclick="toggleMenu()" data-i18n="nav_contact">Contact</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOG HERO
+════════════════════════════════════════════ -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="section-label" data-i18n="blog_label">Our Blog</div>
+    <h2 class="section-title" data-i18n="blog_page_title">Insights & Tips</h2>
+    <p class="section-sub" data-i18n="blog_page_sub">Practical guides, digital strategies, and stories to help your business grow online.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOG GRID
+════════════════════════════════════════════ -->
+<div class="blog-grid-container">
+  <div class="blog-grid">
+    <!-- Cards rendered by blog.js -->
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOG MODAL
+════════════════════════════════════════════ -->
+<div class="blog-modal-overlay" id="blogModalOverlay">
+  <div class="blog-modal">
+    <button class="blog-modal-close" onclick="closeBlogModal()">&times;</button>
+    <div class="blog-modal-icon" id="blogModalIcon"></div>
+    <span class="blog-modal-tag" id="blogModalTag"></span>
+    <span class="blog-modal-date" id="blogModalDate"></span>
+    <h2 id="blogModalTitle"></h2>
+    <div class="blog-modal-content" id="blogModalContent"></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.png" alt="DIGIスタート">
+          <span class="footer-logo-text">DIGI<span>スタート</span></span>
+        </a>
+        <p class="footer-tagline" data-i18n="footer_tagline">Start smart. Start digital. Your trusted partner in digital transformation.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61576693414774" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/digi-start-2583793b9/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/digistartjp/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=digistartnp@gmail.com" class="social-link" target="_blank" rel="noopener" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer_nav">Navigation</h5>
+        <ul>
+          <li><a href="index.html"          data-i18n="nav_home">Home</a></li>
+          <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="index.html#about"    data-i18n="nav_about">About</a></li>
+          <li><a href="index.html#faq"      data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="blog.html"           data-i18n="nav_blog">Blog</a></li>
+          <li><a href="index.html#contact"  data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer_services">Services</h5>
+        <ul>
+          <li><a href="index.html#services" data-i18n="svc1_title">Website</a></li>
+          <li><a href="index.html#services" data-i18n="svc2_title">SNS Management</a></li>
+          <li><a href="index.html#services" data-i18n="svc3_title">Digital Transformation</a></li>
+          <li><a href="index.html#services" data-i18n="svc4_footer">MEO + QR Menus + SNS Link</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer_lang">Languages</h5>
+        <ul>
+          <li><a href="#" onclick="setLang('en')">English</a></li>
+          <li><a href="#" onclick="setLang('jp')">日本語</a></li>
+          <li><a href="#" onclick="setLang('np')">नेपाली</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 DIGIスタート. All rights reserved.</div>
+      <div class="footer-langs">
+        <span onclick="setLang('en')">EN</span>
+        <span onclick="setLang('jp')">日本語</span>
+        <span onclick="setLang('np')">नेपाली</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/main.js"></script>
+<script src="js/blog.js"></script>
+<!-- Ensure language and blog cards are initialized after all scripts are loaded -->
+<script>
+  // Wait for both main.js and blog.js to be loaded, then set language and render blog
+  window.addEventListener('DOMContentLoaded', function() {
+    setLang(localStorage.getItem('lang') || 'jp');
+  });
+</script>
+
+</body>
+</html>

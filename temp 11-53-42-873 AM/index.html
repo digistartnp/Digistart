@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIGIスタート | Start Smart. Start Digital.</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8R2R9YyQz8+1fK6K0Xr2Y5G5m9vDOMg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<style>
+  .original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 0.5em;
+    display: inline-block;
+  }
+  .discounted-price {
+    color: #1CC8C8;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+  .discount-label {
+    background: #1CC8C8;
+    color: #fff;
+    font-size: 0.75em;
+    border-radius: 20px;
+    padding: 3px 8px;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-left: 0.3em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+<!-- Vercel Speed Insights -->
+<script defer src="https://speed.vercel.com/insights.js"></script>
+<!-- End Vercel Speed Insights -->
+     NAVIGATION
+════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="#home" class="nav-logo">
+      <img src="images/logo.png" alt="DIGIスタート Logo">
+      <span class="nav-logo-text">DIGI<span>スタート</span></span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="nav-links">
+      <li><a href="#home"     data-i18n="nav_home">Home</a></li>
+      <li><a href="#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="#pricing"  data-i18n="nav_pricing">Pricing</a></li>
+      <li><a href="#about"    data-i18n="nav_about">About</a></li>
+      <li><a href="#faq"      data-i18n="nav_faq">FAQ</a></li>
+
+      <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
+    </ul>
+
+    <!-- Right Side: Language + CTA -->
+    <div class="nav-right">
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn active"        onclick="setLang('jp')">JP</button>
+        <button class="lang-btn"        onclick="setLang('np')">नेपाली</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="nav_cta">Apply Now →</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"     onclick="toggleMenu()" data-i18n="nav_home">Home</a>
+  <a href="#services" onclick="toggleMenu()" data-i18n="nav_services">Services</a>
+  <a href="#pricing"  onclick="toggleMenu()" data-i18n="nav_pricing">Pricing</a>
+  <a href="#about"    onclick="toggleMenu()" data-i18n="nav_about">About</a>
+  <a href="#faq"      onclick="toggleMenu()" data-i18n="nav_faq">FAQ</a>
+
+  <a href="#contact"  onclick="toggleMenu()" data-i18n="nav_contact">Contact</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-bg-dots"></div>
+  <div class="hero-bg-shape"></div>
+
+  <div class="hero-inner">
+
+    <!-- Hero Text -->
+    <div class="hero-content">
+      <div class="hero-badge" data-i18n="hero_badge">Digital Marketing Agency</div>
+      <h1 class="hero-title">
+        <span data-i18n="hero_title_1">We Help</span><br>
+        <span class="accent" data-i18n="hero_title_2">To Go Digital</span>
+        <div class="offer-container">
+          <span class="hero-50off"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i> 50% OFF <i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
+        </div>
+      </h1>
+      <p class="hero-sub" data-i18n="hero_sub">
+        Start smart. Start digital. We transform traditional businesses into modern digital powerhouses — websites, social media, and full digital transformation.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary"   data-i18n="hero_cta1">Get Started →</a>
+        <a href="#services" class="btn-secondary" data-i18n="hero_cta2">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">4+</div>
+          <div class="stat-label" data-i18n="stat1">Core Services</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label" data-i18n="stat2">Client Focus</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label" data-i18n="stat3">Languages</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Visual Card -->
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-main-card">
+          <div class="hero-service-tag"  data-i18n="hero_card_tag">Digital Transformation</div>
+          <div class="hero-card-title"   data-i18n="hero_card_title">Your Business, Reimagined</div>
+          <div class="hero-card-desc"    data-i18n="hero_card_desc">We bridge the gap between traditional operations and the digital future.</div>
+          <div class="hero-card-metrics">
+            <div class="metric-pill">
+              <div class="mp-val">↑85%</div>
+              <div class="mp-label" data-i18n="mp1">Online Reach</div>
+            </div>
+            <div class="metric-pill">
+              <div class="mp-val">3×</div>
+              <div class="mp-label" data-i18n="mp2">Engagement</div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating badges -->
+        <div class="float-card float-card-1">
+          <div class="fc-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+          <div class="fc-label" data-i18n="fc1_label">Website</div>
+          <div class="fc-val"   data-i18n="fc1_val">Live & Fast</div>
+        </div>
+        <div class="float-card float-card-2">
+          <div class="fc-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div>
+          <div class="fc-label" data-i18n="fc2_label">SNS Growth</div>
+          <div class="fc-val">+2.4k</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SERVICES SECTION
+════════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+
+    <div class="services-header reveal">
+      <div class="section-label" data-i18n="svc_label">What We Do</div>
+      <h2 class="section-title" data-i18n="svc_title">Our Services</h2>
+      <p class="section-sub" data-i18n="svc_sub">Everything you need to build a strong digital presence.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Service 1: Website -->
+      <div class="service-card reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+        <h3 class="svc-title" data-i18n="svc1_title">Website</h3>
+        <p class="svc-desc"   data-i18n="svc1_desc">Professional, fast-loading websites tailored to your brand.</p>
+        <div class="svc-tags">
+          <span class="svc-tag" data-i18n="svc1_t1">Landing Page</span>
+          <span class="svc-tag" data-i18n="svc1_t2">E-Commerce</span>
+          <span class="svc-tag" data-i18n="svc1_t3">Corporate Site</span>
+        </div>
+      </div>
+
+      <!-- Service 2: SNS Management -->
+      <div class="service-card reveal">
+        <div class="svc-num">02</div>
+        <div class="svc-icon"><i class="fa-solid fa-hashtag" aria-hidden="true"></i></div>
+        <h3 class="svc-title" data-i18n="svc2_title">SNS Management</h3>
+        <p class="svc-desc"   data-i18n="svc2_desc">Build your community and grow your brand on Instagram, Facebook, and more.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Instagram</span>
+          <span class="svc-tag">Facebook</span>
+          <span class="svc-tag" data-i18n="svc2_t3">Content</span>
+        </div>
+      </div>
+
+      <!-- Service 3: Digital Transformation -->
+      <div class="service-card reveal">
+        <div class="svc-num">03</div>
+        <div class="svc-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+        <h3 class="svc-title" data-i18n="svc3_title">Digital Transformation</h3>
+        <p class="svc-desc"   data-i18n="svc3_desc">Move beyond fax machines and paper. We modernize your business with digital tools.</p>
+        <div class="svc-tags">
+          <span class="svc-tag" data-i18n="svc3_t1">Consulting</span>
+          <span class="svc-tag" data-i18n="svc3_t2">Automation</span>
+          <span class="svc-tag" data-i18n="svc3_t3">Strategy</span>
+        </div>
+      </div>
+
+      <!-- Service 4: Restaurant Digital Growth -->
+      <div class="service-card reveal">
+        <div class="svc-num">04</div>
+        <div class="svc-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+        <h3 class="svc-title" data-i18n="svc4_title">MEO + QR Code Menus + SNS Integration</h3>
+        <p class="svc-desc" data-i18n="svc4_desc">Optimize your Google Maps button to open your new landing page, generate branded QR table menus, and link your Instagram/SNS profiles directly to your fast site.</p>
+        <div class="svc-tags">
+          <span class="svc-tag" data-i18n="svc4_t1">Google Maps Order</span>
+          <span class="svc-tag" data-i18n="svc4_t2">Branded QR Menu</span>
+          <span class="svc-tag" data-i18n="svc4_t3">Instagram/SNS</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     PRICING SECTION
+════════════════════════════════════════════ -->
+<section id="pricing" class="pricing-section">
+  <div class="section-label" data-i18n="pricing_label">Transparent Pricing</div>
+  <h2 class="heading" data-i18n="pricing_heading">Simple Plans, Real Results</h2>
+  <p class="subheading" data-i18n="pricing_subheading"><span style="color: #1CC8C8; font-weight: bold;"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i> 50% OFF ALL PLANS <i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span><br>No hidden fees, no surprises. Special Go Digital Package! Pick your currency and launch your digital presence today.</p>
+
+  <!-- Currency toggle -->
+  <div class="toggle-row">
+    <button class="toggle-btn active" id="btn-jpy" onclick="setCurrency('jpy')">¥ JPY</button>
+    <button class="toggle-btn" id="btn-usd" onclick="setCurrency('usd')">$ USD</button>
+  </div>
+
+  <div class="plans-grid">
+    <div class="plan-card">
+      <span class="plan-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+      <div class="plan-name" data-i18n="plan_go_name">Go Digital</div>
+      <div class="plan-tagline" data-i18n="plan_go_tagline">For shops & small businesses</div>
+      <div class="plan-price">
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥49,800</span>
+          <span class="discounted-price price-jpy">¥24,900</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$330</span>
+          <span class="discounted-price price-usd">$165</span>
+        </div>
+      </div>
+      <div class="plan-note" data-i18n="plan_go_note">One-time payment · Delivered in 1–2 weeks</div>
+      <ul class="plan-features">
+        <li data-i18n="plan_go_f1">Professional landing page (1 page)</li>
+        <li data-i18n="plan_go_f2">Mobile-optimized & fast loading</li>
+        <li data-i18n="plan_go_f3">Google Maps (MEO) setup</li>
+        <li data-i18n="plan_go_f4">Branded QR code menu</li>
+        <li data-i18n="plan_go_f5">1 language (EN or JP)</li>
+        <li data-i18n="plan_go_f6">30-day post-launch support</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
+    </div>
+    <div class="plan-card popular">
+      <div class="popular-badge" data-i18n="popular_badge">Most Popular</div>
+      <span class="plan-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+      <div class="plan-name" data-i18n="plan_build_name">Build & Grow</div>
+      <div class="plan-tagline" data-i18n="plan_build_tagline">For foreign businesses entering Japan</div>
+      <div class="plan-price">
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥128,000</span>
+          <span class="discounted-price price-jpy">¥64,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$850</span>
+          <span class="discounted-price price-usd">$425</span>
+        </div>
+      </div>
+      <div class="plan-note" data-i18n="plan_build_note">One-time + optional retainer · Delivered in 3–4 weeks</div>
+      <ul class="plan-features">
+        <li data-i18n="plan_build_f1">Full website (up to 5 pages)</li>
+        <li data-i18n="plan_build_f2">Bilingual content (EN + JP)</li>
+        <li data-i18n="plan_build_f3">Google Maps (MEO) optimization</li>
+        <li data-i18n="plan_build_f4">SNS profile setup (IG + FB)</li>
+        <li data-i18n="plan_build_f5">1 month content management</li>
+        <li data-i18n="plan_build_f6">60-day support</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
+    </div>
+    <div class="plan-card">
+      <span class="plan-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>
+      <div class="plan-name" data-i18n="plan_full_name">Full Digital</div>
+      <div class="plan-tagline" data-i18n="plan_full_tagline">For ambitious transformation</div>
+      <div class="plan-price">
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥268,000</span>
+          <span class="discounted-price price-jpy">¥134,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$1,780</span>
+          <span class="discounted-price price-usd">$890</span>
+        </div>
+      </div>
+      <div class="plan-note" data-i18n="plan_full_note">One-time payment · Delivered in 4–6 weeks</div>
+      <ul class="plan-features">
+        <li data-i18n="plan_full_f1">Corporate website (unlimited pages)</li>
+        <li data-i18n="plan_full_f2">Trilingual support (EN + JP + NP)</li>
+        <li data-i18n="plan_full_f3">Full MEO + local SEO strategy</li>
+        <li data-i18n="plan_full_f4">E-commerce or booking integration</li>
+        <li data-i18n="plan_full_f5">Digital workflow audit & automation</li>
+        <li data-i18n="plan_full_f6">3 months SNS management</li>
+        <li data-i18n="plan_full_f7">Priority support</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
+    </div>
+  </div>
+
+  <div class="section-divider"><span class="section-divider-label" data-i18n="monthly_label">Monthly Plans</span></div>
+  <div class="sub-label" data-i18n="monthly_sub_label">Monthly Subscriptions</div>
+  <h3 class="sub-heading" data-i18n="monthly_heading">Keep Growing Every Month</h3>
+  <p class="sub-sub" data-i18n="monthly_subheading">Add ongoing content, management, and SEO retainer services on top of any one-time plan — or subscribe standalone.</p>
+
+  <div class="subs-grid">
+    <div class="sub-card">
+      <div class="sub-card-header">
+        <span class="sub-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span>
+        <span class="sub-badge badge-green">Starter</span>
+      </div>
+      <div class="sub-name" data-i18n="sub1_name">SNS Essentials</div>
+      <div class="sub-desc" data-i18n="sub1_desc">Perfect for businesses that just launched and need a consistent social presence.</div>
+      <div class="sub-price">
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥18,000</span>
+          <span class="discounted-price price-jpy">¥9,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$120</span>
+          <span class="discounted-price price-usd">$60</span>
+        </div>
+        <span> / mo</span>
+      </div>
+      <div class="sub-period" data-i18n="sub1_period">Billed monthly · Cancel anytime</div>
+      <ul class="sub-features">
+        <li data-i18n="sub1_f1">8 posts/month (IG or FB)</li>
+        <li data-i18n="sub1_f2">Caption writing (EN or JP)</li>
+        <li data-i18n="sub1_f3">Monthly performance report</li>
+        <li data-i18n="sub1_f4">Story updates (4/month)</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
+    </div>
+    <div class="sub-card featured">
+      <div class="sub-card-header">
+        <span class="sub-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
+        <span class="sub-badge badge-gold">Popular</span>
+      </div>
+      <div class="sub-name" data-i18n="sub2_name">Growth Retainer</div>
+      <div class="sub-desc" data-i18n="sub2_desc">Full-service monthly management: content, SEO, and map optimization to keep traffic growing.</div>
+      <div class="sub-price">
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥38,000</span>
+          <span class="discounted-price price-jpy">¥19,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$252</span>
+          <span class="discounted-price price-usd">$126</span>
+        </div>
+        <span> / mo</span>
+      </div>
+      <div class="sub-period" data-i18n="sub2_period">Billed monthly · Cancel anytime</div>
+      <ul class="sub-features">
+        <li data-i18n="sub2_f1">16 posts/month (IG + FB)</li>
+        <li data-i18n="sub2_f2">Bilingual captions (EN + JP)</li>
+        <li data-i18n="sub2_f3">MEO monthly optimization</li>
+        <li data-i18n="sub2_f4">Google profile updates</li>
+        <li data-i18n="sub2_f5">Weekly performance report</li>
+        <li data-i18n="sub2_f6">1 reel or short video/month</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
+    </div>
+    <div class="sub-card">
+      <div class="sub-card-header">
+        <span class="sub-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+        <span class="sub-badge badge-blue">Pro</span>
+      </div>
+      <div class="sub-name" data-i18n="sub3_name">Full Digital Partner</div>
+      <div class="sub-desc" data-i18n="sub3_desc">Your outsourced digital team — strategy, content, SEO, and website updates every month.</div>
+      <div class="sub-price">
+        <div class="price-row price-jpy">
+          <span class="original-price price-jpy">¥78,000</span>
+          <span class="discounted-price price-jpy">¥39,000</span>
+          <span class="discount-label">50% OFF</span>
+        </div>
+        <div class="price-row price-usd">
+          <span class="original-price price-usd">$518</span>
+          <span class="discounted-price price-usd">$259</span>
+        </div>
+        <span> / mo</span>
+      </div>
+      <div class="sub-period" data-i18n="sub3_period">Billed monthly · Cancel anytime</div>
+      <ul class="sub-features">
+        <li data-i18n="sub3_f1">Unlimited posts across all platforms</li>
+        <li data-i18n="sub3_f2">Trilingual content (EN + JP + NP)</li>
+        <li data-i18n="sub3_f3">Monthly website updates (up to 4)</li>
+        <li data-i18n="sub3_f4">Full MEO + local SEO management</li>
+        <li data-i18n="sub3_f5">4 reels or short videos/month</li>
+        <li data-i18n="sub3_f6">Dedicated account manager</li>
+        <li data-i18n="sub3_f7">Priority response within 4hrs</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-i18n="plan_cta">Get Started →</a>
+    </div>
+  </div>
+
+  <div class="section-divider"><span class="section-divider-label" data-i18n="addons_divider">Add-Ons</span></div>
+  <div class="addons-label" data-i18n="addons_label">Add-Ons</div>
+  <h3 class="addons-heading" data-i18n="addons_heading">Enhance Your Plan</h3>
+  <p class="addons-sub" data-i18n="addons_sub">Stack these on top of any one-time or monthly plan to get exactly what your business needs.</p>
+
+  <div class="addons-grid">
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+          <div class="addon-name" data-i18n="addon1_name">Extra Page</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥8,000</span>
+          <span class="price-usd">$53</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon1_desc">Add an additional page to your website (About, Menu, Services, etc.).</div>
+      <span class="addon-tag" data-i18n="addon1_tag">One-time</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji"><i class="fa-solid fa-language" aria-hidden="true"></i></span>
+          <div class="addon-name" data-i18n="addon2_name">Extra Language</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥12,000</span>
+          <span class="price-usd">$80</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon2_desc">Add a full translation layer to your site in EN, JP, or Nepali.</div>
+      <span class="addon-tag" data-i18n="addon2_tag">One-time</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji"><i class="fa-solid fa-camera" aria-hidden="true"></i></span>
+          <div class="addon-name" data-i18n="addon3_name">Content Shoot</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥22,000</span>
+          <span class="price-usd">$146</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon3_desc">Professional photo/video session for social media and website content.</div>
+      <span class="addon-tag" data-i18n="addon3_tag">One-time</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+          <div class="addon-name" data-i18n="addon4_name">MEO Boost</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥9,800</span>
+          <span class="price-usd">$65</span>
+          <span style="font-size:.8rem;color:var(--muted)">/mo</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon4_desc">Ongoing Google Maps ranking optimization and review management.</div>
+      <span class="addon-tag" data-i18n="addon4_tag">Monthly</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></span>
+          <div class="addon-name" data-i18n="addon5_name">E-Commerce Setup</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥48,000</span>
+          <span class="price-usd">$318</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon5_desc">Add an online shop or booking system to your existing website.</div>
+      <span class="addon-tag" data-i18n="addon5_tag">One-time</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji"><i class="fa-solid fa-film" aria-hidden="true"></i></span>
+          <div class="addon-name" data-i18n="addon6_name">रील/छोटो भिडिओ</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥14,000</span>
+          <span class="price-usd">$93</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon6_desc">टिकटक र इन्स्टाग्रामका लागि पेशेवर भिडिओ निर्माण।</div>
+      <span class="addon-tag" data-i18n="addon6_tag">प्रति भिडिओ</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+          <div class="addon-name" data-i18n="addon7_name">Email Newsletter</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥11,000</span>
+          <span class="price-usd">$73</span>
+          <span style="font-size:.8rem;color:var(--muted)">/mo</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon7_desc">Monthly newsletter designed and sent to your customer list.</div>
+      <span class="addon-tag" data-i18n="addon7_tag">Monthly</span>
+    </div>
+    <div class="addon-card">
+      <div class="addon-top">
+        <div class="addon-icon-name">
+          <span class="addon-emoji"><i class="fa-solid fa-link" aria-hidden="true"></i></span>
+          <div class="addon-name" data-i18n="addon8_name">QR Menu Update</div>
+        </div>
+        <div class="addon-price">
+          <span class="price-jpy">¥3,500</span>
+          <span class="price-usd">$23</span>
+        </div>
+      </div>
+      <div class="addon-desc" data-i18n="addon8_desc">Update your digital menu content anytime — seasonal, new items, price changes.</div>
+      <span class="addon-tag" data-i18n="addon8_tag">Per update</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+
+      <!-- Left: Visual Card -->
+      <div class="about-visual reveal">
+        <div class="about-card-main">
+          <div class="about-tagline">
+            <span class="ac" data-i18n="about_tagline_1">Start smart.</span><br>
+            <span data-i18n="about_tagline_2">Start digital.</span>
+          </div>
+          <p class="about-card-desc" data-i18n="about_card_desc">
+            DIGIスタート was born from a simple belief: every business deserves a modern digital presence. We work with shops, entrepreneurs, and growing companies across Japan and beyond.
+          </p>
+          <div class="about-metrics">
+            <div class="am-item">
+              <div class="am-val">3</div>
+              <div class="am-label" data-i18n="am1">Languages Supported</div>
+            </div>
+            <div class="am-item">
+              <div class="am-val">∞</div>
+              <div class="am-label" data-i18n="am2">Client Potential</div>
+            </div>
+          </div>
+          <div class="about-badge-strip">
+            <span class="about-badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Japan</span>
+            <span class="about-badge"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> Nepal</span>
+            <span class="about-badge"><i class="fa-solid fa-globe" aria-hidden="true"></i> Global</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="about-content reveal">
+        <div class="section-label" data-i18n="about_label">Who We Are</div>
+        <h2 class="section-title" data-i18n="about_title">About DIGIスタート</h2>
+        <p class="section-sub"   data-i18n="about_sub">We're a multilingual digital marketing agency helping businesses break into the digital world.</p>
+
+        <div class="about-values">
+          <div class="value-item">
+            <div class="vi-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div>
+            <div class="vi-text">
+              <h4 data-i18n="val1_title">Result-Driven</h4>
+              <p  data-i18n="val1_desc">Every project is built around measurable outcomes that grow your business.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="vi-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+            <div class="vi-text">
+              <h4 data-i18n="val2_title">Multilingual Support</h4>
+              <p  data-i18n="val2_desc">We communicate in English, Japanese, and Nepali — no barriers, no confusion.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="vi-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+            <div class="vi-text">
+              <h4 data-i18n="val3_title">Accessible & Affordable</h4>
+              <p  data-i18n="val3_desc">Digital transformation for everyone, not just big corporations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FAQ SECTION
+════════════════════════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-inner">
+
+      <!-- Left: Intro -->
+      <div class="faq-intro reveal">
+        <div class="section-label" data-i18n="faq_label">Got Questions?</div>
+        <h2 class="section-title" data-i18n="faq_title">Frequently Asked</h2>
+        <p class="section-sub"   data-i18n="faq_sub">Can't find your answer? Reach out to us directly.</p>
+        <br>
+        <a href="#contact" class="btn-primary" data-i18n="faq_cta">Ask Us Directly →</a>
+      </div>
+
+      <!-- Right: FAQ List -->
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq1_q">What services does DIGIスタート offer?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq1_a">We offer three core services: Website Development, SNS Management, and Digital Transformation consulting.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq2_q">What languages do you support?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq2_a">We operate fully in English, Japanese (日本語), and Nepali (नेपाली).</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq3_q">How long does it take to build a website?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq3_a">A landing page takes 1–2 weeks. A full corporate or e-commerce website typically takes 3–6 weeks.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq4_q">How do I get started?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq4_a">Fill out the contact form or reach us via social media. We'll schedule a free consultation.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq5_q">Do you work with small businesses?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq5_a">Absolutely! Small and medium businesses are at the heart of what we do. We offer flexible packages.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq6_q">What is digital transformation?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq6_a">Replacing outdated tools (fax, paper) with modern digital systems: online booking, digital payments, cloud storage, and online marketing.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq7_q">What is MEO (Map Engine Optimization)?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq7_a">MEO ensures your business is visible and optimized on Google Maps. We set up your "Order" button to direct customers straight to your landing page, increasing orders and engagement.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq8_q">How do QR Code Menus help my business?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq8_a">Branded QR codes on table tents or displays let customers instantly access your digital menu or services. They're fast, contactless, and drive traffic to your site—perfect for restaurants, cafes, and service businesses.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="faq9_q">How do you integrate Instagram and SNS?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a" data-i18n="faq9_a">We link your Instagram profile bio and SNS channels directly to your new landing page, creating a single hub for all customer interactions. One link guides them to your website, services, and social channels.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT SECTION
+════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+
+      <!-- Left: Info -->
+      <div class="contact-info reveal">
+        <div class="section-label" data-i18n="contact_label">Get In Touch</div>
+        <h2 class="section-title" data-i18n="contact_title">Let's Start Your Digital Journey</h2>
+        <p class="section-sub"   data-i18n="contact_sub">Ready to go digital? We'll get back to you within 24 hours.</p>
+
+        <div class="contact-methods">
+          <div class="cm-item">
+            <div class="cm-icon"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></div>
+            <div>
+              <div class="cm-label" data-i18n="cm_fb">Facebook</div>
+              <div class="cm-val"><a href="https://www.facebook.com/profile.php?id=61576693414774" target="_blank" rel="noopener">DIGIスタート</a></div>
+            </div>
+          </div>
+          <div class="cm-item">
+            <div class="cm-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></div>
+            <div>
+              <div class="cm-label" data-i18n="cm_li">LinkedIn</div>
+              <div class="cm-val"><a href="https://www.linkedin.com/in/digi-start-2583793b9/" target="_blank" rel="noopener">DIGIスタート</a></div>
+            </div>
+          </div>
+          <div class="cm-item">
+            <div class="cm-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></div>
+            <div>
+              <div class="cm-label" data-i18n="cm_ig">Instagram</div>
+              <div class="cm-val"><a href="https://www.instagram.com/digistartjp/" target="_blank" rel="noopener">@digistartjp</a></div>
+            </div>
+          </div>
+          <div class="cm-item">
+            <div class="cm-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+            <div>
+              <div class="cm-label" data-i18n="cm_email">Email</div>
+              <div class="cm-val"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=digistartnp@gmail.com" target="_blank" rel="noopener">digistartnp@gmail.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap reveal">
+        <div class="form-title" data-i18n="form_title">Apply Now — It's Free</div>
+
+        <form id="contactForm" action="https://formspree.io/f/xgonprwq" method="POST" onsubmit="return handleFormSubmit(event);" class="p-6 bg-white rounded-xl border border-gray-200">
+          <div class="form-group">
+            <label for="nameInput" class="block text-sm font-semibold mb-1">Name</label>
+            <input id="nameInput" name="name" type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-400" placeholder="Your name" />
+          </div>
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="emailInput" class="block text-sm font-semibold mb-1">Email</label>
+            <input id="emailInput" name="email" type="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-400" placeholder="email@example.com" />
+          </div>
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="messageInput" class="block text-sm font-semibold mb-1">Message</label>
+            <textarea id="messageInput" name="message" rows="5" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-400" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" style="margin-top: 24px;">Send Message</button>
+        <p id="formSuccess" class="form-success" style="display:none"></p>
+        </form>
+
+        <p id="formNote" data-i18n="form_note" style="margin-top: 16px; font-size: 14px; color: var(--text-light);"></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <img src="images/logo.png" alt="DIGIスタート">
+          <span class="footer-logo-text">DIGI<span>スタート</span></span>
+        </a>
+        <p class="footer-tagline" data-i18n="footer_tagline">Start smart. Start digital. Your trusted partner in digital transformation.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61576693414774" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/digi-start-2583793b9/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/digistartjp/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=digistartnp@gmail.com" class="social-link" target="_blank" rel="noopener" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="footer-col">
+        <h5 data-i18n="footer_nav">Navigation</h5>
+        <ul>
+          <li><a href="#home"     data-i18n="nav_home">Home</a></li>
+          <li><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#about"    data-i18n="nav_about">About</a></li>
+          <li><a href="#faq"      data-i18n="nav_faq">FAQ</a></li>
+
+          <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h5 data-i18n="footer_services">Services</h5>
+        <ul>
+          <li><a href="#services" data-i18n="svc1_title">Website</a></li>
+          <li><a href="#services" data-i18n="svc2_title">SNS Management</a></li>
+          <li><a href="#services" data-i18n="svc3_title">Digital Transformation</a></li>
+          <li><a href="#services" data-i18n="svc4_footer">MEO + QR Menus + SNS Link</a></li>
+        </ul>
+      </div>
+
+      <!-- Languages -->
+      <div class="footer-col">
+        <h5 data-i18n="footer_lang">Languages</h5>
+        <ul>
+          <li><a href="#" onclick="setLang('en')">English</a></li>
+          <li><a href="#" onclick="setLang('jp')">日本語</a></li>
+          <li><a href="#" onclick="setLang('np')">नेपाली</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 DIGIスタート. All rights reserved.</div>
+      <div class="footer-langs">
+        <span onclick="setLang('en')">EN</span>
+        <span onclick="setLang('jp')">日本語</span>
+        <span onclick="setLang('np')">नेपाली</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── External JS ─────────────────────────────────────────── -->
+<script>
+// Real-time Countdown Timer for 50% OFF Offer (30 days)
+function initCountdown() {
+  const countdownElement = document.getElementById('countdown');
+  if (!countdownElement) return;
+  
+  // Persist the expiration date in localStorage so it survives page refreshes
+  const STORAGE_KEY = 'offerExpirationDate';
+  let expirationDate;
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    expirationDate = new Date(parseInt(stored, 10));
+  } else {
+    expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 30);
+    localStorage.setItem(STORAGE_KEY, expirationDate.getTime().toString());
+  }
+  
+  function updateCountdown() {
+    const now = new Date();
+    const timeRemaining = expirationDate - now;
+    
+    if (timeRemaining <= 0) {
+      countdownElement.textContent = 'Offer Expired';
+      countdownElement.style.color = '#888';
+      return;
+    }
+    
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    
+    // Format as: 30d 12h 45m 30s
+    countdownElement.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+  }
+  
+  updateCountdown();
+  // Update every 1 second for real-time countdown
+  setInterval(updateCountdown, 1000);
+}
+
+// Initialize countdown when DOM is ready
+document.addEventListener('DOMContentLoaded', initCountdown);
+</script>
+<script src="js/main.js"></script>
+
+</body>
+  <!-- Vercel Speed Insights -->
+  <script defer src="https://speed.vercel.com/sdk.js" data-sdkn="@vercel/speed-insights"></script>
+</body>
+</html>
