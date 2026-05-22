@@ -77,7 +77,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       "Recent builds across education and hospitality sectors.",
     svc_project1_title: "Akarui Pokhara Edu",
     svc_project1_desc:
-      "End-to-end education site with guided counseling, visa support, and trust-building enrollment flow.",
+      "End-to-end education site with guided counseling, visa support and trust-building enrollment flow.",
     svc_project2_title: "Mustang Asian JP",
     svc_project2_desc:
       "Restaurant site with clear menus, modern branding, and fast ordering paths for dine-in or delivery.",
