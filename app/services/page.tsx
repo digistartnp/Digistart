@@ -10,7 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   Tabs,
   TabsContent,
-  TabsList,
+  TabsList ,
   TabsTrigger ,
 } from "@/components/ui/tabs";
 import { services } from "@/data/services";
@@ -52,7 +52,7 @@ export default function ServicesPage() {
                   Akarui Pokhara Edu
                 </p>
                 <p className="text-sm text-slate-600">
-                  Educational service platform with streamlined enrollment and
+                  Educational services platform with streamlined enrollment and
                   multilingual messaging.
                 </p>
                 <Button asChild>
