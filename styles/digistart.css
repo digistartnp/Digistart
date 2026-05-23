@@ -2054,6 +2054,10 @@ footer::before {
   * { cursor: none !important; }
 }
 
+@media (pointer: coarse) {
+  .cursor-glow, .cursor-dot { display: none !important; }
+}
+
 .cursor-glow {
   position: fixed;
   top: -200px;

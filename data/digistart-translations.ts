@@ -10,13 +10,13 @@ export const translations: Record<Locale, TranslationDictionary> = {
     nav_about: "About",
     nav_faq: "FAQ",
     nav_contact: "Contact",
-    nav_cta: "Book a strategy call ->",
+    nav_cta: "Book Call",
     hero_badge: "High-end software agency",
     hero_title_1: "Premium digital",
     hero_title_2: "products and platforms",
     hero_sub:
       "We design and engineer high-performance web experiences that scale. From frontend craft to backend architecture, every build is optimized for growth.",
-    hero_cta1: "Book a strategy call ->",
+    hero_cta1: "Get Started",
     hero_cta2: "View services",
     stat1: "Launches shipped",
     stat2: "Client satisfaction",
@@ -81,7 +81,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     svc_project2_title: "Mustang Asian JP",
     svc_project2_desc:
       "Restaurant site with clear menus, modern branding, and fast ordering paths for dine-in or delivery.",
-    svc_project_cta: "Visit site ->",
+    svc_project_cta: "Visit Site",
     pricing_label: "Engagement Models",
     pricing_heading: "Flexible plans for premium builds",
     pricing_subheading:
@@ -210,7 +210,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     faq_label: "FAQ",
     faq_title: "Common questions",
     faq_sub: "Have another question? Reach out anytime.",
-    faq_cta: "Ask us directly ->",
+    faq_cta: "Ask Us",
     faq1_q: "What types of companies do you work with?",
     faq1_a:
       "We support SaaS, hospitality, education, and professional services teams looking to modernize their digital presence.",
@@ -218,7 +218,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     faq2_a: "We work in English and Japanese (日本語).",
     faq3_q: "How long does a typical build take?",
     faq3_a:
-      "A sprint engagement takes 4-6 weeks. Full product builds typically take 10-14 weeks.",
+      "Frontend-only projects typically take 1 week. Full builds with backend take 3–4 weeks.",
     faq4_q: "What does your delivery process look like?",
     faq4_a:
       "We align on goals, design the experience, ship in sprints, and optimize after launch.",
@@ -250,7 +250,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     form_name: "Full name",
     form_email: "Email address",
     form_msg: "Project summary",
-    form_submit: "Send inquiry ->",
+    form_submit: "Send Inquiry",
     form_success: "Thanks! We'll reply within 24 hours.",
     footer_tagline:
       "High-end software agency delivering premium digital experiences.",
@@ -265,13 +265,13 @@ export const translations: Record<Locale, TranslationDictionary> = {
     nav_about: "私たちについて",
     nav_faq: "よくある質問",
     nav_contact: "お問い合わせ",
-    nav_cta: "相談予約 ->",
+    nav_cta: "相談予約",
     hero_badge: "ハイエンドITエージェンシー",
     hero_title_1: "プレミアムな",
     hero_title_2: "デジタル体験を構築",
     hero_sub:
       "戦略・UI/UX・エンジニアリングを一体で提供し、成長に強いWebプロダクトを最短で実装します。",
-    hero_cta1: "相談予約 ->",
+    hero_cta1: "相談予約",
     hero_cta2: "サービスを見る",
     stat1: "提供実績",
     stat2: "満足度",
@@ -325,7 +325,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     svc_project1_desc: "カウンセリングからビザ支援まで伝わる、信頼設計の教育サイト。",
     svc_project2_title: "Mustang Asian JP",
     svc_project2_desc: "メニュー訴求と注文導線を整理した飲食店サイト。",
-    svc_project_cta: "サイトを見る ->",
+    svc_project_cta: "サイトを見る",
     pricing_label: "料金プラン",
     pricing_heading: "目的に合わせた柔軟な契約",
     pricing_subheading: "ローンチからフルスタックまで、透明な見積もりでご提案します。",
@@ -451,7 +451,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     faq_label: "よくある質問",
     faq_title: "よくある質問",
     faq_sub: "ご相談はいつでも歓迎です。",
-    faq_cta: "相談する ->",
+    faq_cta: "相談する",
     faq1_q: "どんな業種でも依頼できますか？",
     faq1_a:
       "SaaS、飲食、教育、ヘルスケアなど幅広く対応しています。",
@@ -459,7 +459,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     faq2_a: "英語・日本語での対応が可能です。",
     faq3_q: "開発期間は？",
     faq3_a:
-      "スプリントは4〜6週間、フルスタックは10〜14週間が目安です。",
+      "フロントエンドのみは約1週間、バックエンドを含むフルビルドは3〜4週間が目安です。",
     faq4_q: "進行の流れは？",
     faq4_a:
       "ヒアリング→設計→実装→QA→公開→改善の流れで進行します。",
@@ -491,7 +491,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     form_name: "お名前",
     form_email: "メールアドレス",
     form_msg: "プロジェクト概要",
-    form_submit: "送信する ->",
+    form_submit: "送信する",
     form_success: "送信完了。24時間以内にご連絡します。",
     footer_tagline:
       "プレミアムなWeb体験を提供するソフトウェアエージェンシー。",
