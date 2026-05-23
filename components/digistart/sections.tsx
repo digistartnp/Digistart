@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef } from "react";
 import {
   ArrowUpRight,
   Bolt,
@@ -18,7 +18,52 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useLanguage } from "@/components/digistart/language-provider";
+import Hero3D from "@/components/digistart/hero-3d";
+import CountUp from "@/components/digistart/count-up";
+import Magnetic from "@/components/digistart/magnetic";
+import MarqueeTicker from "@/components/digistart/marquee-ticker";
+
+/* 3D tilt wrapper — outer div keeps CSS reveal/class, inner motion.div handles tilt */
+function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const sx = useSpring(x, { stiffness: 120, damping: 20 });
+  const sy = useSpring(y, { stiffness: 120, damping: 20 });
+  const rotateX = useTransform(sy, [-0.5, 0.5], [5, -5]);
+  const rotateY = useTransform(sx, [-0.5, 0.5], [-5, 5]);
+  const glareX = useTransform(sx, [-0.5, 0.5], ["0%", "100%"]);
+  const glareY = useTransform(sy, [-0.5, 0.5], ["0%", "100%"]);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    x.set((e.clientX - r.left) / r.width - 0.5);
+    y.set((e.clientY - r.top) / r.height - 0.5);
+  };
+  const onLeave = () => { x.set(0); y.set(0); };
+
+  return (
+    /* Outer div owns className (handles .reveal opacity/transform via CSS) */
+    <div ref={ref} className={className} style={{ perspective: "800px" }} onMouseMove={onMove} onMouseLeave={onLeave}>
+      {/* Inner motion.div handles only the 3D tilt — does NOT override opacity */}
+      <motion.div style={{ rotateX, rotateY, transformStyle: "preserve-3d", height: "100%" }}>
+        {/* Specular glare overlay */}
+        <motion.div
+          style={{
+            position: "absolute", inset: 0, borderRadius: "inherit", pointerEvents: "none",
+            background: `radial-gradient(circle at ${glareX} ${glareY}, rgba(255,255,255,0.055) 0%, transparent 55%)`,
+            zIndex: 10,
+          }}
+        />
+        {children}
+      </motion.div>
+    </div>
+  );
+}
 
 const socialLinks = {
   facebook: "https://www.facebook.com/profile.php?id=61576693414774",
@@ -47,61 +92,35 @@ export function HeroSection() {
           </h1>
           <p className="hero-sub">{t("hero_sub")}</p>
           <div className="hero-actions">
-            <Link href="/#contact" className="btn-primary">
-              {t("hero_cta1")}
-            </Link>
-            <Link href="/#services" className="btn-secondary">
-              {t("hero_cta2")}
-            </Link>
+            <Magnetic>
+              <Link href="/#contact" className="btn-primary">
+                {t("hero_cta1")}
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <Link href="/#services" className="btn-secondary">
+                {t("hero_cta2")}
+              </Link>
+            </Magnetic>
           </div>
           <div className="hero-stats">
             <div className="stat-item">
-              <div className="stat-num">30+</div>
+              <div className="stat-num"><CountUp to={30} suffix="+" /></div>
               <div className="stat-label">{t("stat1")}</div>
             </div>
             <div className="stat-item">
-              <div className="stat-num">96%</div>
+              <div className="stat-num"><CountUp to={96} suffix="%" /></div>
               <div className="stat-label">{t("stat2")}</div>
             </div>
             <div className="stat-item">
-              <div className="stat-num">3</div>
+              <div className="stat-num"><CountUp to={3} /></div>
               <div className="stat-label">{t("stat3")}</div>
             </div>
           </div>
         </div>
 
         <div className="hero-visual">
-          <div className="hero-card-stack">
-            <div className="hero-main-card">
-              <div className="hero-service-tag">{t("hero_card_tag")}</div>
-              <div className="hero-card-title">{t("hero_card_title")}</div>
-              <div className="hero-card-desc">{t("hero_card_desc")}</div>
-              <div className="hero-card-metrics">
-                <div className="metric-pill">
-                  <div className="mp-val">↑85%</div>
-                  <div className="mp-label">{t("mp1")}</div>
-                </div>
-                <div className="metric-pill">
-                  <div className="mp-val">3x</div>
-                  <div className="mp-label">{t("mp2")}</div>
-                </div>
-              </div>
-            </div>
-            <div className="float-card float-card-1">
-              <div className="fc-icon">
-                <Globe aria-hidden="true" />
-              </div>
-              <div className="fc-label">{t("fc1_label")}</div>
-              <div className="fc-val">{t("fc1_val")}</div>
-            </div>
-            <div className="float-card float-card-2">
-              <div className="fc-icon">
-                <ChartColumnBig aria-hidden="true" />
-              </div>
-              <div className="fc-label">{t("fc2_label")}</div>
-              <div className="fc-val">+2.4k</div>
-            </div>
-          </div>
+          <Hero3D />
         </div>
       </div>
     </section>
@@ -170,21 +189,23 @@ export function ServicesSection() {
 
         <div className="services-grid">
           {services.map((service) => (
-            <div key={service.id} className="service-card reveal">
-              <div className="svc-num">{service.id}</div>
-              <div className="svc-icon">
-                <service.icon aria-hidden="true" />
+            <TiltCard key={service.id} className="reveal">
+              <div className="service-card" style={{ height: "100%" }}>
+                <div className="svc-num">{service.id}</div>
+                <div className="svc-icon">
+                  <service.icon aria-hidden="true" />
+                </div>
+                <h3 className="svc-title">{service.title}</h3>
+                <p className="svc-desc">{service.description}</p>
+                <div className="svc-tags">
+                  {service.tags.map((tag) => (
+                    <span key={tag} className="svc-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <h3 className="svc-title">{service.title}</h3>
-              <p className="svc-desc">{service.description}</p>
-              <div className="svc-tags">
-                {service.tags.map((tag) => (
-                  <span key={tag} className="svc-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
 
@@ -241,6 +262,8 @@ export function ServicesSection() {
             </Link>
           </div>
         </div>
+
+        <MarqueeTicker />
       </div>
     </section>
   );
@@ -654,14 +677,9 @@ export function FaqSection() {
     () =>
       [
         { q: t("faq1_q"), a: t("faq1_a") },
-        { q: t("faq2_q"), a: t("faq2_a") },
         { q: t("faq3_q"), a: t("faq3_a") },
-        { q: t("faq4_q"), a: t("faq4_a") },
-        { q: t("faq5_q"), a: t("faq5_a") },
         { q: t("faq6_q"), a: t("faq6_a") },
-        { q: t("faq7_q"), a: t("faq7_a") },
         { q: t("faq8_q"), a: t("faq8_a") },
-        { q: t("faq9_q"), a: t("faq9_a") },
       ],
     [t]
   );

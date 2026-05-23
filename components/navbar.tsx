@@ -42,9 +42,6 @@ export default function Navbar() {
             <Link href="/#services">{t("nav_services")}</Link>
           </li>
           <li>
-            <Link href="/#pricing">{t("nav_pricing")}</Link>
-          </li>
-          <li>
             <Link href="/#about">{t("nav_about")}</Link>
           </li>
           <li>
@@ -95,9 +92,6 @@ export default function Navbar() {
         </Link>
         <Link href="/#services" onClick={() => setIsMobileOpen(false)}>
           {t("nav_services")}
-        </Link>
-        <Link href="/#pricing" onClick={() => setIsMobileOpen(false)}>
-          {t("nav_pricing")}
         </Link>
         <Link href="/#about" onClick={() => setIsMobileOpen(false)}>
           {t("nav_about")}

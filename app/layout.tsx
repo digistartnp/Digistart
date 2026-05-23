@@ -6,6 +6,8 @@ import { LanguageProvider } from "@/components/digistart/language-provider";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import PageTransition from "@/components/page-transition";
+import ScrollProgress from "@/components/digistart/scroll-progress";
+import CursorGlow from "@/components/digistart/cursor-glow";
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -65,6 +67,8 @@ export default function RootLayout({
       className={`${fontSans.variable} ${fontHeading.variable} ${fontJP.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-screen">
+        <CursorGlow />
+        <ScrollProgress />
         <LanguageProvider>
           <Navbar />
           <PageTransition>
