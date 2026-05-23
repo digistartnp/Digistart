@@ -1,16 +1,22 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function Magnetic({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
+  const [isTouch, setIsTouch] = useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const sx = useSpring(x, { stiffness: 200, damping: 16 });
   const sy = useSpring(y, { stiffness: 200, damping: 16 });
 
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
+
   const onMove = (e: React.MouseEvent) => {
+    if (isTouch) return;
     const el = ref.current;
     if (!el) return;
     const r = el.getBoundingClientRect();
