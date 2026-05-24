@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   ArrowUpRight,
   Bolt,
@@ -9,11 +9,16 @@ import {
   Database,
   Globe,
   Hash,
-  Lightbulb,
   Layers,
+  Lightbulb,
+  MapPin,
+  Megaphone,
   PenTool,
+  QrCode,
+  Repeat,
   Rocket,
   ShieldCheck,
+  Smartphone,
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
@@ -47,11 +52,8 @@ function TiltCard({ children, className }: { children: React.ReactNode; classNam
   const onLeave = () => { x.set(0); y.set(0); };
 
   return (
-    /* Outer div owns className (handles .reveal opacity/transform via CSS) */
     <div ref={ref} className={className} style={{ perspective: "800px" }} onMouseMove={onMove} onMouseLeave={onLeave}>
-      {/* Inner motion.div handles only the 3D tilt — does NOT override opacity */}
       <motion.div style={{ rotateX, rotateY, transformStyle: "preserve-3d", height: "100%" }}>
-        {/* Specular glare overlay */}
         <motion.div
           style={{
             position: "absolute", inset: 0, borderRadius: "inherit", pointerEvents: "none",
@@ -130,6 +132,54 @@ export function HeroSection() {
 export function ServicesSection() {
   const { t } = useLanguage();
 
+  const mosaicServices = useMemo(
+    () => [
+      {
+        id: "m01",
+        icon: Globe,
+        title: t("mos1_title"),
+        subtitle: t("mos1_subtitle"),
+        variant: "white" as const,
+      },
+      {
+        id: "m02",
+        icon: MapPin,
+        title: t("mos2_title"),
+        subtitle: t("mos2_subtitle"),
+        variant: "mint" as const,
+      },
+      {
+        id: "m03",
+        icon: QrCode,
+        title: t("mos3_title"),
+        subtitle: t("mos3_subtitle"),
+        variant: "teal" as const,
+      },
+      {
+        id: "m04",
+        icon: Repeat,
+        title: t("mos4_title"),
+        subtitle: t("mos4_subtitle"),
+        variant: "teal" as const,
+      },
+      {
+        id: "m05",
+        icon: Smartphone,
+        title: t("mos5_title"),
+        subtitle: t("mos5_subtitle"),
+        variant: "mint" as const,
+      },
+      {
+        id: "m06",
+        icon: Megaphone,
+        title: t("mos6_title"),
+        subtitle: t("mos6_subtitle"),
+        variant: "white" as const,
+      },
+    ],
+    [t]
+  );
+
   const services = useMemo(
     () => [
       {
@@ -207,6 +257,36 @@ export function ServicesSection() {
               </div>
             </TiltCard>
           ))}
+        </div>
+
+        <div className="services-mosaic">
+          <div className="mosaic-sidebar reveal">
+            <span className="mosaic-sidebar-text">
+              {t("svc_our_services")}
+            </span>
+            <span className="mosaic-sidebar-accent" aria-hidden="true" />
+          </div>
+
+          <div className="mosaic-grid">
+            {mosaicServices.map((service) => (
+              <motion.button
+                type="button"
+                key={service.id}
+                className={`mosaic-tile mosaic-tile--${service.variant} reveal`}
+                whileHover={{ y: -6 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="mosaic-tile-shine" aria-hidden="true" />
+                <span className="mosaic-icon">
+                  <service.icon aria-hidden="true" strokeWidth={1.6} />
+                </span>
+                <span className="mosaic-title">{service.title}</span>
+                {service.subtitle ? (
+                  <span className="mosaic-subtitle">{service.subtitle}</span>
+                ) : null}
+              </motion.button>
+            ))}
+          </div>
         </div>
 
         <div className="services-header reveal" style={{ marginTop: "72px" }}>
