@@ -3,12 +3,15 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { useLanguage } from "@/components/digistart/language-provider";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 16);
@@ -17,10 +20,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const navTo = (hash: string) => (e: React.MouseEvent) => {
+    setIsMobileOpen(false);
+    if (pathname === "/") {
+      e.preventDefault();
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      window.history.replaceState(null, "", `/#${hash}`);
+    } else {
+      router.push(`/#${hash}`);
+    }
+  };
+
   return (
     <nav className={isScrolled ? "scrolled" : undefined}>
       <div className="nav-inner">
-        <Link href="/#home" className="nav-logo">
+        <a href="/#home" className="nav-logo" onClick={navTo("home")}>
           <Image
             src="/images/logo.png"
             alt="DIGIスタート Logo"
@@ -32,23 +47,23 @@ export default function Navbar() {
           <span className="nav-logo-text">
             DIGI<span>スタート</span>
           </span>
-        </Link>
+        </a>
 
         <ul className="nav-links">
           <li>
-            <Link href="/#home">{t("nav_home")}</Link>
+            <a href="/#home" onClick={navTo("home")}>{t("nav_home")}</a>
           </li>
           <li>
-            <Link href="/#services">{t("nav_services")}</Link>
+            <a href="/#services" onClick={navTo("services")}>{t("nav_services")}</a>
           </li>
           <li>
-            <Link href="/#about">{t("nav_about")}</Link>
+            <a href="/#about" onClick={navTo("about")}>{t("nav_about")}</a>
           </li>
           <li>
-            <Link href="/#faq">{t("nav_faq")}</Link>
+            <a href="/#faq" onClick={navTo("faq")}>{t("nav_faq")}</a>
           </li>
           <li>
-            <Link href="/#contact">{t("nav_contact")}</Link>
+            <a href="/#contact" onClick={navTo("contact")}>{t("nav_contact")}</a>
           </li>
         </ul>
 
@@ -69,9 +84,9 @@ export default function Navbar() {
               JP
             </button>
           </div>
-          <Link href="/#contact" className="nav-cta">
+          <a href="/#contact" className="nav-cta" onClick={navTo("contact")}>
             {t("nav_cta")}
-          </Link>
+          </a>
         </div>
 
         <button
@@ -87,21 +102,11 @@ export default function Navbar() {
       </div>
 
       <div className={`mobile-menu${isMobileOpen ? " open" : ""}`}>
-        <Link href="/#home" onClick={() => setIsMobileOpen(false)}>
-          {t("nav_home")}
-        </Link>
-        <Link href="/#services" onClick={() => setIsMobileOpen(false)}>
-          {t("nav_services")}
-        </Link>
-        <Link href="/#about" onClick={() => setIsMobileOpen(false)}>
-          {t("nav_about")}
-        </Link>
-        <Link href="/#faq" onClick={() => setIsMobileOpen(false)}>
-          {t("nav_faq")}
-        </Link>
-        <Link href="/#contact" onClick={() => setIsMobileOpen(false)}>
-          {t("nav_contact")}
-        </Link>
+        <a href="/#home" onClick={navTo("home")}>{t("nav_home")}</a>
+        <a href="/#services" onClick={navTo("services")}>{t("nav_services")}</a>
+        <a href="/#about" onClick={navTo("about")}>{t("nav_about")}</a>
+        <a href="/#faq" onClick={navTo("faq")}>{t("nav_faq")}</a>
+        <a href="/#contact" onClick={navTo("contact")}>{t("nav_contact")}</a>
       </div>
     </nav>
   );
