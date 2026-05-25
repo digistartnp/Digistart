@@ -892,8 +892,16 @@ nav.scrolled {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding-bottom: 12px;
+  padding: 4px 4px 12px;
   cursor: grab;
+}
+
+@media (max-width: 640px) {
+  .projects-slider {
+    padding-inline: 16px;
+    margin-inline: -16px;
+    scroll-padding-inline-start: 16px;
+  }
 }
 
 .projects-slider:active {
@@ -2268,9 +2276,10 @@ footer::before {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding-bottom: 12px;
+    padding: 4px 16px 12px;
+    margin: 24px -16px 0;
     gap: 16px;
-    margin-top: 24px;
+    scroll-padding-inline-start: 16px;
   }
   .services-grid::-webkit-scrollbar { display: none; }
   .services-grid > * {
