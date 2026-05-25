@@ -194,8 +194,8 @@ export function ServicesSection() {
           <p className="section-sub">{t("svc_projects_sub")}</p>
         </div>
 
-        <div className="services-grid">
-          <div className="service-card reveal">
+        <div className="projects-slider">
+          <div className="project-slide service-card">
             <div className="svc-project-logo">
               <Image
                 src="https://www.akaruipokharaedu.com/assets/gallery/LOGO/Akarui%20Logo.webp"
@@ -218,7 +218,7 @@ export function ServicesSection() {
             </Link>
           </div>
 
-          <div className="service-card reveal">
+          <div className="project-slide service-card">
             <div className="svc-project-logo">
               <Image
                 src="https://mustangasian-jp.online/images/logo.png"
@@ -232,6 +232,29 @@ export function ServicesSection() {
             <p className="svc-desc">{t("svc_project2_desc")}</p>
             <Link
               href="https://mustangasian-jp.online/"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+              style={{ marginTop: "20px" }}
+            >
+              {t("svc_project_cta")}
+            </Link>
+          </div>
+
+          <div className="project-slide service-card">
+            <div className="svc-project-logo">
+              <Image
+                src="https://www.sagarmathagroupsjp.com/images/logo.png"
+                alt="Sagarmath Groups JP logo"
+                width={28}
+                height={28}
+                unoptimized
+              />
+            </div>
+            <h3 className="svc-title">{t("svc_project3_title")}</h3>
+            <p className="svc-desc">{t("svc_project3_desc")}</p>
+            <Link
+              href="https://www.sagarmathagroupsjp.com/"
               target="_blank"
               rel="noreferrer"
               className="btn-primary"
@@ -531,6 +554,74 @@ export function PricingSection() {
             <span className="addon-tag">{addon.tag}</span>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+export function MobileStandardSection() {
+  const { t } = useLanguage();
+
+  const pillars = useMemo(
+    () => [
+      {
+        id: "01",
+        icon: Rocket,
+        title: t("mob1_title"),
+        tagline: t("mob1_tagline"),
+        points: [t("mob1_p1"), t("mob1_p2"), t("mob1_p3")],
+      },
+      {
+        id: "02",
+        icon: Sparkles,
+        title: t("mob2_title"),
+        tagline: t("mob2_tagline"),
+        points: [t("mob2_p1"), t("mob2_p2"), t("mob2_p3"), t("mob2_p4")],
+      },
+      {
+        id: "03",
+        icon: ChartColumnBig,
+        title: t("mob3_title"),
+        tagline: t("mob3_tagline"),
+        points: [t("mob3_p1"), t("mob3_p2"), t("mob3_p3")],
+      },
+    ],
+    [t]
+  );
+
+  return (
+    <section id="mobile-standard">
+      <div className="container">
+        <div className="services-header reveal">
+          <div className="section-label">{t("mobile_label")}</div>
+          <h2 className="section-title">{t("mobile_title")}</h2>
+          <p className="section-sub">{t("mobile_sub")}</p>
+        </div>
+
+        <div className="services-grid">
+          {pillars.map((pillar) => (
+            <TiltCard key={pillar.id} className="reveal">
+              <div className="service-card product-tier-card" style={{ height: "100%" }}>
+                <div className="svc-num">{pillar.id}</div>
+                <div className="svc-icon">
+                  <pillar.icon aria-hidden="true" />
+                </div>
+                <h3 className="svc-title">{pillar.title}</h3>
+                <p className="prod-tagline">{pillar.tagline}</p>
+                <ul className="prod-points">
+                  {pillar.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            </TiltCard>
+          ))}
+        </div>
+
+        <blockquote className="mobile-impact-callout reveal">
+          <p className="mic-title">{t("mobile_impact_title")}</p>
+          <p className="mic-body">{t("mobile_impact_body")}</p>
+        </blockquote>
       </div>
     </section>
   );

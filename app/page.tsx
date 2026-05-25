@@ -4,6 +4,7 @@ import {
   ContactSection,
   FaqSection,
   HeroSection,
+  MobileStandardSection,
   ServicesSection,
 } from "@/components/digistart/sections";
 
@@ -13,6 +14,7 @@ export default function Home() {
       <RevealProvider>
         <HeroSection />
         <ServicesSection />
+        <MobileStandardSection />
         <AboutSection />
         <FaqSection />
         <ContactSection />

@@ -837,6 +837,33 @@ nav.scrolled {
   overflow: hidden;
 }
 
+/* ── Projects horizontal slider ──────────────────────────── */
+.projects-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 12px;
+  cursor: grab;
+}
+
+.projects-slider:active {
+  cursor: grabbing;
+}
+
+.projects-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.project-slide {
+  flex: 0 0 min(320px, 82vw);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
 .svc-project-logo img {
   width: 28px; height: 28px;
   object-fit: contain;
@@ -2567,4 +2594,29 @@ footer::before {
   background: var(--brand);
   flex-shrink: 0;
   opacity: 0.6;
+}
+
+/* ── Mobile-First Standard Section ─────────────────────────────── */
+.mobile-impact-callout {
+  margin: 48px 0 0;
+  padding: 28px 32px;
+  background: rgba(14, 165, 233, 0.06);
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  border-left: 4px solid var(--brand);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.mic-title {
+  font-family: var(--font-heading, "Sora"), sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 10px;
+}
+
+.mic-body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-soft);
+  margin: 0;
 }
