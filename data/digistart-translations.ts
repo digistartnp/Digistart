@@ -176,10 +176,15 @@ export const translations: Record<Locale, TranslationDictionary> = {
     addon8_name: "Content Update",
     addon8_desc: "Seasonal or campaign updates as needed.",
     addon8_tag: "Per update",
-    about_label: "Our Approach",
-    about_title: "DIGIスタート, built for modern growth",
+    about_label: "About Us",
+    about_title: "Start smart. Start digital.",
     about_sub:
-      "We partner with founders and product teams to deliver premium digital experiences.",
+      "We started DIGIスタート because we kept seeing the same problem: incredible businesses—from local restaurants to specialized education centers—being held back by clunky, outdated, or inaccessible technology. We believe that every business, regardless of budget, language, or technical expertise, has the right to a modern, high-performing digital presence.",
+    about_why_title: "Why we do what we do",
+    about_why_body:
+      "We aren't just an agency; we are builders. We understand the unique challenges of the Japanese market, and we know that effective communication requires more than just translation. We are fluent in English, Japanese, and \"Tech,\" allowing us to bridge the gap between complex engineering and the real-world needs of your customers.",
+    about_closing:
+      "We're here to fix the friction. Whether you need to streamline your operations, reach a new audience, or finally launch that site you've been dreaming of, we build tools that work as hard as you do.",
     about_mission:
       "Every small business, regardless of budget, language, or technical expertise, has the right to a modern digital presentation.",
     about_tagline_1: "Start smart.",
@@ -427,9 +432,14 @@ export const translations: Record<Locale, TranslationDictionary> = {
     addon8_name: "コンテンツ更新",
     addon8_desc: "季節・キャンペーンに合わせて更新。",
     addon8_tag: "更新単位",
-    about_label: "私たちの考え方",
-    about_title: "DIGIスタートについて",
-    about_sub: "戦略・デザイン・開発をつなぐパートナーです。",
+    about_label: "私たちについて",
+    about_title: "Start smart. Start digital.",
+    about_sub: "DIGIスタートを立ち上げたきっかけは、同じ課題を繰り返し目にしたことでした。地元のレストランから専門教育機関まで、素晴らしいビジネスが古くて使いにくいテクノロジーに阻まれていました。予算・言語・技術知識に関わらず、すべてのビジネスには現代的で高性能なデジタルプレゼンスを持つ権利があると信じています。",
+    about_why_title: "なぜ私たちがこの仕事をするのか",
+    about_why_body:
+      "私たちは単なる代理店ではありません—私たちはビルダーです。日本市場固有の課題を深く理解しており、効果的なコミュニケーションには単なる翻訳以上のものが必要だと知っています。英語・日本語・「テック語」に堪能な私たちが、複雑なエンジニアリングとお客様の現実のニーズをつなぐ橋渡しをします。",
+    about_closing:
+      "私たちはフリクションを解消するためにここにいます。業務の効率化、新しい顧客層へのリーチ、あるいはずっと夢見ていたサイトのローンチ—どんな目標にも、あなたと同じくらい一生懸命動くツールを構築します。",
     about_mission:
       "すべての小規模ビジネスは、予算・言語・技術知識に関わらず、現代的なデジタルプレゼンスを持つ権利がある。",
     about_tagline_1: "Start smart.",

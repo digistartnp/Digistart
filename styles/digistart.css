@@ -1620,6 +1620,40 @@ nav.scrolled {
   font-style: normal;
 }
 
+/* About story — new narrative content */
+.about-story {
+  margin-top: 28px;
+}
+
+.about-why-title {
+  font-family: var(--font-heading, "Sora"), sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0 0 12px;
+}
+
+.about-story-body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.about-story-closing {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-body);
+  font-weight: 500;
+  margin-top: 14px;
+  padding: 16px 20px;
+  border-left: 3px solid var(--brand);
+  background: var(--brand-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
 .about-values {
   margin-top: 28px;
   display: grid;

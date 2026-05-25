@@ -130,7 +130,6 @@ export function ServicesSection() {
       {
         id: "01",
         icon: Code2,
-        classification: t("prod1_class"),
         title: t("prod1_title"),
         tagline: t("prod1_tagline"),
         points: [t("prod1_p1"), t("prod1_p2"), t("prod1_p3")],
@@ -138,7 +137,6 @@ export function ServicesSection() {
       {
         id: "02",
         icon: PenTool,
-        classification: t("prod2_class"),
         title: t("prod2_title"),
         tagline: t("prod2_tagline"),
         points: [t("prod2_p1"), t("prod2_p2"), t("prod2_p3")],
@@ -146,7 +144,6 @@ export function ServicesSection() {
       {
         id: "03",
         icon: Globe,
-        classification: t("prod3_class"),
         title: t("prod3_title"),
         tagline: t("prod3_tagline"),
         points: [t("prod3_p1"), t("prod3_p2"), t("prod3_p3")],
@@ -154,7 +151,6 @@ export function ServicesSection() {
       {
         id: "04",
         icon: ShieldCheck,
-        classification: t("prod4_class"),
         title: t("prod4_title"),
         tagline: t("prod4_tagline"),
         points: [t("prod4_p1"), t("prod4_p2"), t("prod4_p3")],
@@ -176,10 +172,7 @@ export function ServicesSection() {
           {products.map((product) => (
             <TiltCard key={product.id} className="reveal">
               <div className="service-card product-tier-card" style={{ height: "100%" }}>
-                <div className="prod-tier-header">
-                  <div className="svc-num">{product.id}</div>
-                  <span className="prod-class">{product.classification}</span>
-                </div>
+                <div className="svc-num">{product.id}</div>
                 <div className="svc-icon">
                   <product.icon aria-hidden="true" />
                 </div>
@@ -581,27 +574,10 @@ export function AboutSection() {
             <h2 className="section-title">{t("about_title")}</h2>
             <p className="section-sub">{t("about_sub")}</p>
 
-            <blockquote className="about-mission-quote">
-              <p>{t("about_mission")}</p>
-              <cite>— Start smart. Start digital.</cite>
-            </blockquote>
-
-            <div className="about-values">
-              {[
-                { title: t("val1_title"), desc: t("val1_desc") },
-                { title: t("val2_title"), desc: t("val2_desc") },
-                { title: t("val3_title"), desc: t("val3_desc") },
-              ].map((value) => (
-                <div key={value.title} className="value-item">
-                  <div className="vi-icon">
-                    <Lightbulb aria-hidden="true" />
-                  </div>
-                  <div className="vi-text">
-                    <h4>{value.title}</h4>
-                    <p>{value.desc}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="about-story">
+              <h3 className="about-why-title">{t("about_why_title")}</h3>
+              <p className="about-story-body">{t("about_why_body")}</p>
+              <p className="about-story-closing">{t("about_closing")}</p>
             </div>
           </div>
         </div>
