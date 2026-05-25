@@ -295,52 +295,75 @@ export function ServicesSection() {
           <p className="section-sub">{t("svc_projects_sub")}</p>
         </div>
 
-        <div className="services-grid">
-          <div className="service-card reveal">
-            <div className="svc-project-logo">
-              <Image
-                src="https://www.akaruipokharaedu.com/assets/gallery/LOGO/Akarui%20Logo.webp"
-                alt="Akarui Pokhara Edu logo"
-                width={28}
-                height={28}
-                unoptimized
-              />
-            </div>
-            <h3 className="svc-title">{t("svc_project1_title")}</h3>
-            <p className="svc-desc">{t("svc_project1_desc")}</p>
-            <Link
-              href="https://www.akaruipokharaedu.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary"
-              style={{ marginTop: "20px" }}
-            >
-              {t("svc_project_cta")}
-            </Link>
-          </div>
-
-          <div className="service-card reveal">
-            <div className="svc-project-logo">
-              <Image
-                src="https://mustangasian-jp.online/images/logo.png"
-                alt="Mustang Asian JP logo"
-                width={28}
-                height={28}
-                unoptimized
-              />
-            </div>
-            <h3 className="svc-title">{t("svc_project2_title")}</h3>
-            <p className="svc-desc">{t("svc_project2_desc")}</p>
-            <Link
-              href="https://mustangasian-jp.online/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary"
-              style={{ marginTop: "20px" }}
-            >
-              {t("svc_project_cta")}
-            </Link>
-          </div>
+        <div className="projects-marquee-wrap">
+          <div className="projects-scroll-fade projects-scroll-fade--left" />
+          <div className="projects-scroll-fade projects-scroll-fade--right" />
+          <motion.div
+            className="projects-marquee-track"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+          >
+            {[
+              {
+                logo: "https://www.akaruipokharaedu.com/assets/gallery/LOGO/Akarui%20Logo.webp",
+                alt: "Akarui Pokhara Edu logo",
+                title: t("svc_project1_title"),
+                desc: t("svc_project1_desc"),
+                href: "https://www.akaruipokharaedu.com/",
+              },
+              {
+                logo: "https://mustangasian-jp.online/images/logo.png",
+                alt: "Mustang Asian JP logo",
+                title: t("svc_project2_title"),
+                desc: t("svc_project2_desc"),
+                href: "https://mustangasian-jp.online/",
+              },
+              {
+                logo: "https://www.sagarmathagroupsjp.com/favicon.ico",
+                alt: "Sagarmatha Groups JP logo",
+                title: t("svc_project3_title"),
+                desc: t("svc_project3_desc"),
+                href: "https://www.sagarmathagroupsjp.com/",
+              },
+              {
+                logo: "https://www.akaruipokharaedu.com/assets/gallery/LOGO/Akarui%20Logo.webp",
+                alt: "Akarui Pokhara Edu logo",
+                title: t("svc_project1_title"),
+                desc: t("svc_project1_desc"),
+                href: "https://www.akaruipokharaedu.com/",
+              },
+              {
+                logo: "https://mustangasian-jp.online/images/logo.png",
+                alt: "Mustang Asian JP logo",
+                title: t("svc_project2_title"),
+                desc: t("svc_project2_desc"),
+                href: "https://mustangasian-jp.online/",
+              },
+              {
+                logo: "https://www.sagarmathagroupsjp.com/favicon.ico",
+                alt: "Sagarmatha Groups JP logo",
+                title: t("svc_project3_title"),
+                desc: t("svc_project3_desc"),
+                href: "https://www.sagarmathagroupsjp.com/",
+              },
+            ].map((p, i) => (
+              <div key={i} className="service-card">
+                <div className="svc-project-logo">
+                  <Image src={p.logo} alt={p.alt} width={28} height={28} unoptimized />
+                </div>
+                <h3 className="svc-title">{p.title}</h3>
+                <p className="svc-desc">{p.desc}</p>
+                <Link
+                  href={p.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary"
+                >
+                  {t("svc_project_cta")}
+                </Link>
+              </div>
+            ))}
+          </motion.div>
         </div>
 
         <MarqueeTicker />

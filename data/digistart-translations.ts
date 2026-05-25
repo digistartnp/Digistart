@@ -87,13 +87,16 @@ export const translations: Record<Locale, TranslationDictionary> = {
     svc_projects_label: "Case Studies",
     svc_projects_title: "Selected launches",
     svc_projects_sub:
-      "Recent builds across education and hospitality sectors.",
+      "Recent builds across education, hospitality, and multi-industry sectors.",
     svc_project1_title: "Akarui Pokhara Edu",
     svc_project1_desc:
       "End-to-end education site with guided counseling, visa support and trust-building enrollment flow.",
     svc_project2_title: "Mustang Asian JP",
     svc_project2_desc:
       "Restaurant site with clear menus, modern branding, and fast ordering paths for dine-in or delivery.",
+    svc_project3_title: "Sagarmatha Groups JP",
+    svc_project3_desc:
+      "Multi-industry corporate site bridging cultures across food, trade, real estate, media, and international support in Tokyo.",
     svc_project_cta: "Visit Site",
     pricing_label: "Engagement Models",
     pricing_heading: "Flexible plans for premium builds",
@@ -346,11 +349,13 @@ export const translations: Record<Locale, TranslationDictionary> = {
     mos6_subtitle: "",
     svc_projects_label: "事例",
     svc_projects_title: "最近のローンチ",
-    svc_projects_sub: "教育・飲食領域の最新実績。",
+    svc_projects_sub: "教育・飲食・総合企業など最新の実績。",
     svc_project1_title: "Akarui Pokhara Edu",
     svc_project1_desc: "カウンセリングからビザ支援まで伝わる、信頼設計の教育サイト。",
     svc_project2_title: "Mustang Asian JP",
     svc_project2_desc: "メニュー訴求と注文導線を整理した飲食店サイト。",
+    svc_project3_title: "サガルマータグループ",
+    svc_project3_desc: "食品・貿易・不動産・メディアなど多業種を展開する東京発の総合企業サイト。",
     svc_project_cta: "サイトを見る",
     pricing_label: "料金プラン",
     pricing_heading: "目的に合わせた柔軟な契約",
