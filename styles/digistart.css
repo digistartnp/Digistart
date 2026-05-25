@@ -845,7 +845,19 @@ nav.scrolled {
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   position: relative;
-  background: var(--bg-card);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0.03) 80%
+  );
+  background-size: 300% 100%;
+  animation: preview-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes preview-shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 .svc-project-preview::after {
@@ -854,6 +866,7 @@ nav.scrolled {
   inset: 0;
   background: linear-gradient(to bottom, transparent 55%, rgba(7, 13, 26, 0.55) 100%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .project-preview-img {
@@ -863,6 +876,8 @@ nav.scrolled {
   object-position: top center;
   transition: transform 0.5s var(--ease-out);
   display: block;
+  position: relative;
+  z-index: 0;
 }
 
 .project-slide:hover .project-preview-img {
@@ -2245,9 +2260,22 @@ footer::before {
   #services, #about, #team, #faq, #contact { padding: 72px 0; }
   .container { padding: 0 16px; }
 
-  /* Services / product tier cards: single column, full width */
+  /* Services / product tier cards: horizontal snap-scroll on mobile */
   .services-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 12px;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .services-grid::-webkit-scrollbar { display: none; }
+  .services-grid > * {
+    flex: 0 0 min(280px, 80vw);
+    scroll-snap-align: start;
   }
 
   /* Section headings */
