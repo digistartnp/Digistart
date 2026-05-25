@@ -11,7 +11,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     nav_faq: "FAQ",
     nav_contact: "Contact",
     nav_cta: "Book Call",
-    hero_badge: "High-end software agency",
+    hero_badge: "One step digital partner",
     hero_title_1: "Premium digital",
     hero_title_2: "products and platforms",
     hero_sub:
@@ -192,6 +192,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
     about_title: "DIGIスタート, built for modern growth",
     about_sub:
       "We partner with founders and product teams to deliver premium digital experiences.",
+    about_mission:
+      "Every small business, regardless of budget, language, or technical expertise, has the right to a modern digital presentation.",
     about_tagline_1: "Start smart.",
     about_tagline_2: "Start digital.",
     about_card_desc:
@@ -266,7 +268,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     form_submit: "Send Inquiry",
     form_success: "Thanks! We'll reply within 24 hours.",
     footer_tagline:
-      "High-end software agency delivering premium digital experiences.",
+      "Start smart. Start digital. — Premium digital experiences for every business.",
     footer_nav: "Navigation",
     footer_services: "Services",
     footer_lang: "Languages",
@@ -279,7 +281,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     nav_faq: "よくある質問",
     nav_contact: "お問い合わせ",
     nav_cta: "相談予約",
-    hero_badge: "ハイエンドITエージェンシー",
+    hero_badge: "ワンステップ・デジタルパートナー",
     hero_title_1: "プレミアムな",
     hero_title_2: "デジタル体験を構築",
     hero_sub:
@@ -446,6 +448,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
     about_label: "私たちの考え方",
     about_title: "DIGIスタートについて",
     about_sub: "戦略・デザイン・開発をつなぐパートナーです。",
+    about_mission:
+      "すべての小規模ビジネスは、予算・言語・技術知識に関わらず、現代的なデジタルプレゼンスを持つ権利がある。",
     about_tagline_1: "Start smart.",
     about_tagline_2: "Start digital.",
     about_card_desc:
@@ -520,7 +524,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     form_submit: "送信する",
     form_success: "送信完了。24時間以内にご連絡します。",
     footer_tagline:
-      "プレミアムなWeb体験を提供するソフトウェアエージェンシー。",
+      "Start smart. Start digital. — すべてのビジネスに、現代的なデジタルプレゼンスを。",
     footer_nav: "ナビゲーション",
     footer_services: "サービス",
     footer_lang: "言語",

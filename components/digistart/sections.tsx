@@ -675,6 +675,11 @@ export function AboutSection() {
             <h2 className="section-title">{t("about_title")}</h2>
             <p className="section-sub">{t("about_sub")}</p>
 
+            <blockquote className="about-mission-quote">
+              <p>{t("about_mission")}</p>
+              <cite>— Start smart. Start digital.</cite>
+            </blockquote>
+
             <div className="about-values">
               {[
                 { title: t("val1_title"), desc: t("val1_desc") },

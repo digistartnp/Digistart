@@ -1153,6 +1153,7 @@ nav.scrolled {
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
   scrollbar-color: var(--border-strong) transparent;
+  direction: ltr;
 }
 
 .addons-grid::-webkit-scrollbar { height: 4px; }
@@ -1513,6 +1514,33 @@ nav.scrolled {
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 999px;
+}
+
+.about-mission-quote {
+  margin-top: 28px;
+  padding: 20px 24px;
+  border-left: 3px solid var(--brand);
+  background: var(--brand-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.about-mission-quote p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink);
+  font-style: italic;
+  margin: 0;
+}
+
+.about-mission-quote cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand);
+  font-style: normal;
 }
 
 .about-values {
