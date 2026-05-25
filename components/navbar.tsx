@@ -102,6 +102,31 @@ export default function Navbar() {
         <Link href="/#contact" onClick={() => setIsMobileOpen(false)}>
           {t("nav_contact")}
         </Link>
+        <div className="mobile-menu-footer">
+          <div className="lang-switcher">
+            <button
+              type="button"
+              className={`lang-btn${lang === "en" ? " active" : ""}`}
+              onClick={() => setLang("en")}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              className={`lang-btn${lang === "jp" ? " active" : ""}`}
+              onClick={() => setLang("jp")}
+            >
+              JP
+            </button>
+          </div>
+          <Link
+            href="/#contact"
+            className="nav-cta"
+            onClick={() => setIsMobileOpen(false)}
+          >
+            {t("nav_cta")}
+          </Link>
+        </div>
       </div>
     </nav>
   );

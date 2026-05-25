@@ -6,19 +6,12 @@ import {
   Bolt,
   ChartColumnBig,
   Code2,
-  Database,
   Globe,
   Hash,
-  Layers,
   Lightbulb,
-  MapPin,
-  Megaphone,
   PenTool,
-  QrCode,
-  Repeat,
   Rocket,
   ShieldCheck,
-  Smartphone,
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
@@ -132,97 +125,39 @@ export function HeroSection() {
 export function ServicesSection() {
   const { t } = useLanguage();
 
-  const mosaicServices = useMemo(
-    () => [
-      {
-        id: "m01",
-        icon: Globe,
-        title: t("mos1_title"),
-        subtitle: t("mos1_subtitle"),
-        variant: "white" as const,
-      },
-      {
-        id: "m02",
-        icon: MapPin,
-        title: t("mos2_title"),
-        subtitle: t("mos2_subtitle"),
-        variant: "mint" as const,
-      },
-      {
-        id: "m03",
-        icon: QrCode,
-        title: t("mos3_title"),
-        subtitle: t("mos3_subtitle"),
-        variant: "teal" as const,
-      },
-      {
-        id: "m04",
-        icon: Repeat,
-        title: t("mos4_title"),
-        subtitle: t("mos4_subtitle"),
-        variant: "teal" as const,
-      },
-      {
-        id: "m05",
-        icon: Smartphone,
-        title: t("mos5_title"),
-        subtitle: t("mos5_subtitle"),
-        variant: "mint" as const,
-      },
-      {
-        id: "m06",
-        icon: Megaphone,
-        title: t("mos6_title"),
-        subtitle: t("mos6_subtitle"),
-        variant: "white" as const,
-      },
-    ],
-    [t]
-  );
-
-  const services = useMemo(
+  const products = useMemo(
     () => [
       {
         id: "01",
         icon: Code2,
-        title: t("svc1_title"),
-        description: t("svc1_desc"),
-        tags: [t("svc1_t1"), t("svc1_t2"), t("svc1_t3")],
+        classification: t("prod1_class"),
+        title: t("prod1_title"),
+        tagline: t("prod1_tagline"),
+        points: [t("prod1_p1"), t("prod1_p2"), t("prod1_p3")],
       },
       {
         id: "02",
-        icon: Database,
-        title: t("svc2_title"),
-        description: t("svc2_desc"),
-        tags: [t("svc2_t1"), t("svc2_t2"), t("svc2_t3")],
+        icon: PenTool,
+        classification: t("prod2_class"),
+        title: t("prod2_title"),
+        tagline: t("prod2_tagline"),
+        points: [t("prod2_p1"), t("prod2_p2"), t("prod2_p3")],
       },
       {
         id: "03",
-        icon: Layers,
-        title: t("svc3_title"),
-        description: t("svc3_desc"),
-        tags: [t("svc3_t1"), t("svc3_t2"), t("svc3_t3")],
+        icon: Globe,
+        classification: t("prod3_class"),
+        title: t("prod3_title"),
+        tagline: t("prod3_tagline"),
+        points: [t("prod3_p1"), t("prod3_p2"), t("prod3_p3")],
       },
       {
         id: "04",
-        icon: PenTool,
-        title: t("svc4_title"),
-        description: t("svc4_desc"),
-        tags: [t("svc4_t1"), t("svc4_t2"), t("svc4_t3")],
-      },
-      {
-        id: "05",
-        icon: Rocket,
-        title: t("svc5_title"),
-        description: t("svc5_desc"),
-        tags: [t("svc5_t1"), t("svc5_t2"), t("svc5_t3")],
-      },
-      {
-        id: "06",
         icon: ShieldCheck,
-        title: t("svc6_title"),
-        description: t("svc6_desc"),
-        tags: [t("svc6_t1"), t("svc6_t2"), t("svc6_t3")],
+        classification: t("prod4_class"),
+        title: t("prod4_title"),
+        tagline: t("prod4_tagline"),
+        points: [t("prod4_p1"), t("prod4_p2"), t("prod4_p3")],
       },
     ],
     [t]
@@ -238,55 +173,26 @@ export function ServicesSection() {
         </div>
 
         <div className="services-grid">
-          {services.map((service) => (
-            <TiltCard key={service.id} className="reveal">
-              <div className="service-card" style={{ height: "100%" }}>
-                <div className="svc-num">{service.id}</div>
+          {products.map((product) => (
+            <TiltCard key={product.id} className="reveal">
+              <div className="service-card product-tier-card" style={{ height: "100%" }}>
+                <div className="prod-tier-header">
+                  <div className="svc-num">{product.id}</div>
+                  <span className="prod-class">{product.classification}</span>
+                </div>
                 <div className="svc-icon">
-                  <service.icon aria-hidden="true" />
+                  <product.icon aria-hidden="true" />
                 </div>
-                <h3 className="svc-title">{service.title}</h3>
-                <p className="svc-desc">{service.description}</p>
-                <div className="svc-tags">
-                  {service.tags.map((tag) => (
-                    <span key={tag} className="svc-tag">
-                      {tag}
-                    </span>
+                <h3 className="svc-title">{product.title}</h3>
+                <p className="prod-tagline">{product.tagline}</p>
+                <ul className="prod-points">
+                  {product.points.map((point) => (
+                    <li key={point}>{point}</li>
                   ))}
-                </div>
+                </ul>
               </div>
             </TiltCard>
           ))}
-        </div>
-
-        <div className="services-mosaic">
-          <div className="mosaic-sidebar reveal">
-            <span className="mosaic-sidebar-text">
-              {t("svc_our_services")}
-            </span>
-            <span className="mosaic-sidebar-accent" aria-hidden="true" />
-          </div>
-
-          <div className="mosaic-grid">
-            {mosaicServices.map((service) => (
-              <motion.button
-                type="button"
-                key={service.id}
-                className={`mosaic-tile mosaic-tile--${service.variant} reveal`}
-                whileHover={{ y: -6 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="mosaic-tile-shine" aria-hidden="true" />
-                <span className="mosaic-icon">
-                  <service.icon aria-hidden="true" strokeWidth={1.6} />
-                </span>
-                <span className="mosaic-title">{service.title}</span>
-                {service.subtitle ? (
-                  <span className="mosaic-subtitle">{service.subtitle}</span>
-                ) : null}
-              </motion.button>
-            ))}
-          </div>
         </div>
 
         <div className="services-header reveal" style={{ marginTop: "72px" }}>
