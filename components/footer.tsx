@@ -52,16 +52,13 @@ export default function Footer() {
             <h5>{t("footer_services")}</h5>
             <ul>
               <li>
-                <Link href="/#services">{t("svc1_title")}</Link>
+                <Link href="/#services">{t("prod1_title")}</Link>
               </li>
               <li>
-                <Link href="/#services">{t("svc2_title")}</Link>
+                <Link href="/#services">{t("prod2_title")}</Link>
               </li>
               <li>
-                <Link href="/#services">{t("svc3_title")}</Link>
-              </li>
-              <li>
-                <Link href="/#services">{t("svc4_footer")}</Link>
+                <Link href="/#services">{t("prod3_title")}</Link>
               </li>
             </ul>
           </div>

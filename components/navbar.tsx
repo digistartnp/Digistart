@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -12,6 +12,7 @@ export default function Navbar() {
   const { lang, setLang, t } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 16);
@@ -32,8 +33,19 @@ export default function Navbar() {
     }
   };
 
+  useEffect(() => {
+    if (!isMobileOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setIsMobileOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMobileOpen]);
+
   return (
-    <nav className={isScrolled ? "scrolled" : undefined}>
+    <nav ref={navRef} className={isScrolled ? "scrolled" : undefined}>
       <div className="nav-inner">
         <a href="/#home" className="nav-logo" onClick={navTo("home")}>
           <Image
@@ -107,6 +119,27 @@ export default function Navbar() {
         <a href="/#about" onClick={navTo("about")}>{t("nav_about")}</a>
         <a href="/#faq" onClick={navTo("faq")}>{t("nav_faq")}</a>
         <a href="/#contact" onClick={navTo("contact")}>{t("nav_contact")}</a>
+        <div className="mobile-menu-footer">
+          <div className="lang-switcher">
+            <button
+              type="button"
+              className={`lang-btn${lang === "en" ? " active" : ""}`}
+              onClick={() => setLang("en")}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              className={`lang-btn${lang === "jp" ? " active" : ""}`}
+              onClick={() => setLang("jp")}
+            >
+              JP
+            </button>
+          </div>
+          <a href="/#contact" className="nav-cta" onClick={navTo("contact")}>
+            {t("nav_cta")}
+          </a>
+        </div>
       </div>
     </nav>
   );

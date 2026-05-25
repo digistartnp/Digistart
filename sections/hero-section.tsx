@@ -16,7 +16,7 @@ export default function HeroSection() {
             <FadeIn>
               <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-600 shadow-sm">
                 <Sparkles className="h-4 w-4 text-primary" />
-                High-end software agency
+                One step digital partner
               </div>
             </FadeIn>
             <FadeIn delay={0.05}>
