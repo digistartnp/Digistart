@@ -196,13 +196,14 @@ export function ServicesSection() {
 
         <div className="projects-slider">
           <div className="project-slide service-card">
-            <div className="svc-project-logo">
+            <div className="svc-project-preview">
               <Image
-                src="https://www.akaruipokharaedu.com/assets/gallery/LOGO/Akarui%20Logo.webp"
-                alt="Akarui Pokhara Edu logo"
-                width={28}
-                height={28}
+                src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.akaruipokharaedu.com%2F?w=640"
+                alt="Akarui Pokhara Edu website preview"
+                width={640}
+                height={360}
                 unoptimized
+                className="project-preview-img"
               />
             </div>
             <h3 className="svc-title">{t("svc_project1_title")}</h3>
@@ -219,13 +220,14 @@ export function ServicesSection() {
           </div>
 
           <div className="project-slide service-card">
-            <div className="svc-project-logo">
+            <div className="svc-project-preview">
               <Image
-                src="https://mustangasian-jp.online/images/logo.png"
-                alt="Mustang Asian JP logo"
-                width={28}
-                height={28}
+                src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmustangasian-jp.online%2F?w=640"
+                alt="Mustang Asian JP website preview"
+                width={640}
+                height={360}
                 unoptimized
+                className="project-preview-img"
               />
             </div>
             <h3 className="svc-title">{t("svc_project2_title")}</h3>
@@ -242,13 +244,14 @@ export function ServicesSection() {
           </div>
 
           <div className="project-slide service-card">
-            <div className="svc-project-logo">
+            <div className="svc-project-preview">
               <Image
-                src="https://www.sagarmathagroupsjp.com/images/logo.png"
-                alt="Sagarmath Groups JP logo"
-                width={28}
-                height={28}
+                src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.sagarmathagroupsjp.com%2F?w=640"
+                alt="Sagarmath Groups JP website preview"
+                width={640}
+                height={360}
                 unoptimized
+                className="project-preview-img"
               />
             </div>
             <h3 className="svc-title">{t("svc_project3_title")}</h3>

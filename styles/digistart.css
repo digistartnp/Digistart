@@ -837,6 +837,38 @@ nav.scrolled {
   overflow: hidden;
 }
 
+/* ── Project card website preview ────────────────────────── */
+.svc-project-preview {
+  width: calc(100% + 52px);
+  margin: -26px -26px 20px -26px;
+  height: 168px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  position: relative;
+  background: var(--bg-card);
+}
+
+.svc-project-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(7, 13, 26, 0.55) 100%);
+  pointer-events: none;
+}
+
+.project-preview-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s var(--ease-out);
+  display: block;
+}
+
+.project-slide:hover .project-preview-img {
+  transform: scale(1.05);
+}
+
 /* ── Projects horizontal slider ──────────────────────────── */
 .projects-slider {
   display: flex;
