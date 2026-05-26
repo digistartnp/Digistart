@@ -15,7 +15,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     hero_title_1: "Premium digital",
     hero_title_2: "products and platforms",
     hero_sub:
-      "We design and engineer high-performance web experiences that scale. From frontend craft to backend architecture, every build is optimized for growth.",
+      "You run the business. We build the digital presence.",
     hero_cta1: "Get Started",
     hero_cta2: "View services",
     stat1: "Launches shipped",
@@ -291,6 +291,10 @@ export const translations: Record<Locale, TranslationDictionary> = {
     footer_nav: "Navigation",
     footer_services: "Services",
     footer_lang: "Languages",
+    line_chat_label: "Chat with us",
+    line_chat_sub: "Reply within minutes on LINE",
+    line_chat_cta: "Open LINE",
+    line_chat_aria: "Chat with us on LINE",
   },
   jp: {
     nav_home: "ホーム",
@@ -304,7 +308,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     hero_title_1: "プレミアムな",
     hero_title_2: "デジタル体験を構築",
     hero_sub:
-      "戦略・UI/UX・エンジニアリングを一体で提供し、成長に強いWebプロダクトを最短で実装します。",
+      "事業はあなたが。デジタルは私たちが。",
     hero_cta1: "相談予約",
     hero_cta2: "サービスを見る",
     stat1: "提供実績",
@@ -571,6 +575,10 @@ export const translations: Record<Locale, TranslationDictionary> = {
     footer_nav: "ナビゲーション",
     footer_services: "サービス",
     footer_lang: "言語",
+    line_chat_label: "LINEで相談",
+    line_chat_sub: "LINEで数分以内に返信します",
+    line_chat_cta: "LINEを開く",
+    line_chat_aria: "LINEでチャットする",
   },
 };
 

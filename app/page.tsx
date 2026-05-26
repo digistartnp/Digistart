@@ -6,6 +6,7 @@ import {
   HeroSection,
   ServicesSection,
 } from "@/components/digistart/sections";
+import LineChatButton from "@/components/line-chat-button";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <FaqSection />
         <ContactSection />
       </RevealProvider>
+      <LineChatButton />
     </div>
   );
 }
