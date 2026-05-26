@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowUpRight,
   Bolt,
@@ -130,6 +130,20 @@ export function HeroSection() {
 
 export function ServicesSection() {
   const { t } = useLanguage();
+  const [projectsDuration, setProjectsDuration] = useState(18);
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      if (w < 480) setProjectsDuration(36);
+      else if (w < 768) setProjectsDuration(28);
+      else if (w < 1024) setProjectsDuration(22);
+      else setProjectsDuration(18);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const mosaicServices = useMemo(
     () => [
@@ -281,7 +295,7 @@ export function ServicesSection() {
           <motion.div
             className="projects-marquee-track"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: projectsDuration, repeat: Infinity, ease: "linear" }}
           >
             {[
               {
