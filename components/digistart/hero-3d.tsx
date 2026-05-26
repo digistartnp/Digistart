@@ -1,7 +1,14 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, type ReactNode } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
+import {
+  TrendingUp,
+  Zap,
+  Rocket,
+  Globe2,
+  ArrowUpRight,
+} from "lucide-react";
 
 /* ── Orbital ring ───────────────────────────────────────────── */
 function OrbitalRing({
@@ -54,20 +61,22 @@ function MetricChip({
   label,
   value,
   icon,
+  tone = "brand",
   delay,
   x,
   y,
 }: {
   label: string;
   value: string;
-  icon: string;
+  icon: ReactNode;
+  tone?: "brand" | "amber" | "violet" | "emerald";
   delay: number;
   x: string;
   y: string;
 }) {
   return (
     <motion.div
-      className="metric-chip"
+      className={`metric-chip metric-chip--${tone}`}
       style={{ position: "absolute", left: x, top: y }}
       initial={{ opacity: 0, scale: 0.7, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
@@ -77,8 +86,8 @@ function MetricChip({
         y: { delay: delay + 0.5, duration: 3 + delay * 0.5, repeat: Infinity, ease: "easeInOut" },
       }}
     >
-      <span className="mc-icon">{icon}</span>
-      <div>
+      <span className="mc-icon" aria-hidden="true">{icon}</span>
+      <div className="mc-text">
         <div className="mc-val">{value}</div>
         <div className="mc-label">{label}</div>
       </div>
@@ -164,14 +173,18 @@ export default function Hero3D() {
 
           <div className="card-kpi-row">
             {[
-              { label: "Launched", val: "30+", up: true },
-              { label: "Satisfied", val: "96%", up: true },
-              { label: "Languages", val: "3", up: true },
+              { label: "Launched", val: "30+" },
+              { label: "Satisfied", val: "96%" },
+              { label: "Languages", val: "3" },
             ].map((k) => (
               <div key={k.label} className="card-kpi">
                 <div className="kpi-val">
                   {k.val}
-                  <span className="kpi-arrow up">↑</span>
+                  <ArrowUpRight
+                    className="kpi-arrow"
+                    strokeWidth={2.5}
+                    aria-hidden="true"
+                  />
                 </div>
                 <div className="kpi-label">{k.label}</div>
               </div>
@@ -200,10 +213,42 @@ export default function Hero3D() {
       </motion.div>
 
       {/* Floating chips — real site stats */}
-      <MetricChip label="Performance lift" value="+85%"   icon="📈" delay={0.9}  x="2%"   y="4%" />
-      <MetricChip label="Conversion gain"  value="3x"     icon="⚡" delay={1.1}  x="60%"  y="2%" />
-      <MetricChip label="Core users"       value="2.4k+"  icon="🚀" delay={1.3}  x="2%"   y="80%" />
-      <MetricChip label="JP · NP · Global" value="3 mkts" icon="🌏" delay={1.5}  x="60%"  y="82%" />
+      <MetricChip
+        label="Performance lift"
+        value="+85%"
+        tone="emerald"
+        icon={<TrendingUp size={14} strokeWidth={2.5} />}
+        delay={0.9}
+        x="2%"
+        y="4%"
+      />
+      <MetricChip
+        label="Conversion gain"
+        value="3x"
+        tone="amber"
+        icon={<Zap size={14} strokeWidth={2.5} />}
+        delay={1.1}
+        x="60%"
+        y="2%"
+      />
+      <MetricChip
+        label="Core users"
+        value="2.4k+"
+        tone="violet"
+        icon={<Rocket size={14} strokeWidth={2.5} />}
+        delay={1.3}
+        x="2%"
+        y="80%"
+      />
+      <MetricChip
+        label="JP · NP · Global"
+        value="3 markets"
+        tone="brand"
+        icon={<Globe2 size={14} strokeWidth={2.5} />}
+        delay={1.5}
+        x="60%"
+        y="82%"
+      />
     </div>
   );
 }
