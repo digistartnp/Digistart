@@ -8,9 +8,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact — Free Consultation in English or 日本語",
   description:
-    "Start your next project with Digistart. Reach out for strategy, design, and engineering support.",
+    "Tell us about your business and get a free consultation and tailored proposal for your website, MEO, or digital transformation project. English and Japanese welcome.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact — Free Consultation in English or 日本語",
+    description:
+      "Get a free consultation and tailored proposal for your website or digital project.",
+    url: "/contact",
+    type: "website",
+  },
 };
 
 export default function ContactPage() {

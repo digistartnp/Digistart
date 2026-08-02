@@ -6,9 +6,17 @@ import SectionHeading from "@/components/section-heading";
 import FadeIn from "@/components/fade-in";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — A Bilingual Web Studio Working in Japan",
   description:
-    "Learn about Digistart, our mission, vision, and the team behind our high-end software delivery.",
+    "DIGIスタート is a small web studio building bilingual (English / 日本語) websites and digital tools for restaurants, schools, and growing businesses in Japan.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About — A Bilingual Web Studio Working in Japan",
+    description:
+      "A small web studio building bilingual websites and digital tools for businesses in Japan.",
+    url: "/about",
+    type: "website",
+  },
 };
 
 const values = [

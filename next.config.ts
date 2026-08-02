@@ -11,6 +11,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "mustangasian-jp.online",
       },
+      {
+        protocol: "https",
+        hostname: "motherindiakyoto.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.sagarmathagroupsjp.com",
+      },
+      {
+        protocol: "https",
+        hostname: "s0.wp.com",
+      },
     ],
   },
 };

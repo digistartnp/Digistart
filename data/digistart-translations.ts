@@ -77,14 +77,21 @@ export const translations: Record<Locale, TranslationDictionary> = {
     svc_projects_sub:
       "Recent builds across education, hospitality, and multi-industry sectors.",
     svc_project1_title: "Akarui Pokhara Edu",
+    svc_project1_tag: "Education",
     svc_project1_desc:
       "End-to-end education site with guided counseling, visa support and trust-building enrollment flow.",
     svc_project2_title: "Mustang Asian JP",
+    svc_project2_tag: "Restaurant",
     svc_project2_desc:
       "Restaurant site with clear menus, modern branding, and fast ordering paths for dine-in or delivery.",
     svc_project3_title: "Sagarmatha Groups JP",
+    svc_project3_tag: "Corporate",
     svc_project3_desc:
       "Multi-industry corporate site bridging cultures across food, trade, real estate, media, and international support in Tokyo.",
+    svc_project4_title: "Mother India Kyoto",
+    svc_project4_tag: "Restaurant",
+    svc_project4_desc:
+      "Bilingual site for a Kyoto Indian and Nepali restaurant — full menu, spice levels, dietary options, and one-tap reservations.",
     svc_project_cta: "Visit Site",
     mobile_label: "Built-for-Performance Promise",
     mobile_title: "The Mobile-First Standard",
@@ -367,11 +374,18 @@ export const translations: Record<Locale, TranslationDictionary> = {
     svc_projects_title: "最近のローンチ",
     svc_projects_sub: "教育・飲食・総合企業など最新の実績。",
     svc_project1_title: "Akarui Pokhara Edu",
+    svc_project1_tag: "教育",
     svc_project1_desc: "カウンセリングからビザ支援まで伝わる、信頼設計の教育サイト。",
     svc_project2_title: "Mustang Asian JP",
+    svc_project2_tag: "飲食",
     svc_project2_desc: "メニュー訴求と注文導線を整理した飲食店サイト。",
     svc_project3_title: "サガルマータグループ",
+    svc_project3_tag: "総合企業",
     svc_project3_desc: "食品・貿易・不動産・メディアなど多業種を展開する東京発の総合企業サイト。",
+    svc_project4_title: "Mother India Kyoto",
+    svc_project4_tag: "飲食",
+    svc_project4_desc:
+      "京都のインド・ネパール料理店の日英対応サイト。メニュー、辛さ、食事制限の案内から予約までワンタップで。",
     svc_project_cta: "サイトを見る",
     mobile_label: "パフォーマンス保証",
     mobile_title: "モバイルファースト基準",

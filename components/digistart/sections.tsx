@@ -22,7 +22,14 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { useLanguage } from "@/components/digistart/language-provider";
 import Hero3D from "@/components/digistart/hero-3d";
 import CountUp from "@/components/digistart/count-up";
@@ -130,20 +137,77 @@ export function HeroSection() {
 
 export function ServicesSection() {
   const { t } = useLanguage();
-  const [projectsDuration, setProjectsDuration] = useState(18);
+  const reduceMotion = useReducedMotion();
+  const [projectsDuration, setProjectsDuration] = useState(28);
 
   useEffect(() => {
     const update = () => {
       const w = window.innerWidth;
-      if (w < 480) setProjectsDuration(36);
-      else if (w < 768) setProjectsDuration(28);
-      else if (w < 1024) setProjectsDuration(22);
-      else setProjectsDuration(18);
+      if (w < 480) setProjectsDuration(48);
+      else if (w < 768) setProjectsDuration(40);
+      else if (w < 1024) setProjectsDuration(34);
+      else setProjectsDuration(28);
     };
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
+
+  /* Marquee driven by hand so hovering can freeze it mid-travel — the cards
+     are links, and a moving target is a hostile one. */
+  const projectsPaused = useRef(false);
+  const projectsX = useMotionValue(0);
+  const projectsOffset = useTransform(projectsX, (v) => `${v}%`);
+
+  useAnimationFrame((_, delta) => {
+    if (projectsPaused.current || reduceMotion) return;
+    const perSecond = 50 / projectsDuration;
+    let next = projectsX.get() - (perSecond * delta) / 1000;
+    if (next <= -50) next += 50;
+    projectsX.set(next);
+  });
+
+  const projects = useMemo(
+    () => [
+      {
+        preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.akaruipokharaedu.com%2F?w=640",
+        alt: "Akarui Pokhara Edu website preview",
+        title: t("svc_project1_title"),
+        tag: t("svc_project1_tag"),
+        desc: t("svc_project1_desc"),
+        href: "https://www.akaruipokharaedu.com/",
+        domain: "akaruipokharaedu.com",
+      },
+      {
+        preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmustangasian-jp.online%2F?w=640",
+        alt: "Mustang Asian JP website preview",
+        title: t("svc_project2_title"),
+        tag: t("svc_project2_tag"),
+        desc: t("svc_project2_desc"),
+        href: "https://mustangasian-jp.online/",
+        domain: "mustangasian-jp.online",
+      },
+      {
+        preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmotherindiakyoto.com%2F?w=640",
+        alt: "Mother India Kyoto website preview",
+        title: t("svc_project4_title"),
+        tag: t("svc_project4_tag"),
+        desc: t("svc_project4_desc"),
+        href: "https://motherindiakyoto.com/",
+        domain: "motherindiakyoto.com",
+      },
+      {
+        preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.sagarmathagroupsjp.com%2F?w=640",
+        alt: "Sagarmatha Groups JP website preview",
+        title: t("svc_project3_title"),
+        tag: t("svc_project3_tag"),
+        desc: t("svc_project3_desc"),
+        href: "https://www.sagarmathagroupsjp.com/",
+        domain: "sagarmathagroupsjp.com",
+      },
+    ],
+    [t]
+  );
 
   const mosaicServices = useMemo(
     () => [
@@ -289,68 +353,45 @@ export function ServicesSection() {
           <p className="section-sub">{t("svc_projects_sub")}</p>
         </div>
 
-        <div className="projects-marquee-wrap">
+        <div
+          className="projects-marquee-wrap"
+          onMouseEnter={() => { projectsPaused.current = true; }}
+          onMouseLeave={() => { projectsPaused.current = false; }}
+        >
           <div className="projects-scroll-fade projects-scroll-fade--left" />
           <div className="projects-scroll-fade projects-scroll-fade--right" />
-          <motion.div
-            className="projects-marquee-track"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: projectsDuration, repeat: Infinity, ease: "linear" }}
-          >
-            {[
-              {
-                preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.akaruipokharaedu.com%2F?w=640",
-                alt: "Akarui Pokhara Edu website preview",
-                title: t("svc_project1_title"),
-                desc: t("svc_project1_desc"),
-                href: "https://www.akaruipokharaedu.com/",
-              },
-              {
-                preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmustangasian-jp.online%2F?w=640",
-                alt: "Mustang Asian JP website preview",
-                title: t("svc_project2_title"),
-                desc: t("svc_project2_desc"),
-                href: "https://mustangasian-jp.online/",
-              },
-              {
-                preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.sagarmathagroupsjp.com%2F?w=640",
-                alt: "Sagarmatha Groups JP website preview",
-                title: t("svc_project3_title"),
-                desc: t("svc_project3_desc"),
-                href: "https://www.sagarmathagroupsjp.com/",
-              },
-              {
-                preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.akaruipokharaedu.com%2F?w=640",
-                alt: "Akarui Pokhara Edu website preview",
-                title: t("svc_project1_title"),
-                desc: t("svc_project1_desc"),
-                href: "https://www.akaruipokharaedu.com/",
-              },
-              {
-                preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmustangasian-jp.online%2F?w=640",
-                alt: "Mustang Asian JP website preview",
-                title: t("svc_project2_title"),
-                desc: t("svc_project2_desc"),
-                href: "https://mustangasian-jp.online/",
-              },
-              {
-                preview: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.sagarmathagroupsjp.com%2F?w=640",
-                alt: "Sagarmatha Groups JP website preview",
-                title: t("svc_project3_title"),
-                desc: t("svc_project3_desc"),
-                href: "https://www.sagarmathagroupsjp.com/",
-              },
-            ].map((p, i) => (
-              <div key={i} className="project-slide service-card">
-                <div className="svc-project-preview">
-                  <Image src={p.preview} alt={p.alt} width={640} height={360} unoptimized className="project-preview-img" />
+          <motion.div className="projects-marquee-track" style={{ x: projectsOffset }}>
+            {[...projects, ...projects].map((p, i) => (
+              <Link
+                key={`${p.href}-${i}`}
+                href={p.href}
+                target="_blank"
+                rel="noreferrer"
+                className="project-card"
+              >
+                <div className="project-shot">
+                  <Image
+                    src={p.preview}
+                    alt={p.alt}
+                    width={640}
+                    height={360}
+                    unoptimized
+                    className="project-shot-img"
+                  />
                 </div>
-                <h3 className="svc-title">{p.title}</h3>
-                <p className="svc-desc">{p.desc}</p>
-                <Link href={p.href} target="_blank" rel="noreferrer" className="btn-primary" style={{ marginTop: "20px" }}>
-                  {t("svc_project_cta")}
-                </Link>
-              </div>
+                <div className="project-meta">
+                  <span className="project-index">
+                    {String((i % projects.length) + 1).padStart(2, "0")}
+                  </span>
+                  <span className="project-tag">{p.tag}</span>
+                </div>
+                <h4 className="project-name">{p.title}</h4>
+                <p className="project-desc">{p.desc}</p>
+                <span className="project-link">
+                  {p.domain}
+                  <ArrowUpRight size={14} strokeWidth={1.8} aria-hidden="true" />
+                </span>
+              </Link>
             ))}
           </motion.div>
         </div>

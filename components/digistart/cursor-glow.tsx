@@ -23,10 +23,5 @@ export default function CursorGlow() {
     };
   }, [x, y]);
 
-  return (
-    <>
-      <motion.div className="cursor-glow" style={{ translateX: sx, translateY: sy }} />
-      <motion.div className="cursor-dot" style={{ translateX: x, translateY: y }} />
-    </>
-  );
+  return <motion.div className="cursor-glow" style={{ translateX: sx, translateY: sy }} />;
 }

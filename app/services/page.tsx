@@ -16,9 +16,17 @@ import {
 import { services } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services — Web Design, MEO, QR Menus & Digital Transformation",
   description:
-    "Explore Digistart services including frontend development, backend architecture, full stack builds, and UX design.",
+    "Website design and development, Map Engine Optimization (MEO), QR code digital menus, social media integration, and advertising for businesses in Japan.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services — Web Design, MEO, QR Menus & Digital Transformation",
+    description:
+      "Website design and development, MEO, QR code digital menus, social media integration, and advertising for businesses in Japan.",
+    url: "/services",
+    type: "website",
+  },
 };
 
 export default function ServicesPage() {
