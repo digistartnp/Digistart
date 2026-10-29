@@ -60,7 +60,6 @@ const en = {
         "Renewal deadlines with calendar reminders",
         "Your answers stay on your phone",
       ],
-      tabs: ["Homepage", "Mobile"],
       alts: [
         "VisaTomo homepage with a renewal checker.",
         "VisaTomo on a phone.",
@@ -221,6 +220,8 @@ const en = {
     soon: "Soon",
     rights: "All rights reserved.",
     place: "Japan · Nepal",
+    privacy: "Privacy",
+    terms: "Terms",
   },
 };
 
@@ -286,7 +287,6 @@ const ja: Copy = {
         "更新期限をカレンダーでリマインド",
         "回答はあなたのスマホの中だけに保存",
       ],
-      tabs: ["トップページ", "モバイル"],
       alts: [
         "更新チェッカーのある VisaTomo のトップページ",
         "スマートフォンで表示した VisaTomo",
@@ -447,6 +447,8 @@ const ja: Copy = {
     soon: "近日公開",
     rights: "All rights reserved.",
     place: "日本 · ネパール",
+    privacy: "プライバシー",
+    terms: "利用規約",
   },
 };
 

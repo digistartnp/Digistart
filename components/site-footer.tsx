@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { useLanguage } from "@/components/providers";
 import { ArrowUpRight } from "@/components/ui";
@@ -77,7 +78,15 @@ export default function SiteFooter() {
           <p>
             © {new Date().getFullYear()} DIGIスタート. {t.footer.rights}
           </p>
-          <p className="font-mono">{t.footer.place}</p>
+          <div className="flex items-center gap-5">
+            <Link href="/privacy" className="transition-colors hover:text-ink">
+              {t.footer.privacy}
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-ink">
+              {t.footer.terms}
+            </Link>
+            <span className="font-mono">{t.footer.place}</span>
+          </div>
         </div>
       </div>
     </footer>

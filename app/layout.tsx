@@ -17,7 +17,7 @@ const notoJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-jp", display
 const siteUrl = "https://www.digistartjp.com";
 const title = "DIGIスタート — Software that makes life in Japan simpler";
 const description =
-  "DIGIスタート is a product studio in Japan and Nepal. We build ResumeJP and VisaTomo — free, bilingual tools for Japanese resumes and visa forms — and build web products for teams.";
+  "DIGIスタート is a product studio in Japan and Nepal. We build ResumeJP and VisaTomo — free, bilingual tools for Japanese resumes (履歴書) and visa forms (在留期間更新) — and build web apps and SaaS products for teams.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -43,6 +43,12 @@ export const metadata: Metadata = {
   publisher: "DIGIスタート",
   alternates: { canonical: "/" },
   formatDetection: { telephone: false, address: false, email: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  category: "technology",
   openGraph: {
     title,
     description,
@@ -76,6 +82,15 @@ const structuredData = {
       areaServed: ["JP", "NP"],
       knowsLanguage: ["en", "ja", "ne"],
       sameAs: [links.instagram, links.facebook, links.linkedin],
+      contactPoint: { "@type": "ContactPoint", email: links.email, contactType: "customer support", availableLanguage: ["English", "Japanese", "Nepali"] },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "DIGIスタート",
+      inLanguage: ["en", "ja"],
+      publisher: { "@id": `${siteUrl}/#organization` },
     },
     ...[
       { name: "ResumeJP", url: links.resumejp, category: "BusinessApplication", about: "Japanese resume (履歴書) builder" },
@@ -87,6 +102,7 @@ const structuredData = {
       description: app.about,
       applicationCategory: app.category,
       operatingSystem: "Web",
+      inLanguage: ["en", "ja"],
       offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" },
       creator: { "@id": `${siteUrl}/#organization` },
     })),

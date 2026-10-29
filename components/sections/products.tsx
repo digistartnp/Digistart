@@ -2,10 +2,10 @@
 
 import type { ReactNode } from "react";
 import Image, { type StaticImageData } from "next/image";
-import { AnimatePresence, m } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/components/providers";
 import { ArrowUpRight, BrowserFrame, PhoneFrame, Reveal, SectionHeading } from "@/components/ui";
-import { InputOutput, SlideDots, Tilt, useAutoSlide } from "@/components/three-d";
+import { InputOutput, Tilt } from "@/components/three-d";
 import { EraConverter, RenewalWindow } from "@/components/mini-tools";
 import { links, type Copy } from "@/lib/copy";
 import resumeFill from "@/assets/products/resumejp-m-fill.jpg";
@@ -15,63 +15,39 @@ import visaMobile from "@/assets/products/visatomo-mobile.jpg";
 import resumeLogo from "@/assets/products/logos/resumejp.svg";
 import visaLogo from "@/assets/products/logos/visatomo.svg";
 
+/* VisaTomo on desktop and phone at once: the browser angled in depth, the phone
+   floating in front. Both drift on their own and pop toward you on hover. */
 function VisaShowcase({ copy }: { copy: Copy["products"]["visatomo"] }) {
-  const { ref, active: view, running, showProgress, choose, bind } = useAutoSlide(copy.tabs.length);
+  const reduce = useReducedMotion();
+  const drift = (delay: number, d: number) =>
+    reduce ? {} : { animate: { y: [0, -d, 0] }, transition: { duration: 7, delay, repeat: Infinity, ease: "easeInOut" as const } };
+  const pop = { scale: 1.05, rotateY: 0, rotateX: 0, transition: { type: "spring" as const, stiffness: 260, damping: 18 } };
 
   return (
-    <div ref={ref} {...bind}>
-      <Tilt max={4}>
-        {/* Fixed-ratio stage so switching views never shifts the layout. No clipping box. */}
-        <div aria-roledescription="carousel" aria-label="VisaTomo" className="relative aspect-[16/11]" style={{ perspective: 1400 }}>
-          {/* A quick 3D card turn: the current view turns away, then the next turns in. */}
-          <AnimatePresence mode="wait" initial={false}>
-            <m.div
-              key={view}
-              initial={{ rotateY: -70, opacity: 0 }}
-              animate={{ rotateY: 0, opacity: 1, transition: { duration: 0.32, ease: [0.22, 1, 0.36, 1] } }}
-              exit={{ rotateY: 70, opacity: 0, transition: { duration: 0.16, ease: [0.55, 0, 1, 0.45] } }}
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <m.div
-                className={`cursor-pointer ${view === 0 ? "w-full" : "h-full"}`}
-                whileHover={{ scale: 1.05, y: -8, transition: { type: "spring", stiffness: 260, damping: 18 } }}
-              >
-                {view === 0 ? (
-                  <BrowserFrame domain="visatomo.com" className="w-full">
-                    <Image
-                      src={visaDesktop}
-                      alt={copy.alts[0]}
-                      placeholder="blur"
-                      sizes="(min-width: 1024px) 640px, 90vw"
-                      className="h-auto w-full"
-                    />
-                  </BrowserFrame>
-                ) : (
-                  <PhoneFrame className="h-full">
-                    <Image
-                      src={visaMobile}
-                      alt={copy.alts[1]}
-                      placeholder="blur"
-                      fill
-                      sizes="240px"
-                      className="object-cover object-top"
-                    />
-                  </PhoneFrame>
-                )}
-              </m.div>
-            </m.div>
-          </AnimatePresence>
-        </div>
-      </Tilt>
-      <SlideDots
-        count={copy.tabs.length}
-        active={view}
-        running={running}
-        showProgress={showProgress}
-        onChoose={choose}
-        labels={copy.tabs}
-      />
-    </div>
+    <Tilt max={4}>
+      <div className="relative aspect-[16/12]" style={{ perspective: 1400 }}>
+        <m.div
+          className="absolute top-[6%] left-0 w-[86%] cursor-pointer"
+          style={{ rotateY: 14, rotateX: 4 }}
+          whileHover={pop}
+          {...drift(0, 6)}
+        >
+          <BrowserFrame domain="visatomo.com" className="w-full">
+            <Image src={visaDesktop} alt={copy.alts[0]} placeholder="blur" sizes="(min-width: 1024px) 520px, 86vw" className="h-auto w-full" />
+          </BrowserFrame>
+        </m.div>
+        <m.div
+          className="absolute right-[2%] bottom-[2%] z-10 h-[72%] cursor-pointer"
+          style={{ aspectRatio: "9 / 19.2", rotateY: -12 }}
+          whileHover={pop}
+          {...drift(1.6, 10)}
+        >
+          <PhoneFrame className="h-full">
+            <Image src={visaMobile} alt={copy.alts[1]} placeholder="blur" fill sizes="(min-width: 1024px) 200px, 34vw" className="object-cover object-top" />
+          </PhoneFrame>
+        </m.div>
+      </div>
+    </Tilt>
   );
 }
 
