@@ -1,201 +1,114 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Noto_Sans_JP, Plus_Jakarta_Sans, Sora } from "next/font/google";
+import { Inter, JetBrains_Mono, Noto_Sans_JP, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/components/digistart/language-provider";
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
-import PageTransition from "@/components/page-transition";
-import ScrollProgress from "@/components/digistart/scroll-progress";
-import CursorGlow from "@/components/digistart/cursor-glow";
-import ScrollReset from "@/components/digistart/scroll-reset";
+import { Providers } from "@/components/providers";
+import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
+import { links } from "@/lib/copy";
 
-const fontSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const fontHeading = Sora({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
-});
-
-const fontJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  variable: "--font-jp",
-  display: "swap",
-});
+/* Variable fonts: one file per family covers every weight we use. */
+const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display-latin", display: "swap" });
+const body = Inter({ subsets: ["latin"], variable: "--font-body-latin", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono-latin", display: "swap", preload: false });
+/* Japanese glyphs are served in unicode-range slices on demand, so don't preload. */
+const notoJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-jp", display: "swap", preload: false });
 
 const siteUrl = "https://www.digistartjp.com";
+const title = "DIGIスタート — Software that makes life in Japan simpler";
+const description =
+  "DIGIスタート is a product studio in Japan and Nepal. We build ResumeJP and VisaTomo — free, bilingual tools for Japanese resumes and visa forms — and build web products for teams.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  icons: {
-    icon: "/images/logo.png",
-    shortcut: "/images/logo.png",
-    apple: "/images/logo.png",
-  },
-  title: {
-    default:
-      "DIGIスタート — Web Design & Digital Transformation in Japan | Start Smart. Start Digital.",
-    template: "%s | DIGIスタート",
-  },
-  description:
-    "DIGIスタート builds fast, bilingual (English / 日本語) websites for restaurants, schools, and small businesses in Japan — plus SEO, Google Maps optimization, QR menus, and social media support.",
-  keywords: [
-    "web design Japan",
-    "website development Tokyo",
-    "bilingual website Japanese English",
-    "多言語ウェブサイト制作",
-    "ホームページ制作 日本",
-    "restaurant website Japan",
-    "QR code digital menu",
-    "Google Maps optimization",
-    "MEO対策",
-    "digital transformation Japan",
-    "SNS運用代行",
-    "DIGIスタート",
-  ],
+  title: { default: title, template: "%s | DIGIスタート" },
+  description,
   applicationName: "DIGIスタート",
+  keywords: [
+    "DIGIスタート",
+    "digistart",
+    "product studio Japan",
+    "software company Japan Nepal",
+    "ResumeJP",
+    "VisaTomo",
+    "Japanese resume builder",
+    "履歴書 作成",
+    "visa renewal form Japan",
+    "在留期間更新 申請書",
+    "SaaS development Japan",
+    "Web アプリ開発",
+  ],
   authors: [{ name: "DIGIスタート", url: siteUrl }],
   creator: "DIGIスタート",
   publisher: "DIGIスタート",
-  category: "Web Design & Development",
-  alternates: {
-    canonical: "/",
-    languages: {
-      en: "/",
-      ja: "/",
-      "x-default": "/",
-    },
-  },
+  alternates: { canonical: "/" },
   formatDetection: { telephone: false, address: false, email: false },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
   openGraph: {
-    title: "DIGIスタート — Web Design & Digital Transformation in Japan",
-    description:
-      "Fast, bilingual websites for restaurants, schools, and small businesses in Japan — plus SEO, Google Maps optimization, QR menus, and social media support.",
+    title,
+    description,
     url: siteUrl,
     siteName: "DIGIスタート",
     type: "website",
     locale: "en_US",
     alternateLocale: ["ja_JP"],
-    images: [
-      {
-        url: "/images/logo.png",
-        width: 224,
-        height: 216,
-        alt: "DIGIスタート",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "DIGIスタート — Web Design & Digital Transformation in Japan",
-    description:
-      "Bilingual websites, SEO, Google Maps optimization, and social media for businesses in Japan.",
-    images: ["/images/logo.png"],
-  },
+  twitter: { card: "summary_large_image", title, description },
 };
 
-/* Structured data — one graph so Organization and WebSite can reference each other. */
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+};
+
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
       name: "DIGIスタート",
-      alternateName: ["DIGI Start", "Digistart"],
+      alternateName: ["digistart", "DIGI Start"],
       url: siteUrl,
-      logo: `${siteUrl}/images/logo.png`,
-      image: `${siteUrl}/images/logo.png`,
-      email: "digistartnp@gmail.com",
-      description:
-        "Web design, development, and digital transformation studio building bilingual websites for businesses in Japan.",
-      slogan: "Start Smart. Start Digital.",
-      areaServed: [
-        { "@type": "Country", name: "Japan" },
-        { "@type": "Country", name: "Nepal" },
-      ],
-      availableLanguage: ["en", "ja", "ne"],
+      logo: `${siteUrl}/icon.svg`,
+      email: links.email,
+      description,
+      areaServed: ["JP", "NP"],
       knowsLanguage: ["en", "ja", "ne"],
-      sameAs: [
-        "https://www.facebook.com/profile.php?id=61576693414774",
-        "https://www.instagram.com/digistartjp/",
-        "https://www.linkedin.com/in/digi-start-2583793b9/",
-      ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Services",
-        itemListElement: [
-          "Website Design & Development",
-          "Map Engine Optimization (MEO)",
-          "QR Code Digital Menus",
-          "Digital Transformation",
-          "Social Media Integration",
-          "Advertising",
-        ].map((name) => ({
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name },
-        })),
-      },
+      sameAs: [links.instagram, links.facebook, links.linkedin],
     },
-    {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      url: siteUrl,
-      name: "DIGIスタート",
-      inLanguage: ["en", "ja"],
-      publisher: { "@id": `${siteUrl}/#organization` },
-    },
+    ...[
+      { name: "ResumeJP", url: links.resumejp, category: "BusinessApplication", about: "Japanese resume (履歴書) builder" },
+      { name: "VisaTomo", url: links.visatomo, category: "UtilitiesApplication", about: "Japan visa application forms in plain English" },
+    ].map((app) => ({
+      "@type": "WebApplication",
+      name: app.name,
+      url: app.url,
+      description: app.about,
+      applicationCategory: app.category,
+      operatingSystem: "Web",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" },
+      creator: { "@id": `${siteUrl}/#organization` },
+    })),
   ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${fontSans.variable} ${fontHeading.variable} ${fontJP.variable} h-full scroll-smooth antialiased`}
-    >
-      <head>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable} ${notoJP.variable} antialiased`}>
+      <body className="min-h-dvh">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-      </head>
-      <body className="min-h-screen">
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <ScrollReset />
-        <CursorGlow />
-        <ScrollProgress />
-        <LanguageProvider>
-          <Navbar />
-          <PageTransition>
-            <main id="main" className="flex-1">
-            {children}
-          </main>
-          </PageTransition>
-          <Footer />
-        </LanguageProvider>
+        <Providers>
+          <SiteHeader />
+          <main id="main">{children}</main>
+          <SiteFooter />
+        </Providers>
       </body>
     </html>
   );

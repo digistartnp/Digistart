@@ -1,29 +1,21 @@
-import type { Metadata } from "next";
-import RevealProvider from "@/components/digistart/reveal-provider";
-import {
-  AboutSection,
-  ContactSection,
-  FaqSection,
-  HeroSection,
-  ServicesSection,
-} from "@/components/digistart/sections";
-import LineChatButton from "@/components/line-chat-button";
-
-export const metadata: Metadata = {
-  alternates: { canonical: "/" },
-};
+import Hero from "@/components/sections/hero";
+import Products from "@/components/sections/products";
+import Sarathi from "@/components/sections/sarathi";
+import Approach from "@/components/sections/approach";
+import Services from "@/components/sections/services";
+import Faq from "@/components/sections/faq";
+import Contact from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      <RevealProvider>
-        <HeroSection />
-        <ServicesSection />
-        <AboutSection />
-        <FaqSection />
-        <ContactSection />
-      </RevealProvider>
-      <LineChatButton />
-    </div>
+    <>
+      <Hero />
+      <Products />
+      <Sarathi />
+      <Approach />
+      <Services />
+      <Faq />
+      <Contact />
+    </>
   );
 }

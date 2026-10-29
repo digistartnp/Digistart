@@ -2,28 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "www.akaruipokharaedu.com",
-      },
-      {
-        protocol: "https",
-        hostname: "mustangasian-jp.online",
-      },
-      {
-        protocol: "https",
-        hostname: "motherindiakyoto.com",
-      },
-      {
-        protocol: "https",
-        hostname: "www.sagarmathagroupsjp.com",
-      },
-      {
-        protocol: "https",
-        hostname: "s0.wp.com",
-      },
-    ],
+    formats: ["image/avif", "image/webp"],
+  },
+  /* The site is a single page now; keep old URLs working. */
+  async redirects() {
+    return [
+      { source: "/about", destination: "/#approach", permanent: true },
+      { source: "/services", destination: "/#services", permanent: true },
+      { source: "/contact", destination: "/#contact", permanent: true },
+    ];
   },
 };
 
