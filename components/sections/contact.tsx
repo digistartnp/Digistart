@@ -108,7 +108,7 @@ export default function Contact() {
   ];
 
   return (
-    <section aria-label={t.contact.label} className="pt-6 pb-24 md:pt-10 md:pb-32">
+    <section aria-label={t.contact.label} className="pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="container-x relative grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-20">
         <div>
           <Reveal className="space-y-3">

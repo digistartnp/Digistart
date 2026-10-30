@@ -8,7 +8,7 @@ export default function Services() {
   const { t } = useLanguage();
 
   return (
-    <section aria-label={t.services.label} className="pt-6 pb-24 md:pt-10 md:pb-32">
+    <section aria-label={t.services.label} className="pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="container-x">
         <div className="grid gap-4 md:grid-cols-2">
           {t.services.items.map((item, i) => (

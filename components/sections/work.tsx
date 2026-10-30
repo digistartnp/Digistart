@@ -114,7 +114,7 @@ export default function Work() {
   const { t } = useLanguage();
 
   return (
-    <section aria-label={t.work.label} className="pt-14 pb-24 md:pt-20 md:pb-32">
+    <section aria-label={t.work.label} className="pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="container-x space-y-28 md:space-y-40">
         {projects.map((project, i) => {
           const c = t.work.items[project.key];

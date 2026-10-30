@@ -18,7 +18,7 @@ export default function Approach() {
   const { t } = useLanguage();
 
   return (
-    <section aria-label={t.approach.label} className="pt-2 pb-24 md:pb-32">
+    <section aria-label={t.approach.label} className="pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="container-x">
         <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_auto]">
           <div>

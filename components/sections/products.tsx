@@ -131,13 +131,13 @@ export default function Products() {
   const v = t.products.visatomo;
 
   return (
-    <section aria-label={t.products.label} className="pt-14 pb-24 md:pt-20 md:pb-32">
+    <section aria-label={t.products.label} className="pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="container-x">
-        <div className="space-y-24 md:space-y-32">
+        <div className="space-y-24 md:space-y-28">
           <article
             id="resumejp"
             aria-labelledby="resumejp-name"
-            className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16"
+            className="grid scroll-mt-24 items-start gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16"
           >
             <Reveal>
               <ProductCopy
@@ -150,7 +150,7 @@ export default function Products() {
                 tool={<EraConverter copy={r.tool} />}
               />
             </Reveal>
-            <Reveal delay={0.08}>
+            <Reveal delay={0.08} className="lg:sticky lg:top-28">
               <InputOutput input={resumeFill} output={resumeSheet} inputAlt={r.steps[1].alt} outputAlt={r.steps[2].alt} />
             </Reveal>
           </article>
@@ -158,7 +158,7 @@ export default function Products() {
           <article
             id="visatomo"
             aria-labelledby="visatomo-name"
-            className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16"
+            className="grid scroll-mt-24 items-start gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16"
           >
             <Reveal className="lg:order-2">
               <ProductCopy
@@ -171,7 +171,7 @@ export default function Products() {
                 tool={<RenewalWindow copy={v.tool} />}
               />
             </Reveal>
-            <Reveal delay={0.08} className="lg:order-1">
+            <Reveal delay={0.08} className="lg:sticky lg:top-28 lg:order-1">
               <VisaShowcase copy={v} />
             </Reveal>
           </article>

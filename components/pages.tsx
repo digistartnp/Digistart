@@ -17,7 +17,7 @@ export function ProductsPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageHeader path="products" title={t.products.title} sub={t.products.sub} />
+      <PageHeader title={t.products.title} sub={t.products.sub} />
       <Products />
       <Sarathi />
     </>
@@ -28,7 +28,7 @@ export function WorkPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageHeader path="work" title={t.work.title} sub={t.work.sub} />
+      <PageHeader title={t.work.title} sub={t.work.sub} />
       <Work />
       <CtaBand />
     </>
@@ -39,7 +39,7 @@ export function ServicesPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageHeader path="services" title={t.services.title} sub={t.services.sub} />
+      <PageHeader title={t.services.title} sub={t.services.sub} />
       <Services />
       <Faq />
       <CtaBand />
@@ -51,7 +51,7 @@ export function AboutPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageHeader path="about" title={t.approach.title} sub={t.about.sub} />
+      <PageHeader title={t.approach.title} sub={t.about.sub} />
       <Approach />
       <CtaBand />
     </>
@@ -62,7 +62,7 @@ export function ContactPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageHeader path="contact" title={t.contact.title} sub={t.contact.sub} />
+      <PageHeader title={t.contact.title} sub={t.contact.sub} />
       <Contact />
     </>
   );
