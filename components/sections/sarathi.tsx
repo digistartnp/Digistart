@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/components/providers";
 import { Reveal, SectionHeading } from "@/components/ui";
 import { PhoneFan } from "@/components/three-d";
@@ -7,8 +8,6 @@ import elderHome from "@/assets/products/sarathi/elder_home.webp";
 import elderConfirm from "@/assets/products/sarathi/elder_confirm.webp";
 import elderMedicines from "@/assets/products/sarathi/elder_medicines.webp";
 import familyToday from "@/assets/products/sarathi/family_today.webp";
-
-export const SARATHI_TOPIC_EVENT = "digistart:topic";
 
 const shots = [elderHome, elderConfirm, elderMedicines, familyToday];
 
@@ -26,15 +25,11 @@ export default function Sarathi() {
   const { t } = useLanguage();
   const s = t.sarathi;
 
-  const joinWaitlist = () => {
-    window.dispatchEvent(new CustomEvent(SARATHI_TOPIC_EVENT, { detail: "sarathi" }));
-  };
-
   return (
     <section id="sarathi" className="relative border-t border-line bg-linear-to-b from-brand-soft to-surface py-24 md:py-32">
       <div className="container-x grid items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
         <div>
-          <SectionHeading index="02" label={s.label} title={s.title} sub={s.tagline} />
+          <SectionHeading label={s.label} title={s.title} sub={s.tagline} />
           <Reveal className="mt-6">
             <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-[11px] text-muted">
               <span className="size-1.5 animate-pulse rounded-full bg-amber-500" aria-hidden="true" />
@@ -57,9 +52,9 @@ export default function Sarathi() {
               ))}
             </ul>
 
-            <a href="#contact" onClick={joinWaitlist} className="btn btn-primary mt-8">
+            <Link href="/contact?topic=sarathi" className="btn btn-primary mt-8">
               {s.cta}
-            </a>
+            </Link>
           </Reveal>
         </div>
 

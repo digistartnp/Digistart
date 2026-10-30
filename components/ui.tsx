@@ -33,7 +33,7 @@ export function SectionHeading({
   sub,
   tone = "ink",
 }: {
-  index: string;
+  index?: string;
   label: string;
   title: string;
   sub?: string;
@@ -47,7 +47,8 @@ export function SectionHeading({
           dark ? "text-white/55" : "text-faint"
         }`}
       >
-        <span className="text-accent">{index}</span> / {label}
+        {index ? <span className="text-accent">{index} / </span> : null}
+        {label}
       </p>
       <h2
         className={`mt-4 text-[2rem] leading-[1.1] font-semibold tracking-[-0.035em] text-balance md:text-[2.75rem] ${

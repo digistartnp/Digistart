@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/components/providers";
 import { PhoneFrame } from "@/components/ui";
@@ -75,12 +76,12 @@ export default function Hero() {
           </h1>
           <p className="mt-6 max-w-lg text-[1.0625rem] leading-relaxed text-pretty text-muted">{h.sub}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="#products" className="btn btn-primary">
+            <Link href="/products" className="btn btn-primary">
               {h.primary}
-            </a>
-            <a href="#contact" className="btn btn-secondary">
-              {h.secondary}
-            </a>
+            </Link>
+            <Link href="/work" className="btn btn-secondary">
+              {t.home.workCta}
+            </Link>
           </div>
         </div>
 

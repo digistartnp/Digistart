@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { m, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/components/providers";
-import { ArrowUpRight, BrowserFrame, PhoneFrame, Reveal, SectionHeading } from "@/components/ui";
+import { ArrowUpRight, BrowserFrame, PhoneFrame, Reveal } from "@/components/ui";
 import { InputOutput, Tilt } from "@/components/three-d";
 import { EraConverter, RenewalWindow } from "@/components/mini-tools";
 import { links, type Copy } from "@/lib/copy";
@@ -131,14 +131,13 @@ export default function Products() {
   const v = t.products.visatomo;
 
   return (
-    <section id="products" className="border-t border-line py-24 md:py-32">
+    <section aria-label={t.products.label} className="pt-14 pb-24 md:pt-20 md:pb-32">
       <div className="container-x">
-        <SectionHeading index="01" label={t.products.label} title={t.products.title} sub={t.products.sub} />
-
-        <div className="mt-16 space-y-24 md:mt-20 md:space-y-32">
+        <div className="space-y-24 md:space-y-32">
           <article
+            id="resumejp"
             aria-labelledby="resumejp-name"
-            className="grid items-center gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16"
+            className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16"
           >
             <Reveal>
               <ProductCopy
@@ -157,8 +156,9 @@ export default function Products() {
           </article>
 
           <article
+            id="visatomo"
             aria-labelledby="visatomo-name"
-            className="grid items-center gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16"
+            className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16"
           >
             <Reveal className="lg:order-2">
               <ProductCopy

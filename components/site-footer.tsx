@@ -15,15 +15,16 @@ export default function SiteFooter() {
       items: [
         { label: "ResumeJP", href: links.resumejp, external: true },
         { label: "VisaTomo", href: links.visatomo, external: true },
-        { label: "Sarathi Connect", href: "/#sarathi", badge: t.footer.soon },
+        { label: "Sarathi Connect", href: "/products#sarathi", badge: t.footer.soon },
       ],
     },
     {
       title: t.footer.company,
       items: [
-        { label: t.nav.approach, href: "/#approach" },
-        { label: t.nav.services, href: "/#services" },
-        { label: t.nav.contact, href: "/#contact" },
+        { label: t.nav.work, href: "/work" },
+        { label: t.nav.services, href: "/services" },
+        { label: t.nav.about, href: "/about" },
+        { label: t.nav.contact, href: "/contact" },
       ],
     },
     {

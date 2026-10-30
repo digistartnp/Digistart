@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, m } from "framer-motion";
 import { Logo } from "@/components/logo";
 import { useLanguage } from "@/components/providers";
@@ -37,6 +38,8 @@ export default function SiteHeader() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -53,11 +56,10 @@ export default function SiteHeader() {
   }, [open]);
 
   const nav = [
-    { href: "/#products", label: t.nav.products },
-    { href: "/#sarathi", label: t.nav.next },
-    { href: "/#approach", label: t.nav.approach },
-    { href: "/#services", label: t.nav.services },
-    { href: "/#contact", label: t.nav.contact },
+    { href: "/products", label: t.nav.products },
+    { href: "/work", label: t.nav.work },
+    { href: "/services", label: t.nav.services },
+    { href: "/about", label: t.nav.about },
   ];
 
   return (
@@ -67,7 +69,7 @@ export default function SiteHeader() {
       }`}
     >
       <div className="container-x flex h-16 items-center justify-between gap-6">
-        <Link href="/#top" aria-label="digistart — home" onClick={() => setOpen(false)}>
+        <Link href="/" aria-label="digistart — home" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
@@ -75,8 +77,22 @@ export default function SiteHeader() {
           <ul className="flex items-center gap-7">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-sm text-muted transition-colors hover:text-ink">
+                <Link
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={`relative flex h-16 items-center text-sm transition-colors ${
+                    isActive(item.href) ? "font-medium text-ink" : "text-muted hover:text-ink"
+                  }`}
+                >
                   {item.label}
+                  {isActive(item.href) ? (
+                    <m.span
+                      layoutId="nav-active"
+                      className="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-brand"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      aria-hidden="true"
+                    />
+                  ) : null}
                 </Link>
               </li>
             ))}
@@ -85,7 +101,7 @@ export default function SiteHeader() {
 
         <div className="hidden items-center gap-3 md:flex">
           <LanguageToggle />
-          <Link href="/#contact" className="btn btn-primary h-9 px-4 text-sm">
+          <Link href="/contact" className="btn btn-primary h-9 px-4 text-sm">
             {t.nav.cta}
           </Link>
         </div>
@@ -130,14 +146,16 @@ export default function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="flex h-12 items-center border-b border-line text-base text-ink last:border-b-0"
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className="flex h-12 items-center justify-between border-b border-line text-base text-ink last:border-b-0"
                 >
                   {item.label}
+                  {isActive(item.href) ? <span className="size-1.5 rounded-full bg-brand" aria-hidden="true" /> : null}
                 </Link>
               ))}
               <div className="flex items-center justify-between gap-3 pt-4 pb-2">
                 <LanguageToggle />
-                <Link href="/#contact" onClick={() => setOpen(false)} className="btn btn-primary">
+                <Link href="/contact" onClick={() => setOpen(false)} className="btn btn-primary">
                   {t.nav.cta}
                 </Link>
               </div>

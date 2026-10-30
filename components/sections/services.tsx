@@ -1,18 +1,16 @@
 "use client";
 
 import { useLanguage } from "@/components/providers";
-import { Reveal, SectionHeading } from "@/components/ui";
+import { Reveal } from "@/components/ui";
 import { Tilt } from "@/components/three-d";
 
 export default function Services() {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="border-t border-line bg-surface py-24 md:py-32">
+    <section aria-label={t.services.label} className="pt-6 pb-24 md:pt-10 md:pb-32">
       <div className="container-x">
-        <SectionHeading index="04" label={t.services.label} title={t.services.title} sub={t.services.sub} />
-
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {t.services.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.05}>
               <Tilt max={5} className="h-full">

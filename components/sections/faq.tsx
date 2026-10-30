@@ -12,7 +12,7 @@ export default function Faq() {
   return (
     <section id="faq" className="py-24 md:py-32">
       <div className="container-x grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-20">
-        <SectionHeading index="05" label={t.faq.label} title={t.faq.title} />
+        <SectionHeading label={t.faq.label} title={t.faq.title} />
 
         <Reveal>
           <ul className="border-t border-line">

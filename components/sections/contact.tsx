@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { useLanguage } from "@/components/providers";
-import { ArrowUpRight, Reveal, SectionHeading } from "@/components/ui";
-import { SARATHI_TOPIC_EVENT } from "@/components/sections/sarathi";
+import { ArrowUpRight, Reveal } from "@/components/ui";
 import { links } from "@/lib/copy";
 import { checkEmail } from "@/lib/validate-email";
 
@@ -53,12 +52,12 @@ export default function Contact() {
     setValues((v) => ({ ...v, [field]: e.target.value }));
   const blur = (field: Field) => () => setTouched((t) => ({ ...t, [field]: true }));
 
-  /* The Sarathi "Join the waitlist" button pre-selects its topic here. */
+  /* Links like /contact?topic=sarathi pre-select the topic. */
   useEffect(() => {
-    const onTopic = (e: Event) => setTopic((e as CustomEvent<Topic>).detail);
-    window.addEventListener(SARATHI_TOPIC_EVENT, onTopic);
-    return () => window.removeEventListener(SARATHI_TOPIC_EVENT, onTopic);
-  }, []);
+    const requested = new URLSearchParams(window.location.search).get("topic");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time read of the URL after hydration
+    if (requested && requested in f.topics) setTopic(requested as Topic);
+  }, [f.topics]);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -109,17 +108,10 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="grain relative isolate overflow-hidden border-t border-line bg-surface py-24 md:py-32">
-      <div className="aurora -z-10 opacity-60" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </div>
+    <section aria-label={t.contact.label} className="pt-6 pb-24 md:pt-10 md:pb-32">
       <div className="container-x relative grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-20">
         <div>
-          <SectionHeading index="06" label={t.contact.label} title={t.contact.title} sub={t.contact.sub} />
-
-          <Reveal className="mt-10 space-y-3">
+          <Reveal className="space-y-3">
             {channels.map((channel) => (
               <div key={channel.label} className="relative">
                 <a

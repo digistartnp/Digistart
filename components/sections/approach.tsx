@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/components/providers";
-import { Reveal, SectionHeading } from "@/components/ui";
+import { Reveal } from "@/components/ui";
 import { Mark3D, StackRing, Tilt } from "@/components/three-d";
 
 const stack = ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Tailwind CSS"];
@@ -18,12 +18,11 @@ export default function Approach() {
   const { t } = useLanguage();
 
   return (
-    <section id="approach" className="py-24 md:py-32">
+    <section aria-label={t.approach.label} className="pt-2 pb-24 md:pb-32">
       <div className="container-x">
         <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_auto]">
           <div>
-            <SectionHeading index="03" label={t.approach.label} title={t.approach.title} />
-            <Reveal className="mt-6 flex max-w-md items-start gap-3 text-sm leading-relaxed text-muted">
+            <Reveal className="flex max-w-md items-start gap-3 text-sm leading-relaxed text-muted">
               <span className="mt-1.5 h-3.5 w-2 shrink-0 rounded-[2px] bg-accent" aria-hidden="true" />
               {t.approach.markCaption}
             </Reveal>

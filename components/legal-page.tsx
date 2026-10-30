@@ -39,7 +39,7 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
         <Link href={`/${other}`} className="btn btn-secondary">
           {legal[other][lang].title}
         </Link>
-        <Link href="/#contact" className="btn btn-primary">
+        <Link href="/contact" className="btn btn-primary">
           {lang === "ja" ? "お問い合わせ" : "Contact us"}
         </Link>
       </div>
